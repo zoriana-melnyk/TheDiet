@@ -1,12 +1,10 @@
-// import background from './img/back.png';
 import './App.scss';
+import { Header } from "./components/Header";
 
 function App() {
   return (
     <div className="App">
-      {/* <header className="App-header">
-        <img src={background} className="App-background" alt="back-img" />
-      </header> */}
+      <Header />
     </div>
   );
 }
