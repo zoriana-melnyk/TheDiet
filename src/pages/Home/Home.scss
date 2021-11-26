@@ -1,0 +1,87 @@
+.Home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 70vw;
+    margin: 0 auto;
+    margin-top: 50px;
+    .Main-info{
+        margin: 0;
+        background: rgba(73, 60, 47, 0.62);
+        border: 1px solid #000000;
+        box-sizing: border-box;
+        border-radius: 20px;
+        &-img {
+            min-width: 200px;
+            max-height: 130px;
+        }
+        .About{
+            padding-top: 30px;
+            .VisionCard{
+                width: 15vw;
+                margin-left: 50px;
+                margin-right: 50px;
+                border-radius: 10px;
+            }
+            .Text-block{
+                font-family: Alegreya SC;
+                color: #FFFDFD;
+                .Text-about-header{
+                    font-weight: bold;
+                    font-size: 27px;
+                }
+                .Text-about{
+                    font-size: 22px;
+                }
+            }
+        }
+        .Cooperation{
+            padding-top: 50px;
+            .Text-block{
+                font-family: Alegreya SC;
+                color: #FFFDFD;
+                width: 300px;
+                .Text-coop{
+                    padding-top: 20px;
+                    font-size: 22px;
+                }
+            }
+            .CooperationCard{
+                width: 20vw;
+                margin-left: 50px;
+                margin-right: 50px;
+                border-radius: 10px;
+            }
+            padding-bottom: 20px;
+        }
+        .GoToMenu{
+            font-family: Alegreya SC;
+            color: #FFFDFD;
+            font-weight: bold;
+            font-size: 20px;
+            background: #41362B;
+            border: 2px solid #FFFFFF;
+            box-sizing: border-box;
+            border-radius: 15px;
+        }
+    }
+    .Footer{
+        .GoToFooter{
+            background: #332820;
+            border: 1px solid #1f1813;
+            box-sizing: border-box;
+            border-radius: 15px;
+        }
+    }
+    @media only screen and (max-width: 700px) {
+        .Cooperation,
+        .About{
+            flex-direction: column;
+            align-items: center;
+        }
+        .Cooperation{
+            flex-direction: column-reverse;
+        }
+    }
+}

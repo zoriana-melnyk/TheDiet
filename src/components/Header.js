@@ -12,7 +12,6 @@ import sticker from '../img/sticker.png'
 
 function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    console.log({ isMenuOpen });
     return (
         <header className="App-header">
             <Navbar className="App-navbar">
