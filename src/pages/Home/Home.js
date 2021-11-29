@@ -38,11 +38,11 @@ function Home() {
                 <Button className="GoToMenu" href="#menu">Де та їжа?</Button>
 
             </div>
-            <div className="Footer my-4">
+            <footer className="Footer my-4">
                 <Button className="GoToFooter" href="#footer">
                     <ArrowBarDown />
                 </Button>
-            </div>
+            </footer>
         </div >
     );
 }

@@ -1,0 +1,36 @@
+.Footer-block{
+    margin: 0;
+    background: rgba(73, 60, 47, 0.62);
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 20px;
+    .Text-reviews-header{
+        font-family: Alegreya SC;
+        font-weight: bold;
+        color: #FFFDFD;
+    }
+    .Reviews-container{
+        width: 650px;
+        height: 150px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.87);
+        &-img {
+            min-width: 200px;
+            max-height: 130px;
+        }
+        .Man, .Woman, .Boy, .Moslem-woman{
+            width: 10vw;
+        }
+        .Reviews{
+            font-family: Alegreya SC;
+            color: #FFFFFF;
+            font-size: 20px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+    }
+}
