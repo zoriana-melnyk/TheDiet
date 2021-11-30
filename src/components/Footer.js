@@ -44,9 +44,8 @@ function Footer() {
                     <img src={MoslemWoman} className="Reviews-container-img Moslem-woman mr-4" alt="moslem-woman_img" />
                 </div>
             </footer>
-            <div className="FooterButton my-4">
+            <div className="FooterButton my-3">
                 <Button className="GoToUp" onClick={e => {
-                    // TODO: read abous scrollto
                     window.scrollTo({ top: 0 })
                 }}>
                     <ArrowBarUp />

@@ -40,8 +40,7 @@ function Home() {
             </div>
             <footer className="Footer my-4">
                 <Button className="GoToFooter" onClick={e => {
-                    // TODO: read abous scrollto
-                    window.scrollTo(10000, 100000)
+                    window.scrollTo(750, 750)
                 }}>
                     <ArrowBarDown />
                 </Button>
