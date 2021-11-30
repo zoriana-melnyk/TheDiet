@@ -45,7 +45,10 @@ function Footer() {
                 </div>
             </footer>
             <div className="FooterButton my-4">
-                <Button className="GoToUp" href="#up">
+                <Button className="GoToUp" onClick={e => {
+                    // TODO: read abous scrollto
+                    window.scrollTo({ top: 0 })
+                }}>
                     <ArrowBarUp />
                 </Button>
             </div>

@@ -39,7 +39,10 @@ function Home() {
 
             </div>
             <footer className="Footer my-4">
-                <Button className="GoToFooter" href="#footer">
+                <Button className="GoToFooter" onClick={e => {
+                    // TODO: read abous scrollto
+                    window.scrollTo(10000, 100000)
+                }}>
                     <ArrowBarDown />
                 </Button>
             </footer>
@@ -47,4 +50,4 @@ function Home() {
     );
 }
 
-export default Home;
+export { Home };
