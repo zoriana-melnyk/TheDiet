@@ -2,17 +2,21 @@ import React from "react";
 // REDO: replace with correct login SVG
 import login from "../img/login.svg"
 
-function LogIn({ onClick }) {
+function Register({ onClick }) {
     return (
-        <div className="base-constructor">
-            <div className="header">Login</div>
+        <div className="base-constructor" >
+            <div className="header">Register</div>
             <div className="content">
                 <div className="image">
-                    <img src={login} alt="login-img" />
+                    <img src={login} alt="login_img" />
                     <div className="form">
                         <div className="form-group">
                             <label htmlFor="username">Username</label>
                             <input type="text" name="username" placeholder="username" />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="email">Email</label>
+                            <input type="email" name="email" placeholder="email" />
                         </div>
                         <div className="form-group">
                             <label htmlFor="password">Password</label>
@@ -22,9 +26,12 @@ function LogIn({ onClick }) {
                 </div>
             </div>
             <div className="footer">
-                <button type="buttton" className="btn">Login</button>
+                <button type="buttton" className="btn">Register</button>
             </div>
         </div>
     );
 }
-export { LogIn };
+
+export {
+    Register
+}
