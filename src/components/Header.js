@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import './Header.scss';
+import React, { useState } from 'react';
+import { NavLink } from "react-router-dom";
 import { Container, Navbar } from 'react-bootstrap';
 import { slide as Menu } from 'react-burger-menu'
 
@@ -9,6 +9,7 @@ import closeMenuButton from '../img/close.svg';
 import userPhoto from '../img/user.png'
 import sticker from '../img/sticker.png'
 
+import './Header.scss';
 
 function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -30,8 +31,8 @@ function Header() {
                     >
                         <div className="user-ifo">
                             <img src={userPhoto} alt="userPhoto" width="35px" height="35px" />
-                            <a id="login" className="Login" href="/login">Увійти</a>
-                            <a id="signIn" className="SignIn" href="/signIn">Зареєстуватися</a>
+                            <NavLink id="login" className="Login" to={'/auth/login'}>Увійти</NavLink>
+                            <NavLink id="signIn" className="SignIn" to={'/auth/register'}>Зареєстуватися</NavLink>
                             <img className="close-button" onClick={() => setIsMenuOpen(false)} src={closeMenuButton} alt="closeMenu_img" />
                         </div>
                         <div className="routes">
