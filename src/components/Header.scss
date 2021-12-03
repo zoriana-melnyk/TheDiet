@@ -1,157 +1,157 @@
 .App-header {
-    width: 100%;
-    .App-logo{
-      height: 50px;
+  width: 100%;
+  .App-logo {
+    height: 50px;
+  }
+  .App-navbar {
+    height: 100%;
+    background-color: #12101194;
+    .bm-burger-button {
+      width: 36px;
+      height: 30px;
+      right: 36px;
+      top: 20px;
     }
-    .App-navbar{
-      background-color: #12101194;
-      .bm-burger-button {
-        position: fixed;
-        width: 36px;
-        height: 30px;
-        right: 36px;
-        top: 20px;
-      }
-      .bm-cross-button {
-          display: none;
-      }
-      .bm-menu-wrap {
-        top: 0px;
-      }
-      .bm-menu {
-        background: #41362B;
-        padding: 2.5em 1.5em 0;
-        font-size: 1.15em;
-        border-radius: 20px;
-        .bm-item-list {
-            display: flex;
-            justify-content: space-between;
-            flex-direction: column;
-          }
-      }
-      .bm-overlay {
-        top: 0;
-        left: 0;
-      }
-      .user-ifo{
-          display: flex !important;
-          flex-direction: row;
-          justify-content: space-between;
-          top: 25px !important;
-        .Login{
-            font-family: Alegreya SC;
-            font-style: normal;
-            font-weight: 500;
-            font-size: 20px;
-            line-height: 30px;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            color: #C4C4C4
-          }
-          .SignIn{
-            font-family: Alegreya SC;
-            font-style: normal;
-            font-weight: 500;
-            font-size: 20px;
-            line-height: 30px;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            color: #C4C4C4
-          }
-          .close-button{
-              width: 20px;
-              padding: 0.5px;
-              cursor: pointer;
-          }
-      }
-      .routes{
-        display: flex !important;
-        flex-direction: column;
+    .bm-cross-button {
+      display: none;
+    }
+    .bm-menu-wrap {
+      top: 0px;
+    }
+    .bm-menu {
+      background: #41362b;
+      padding: 2.5em 1.5em 0;
+      font-size: 1.15em;
+      border-radius: 20px;
+      .bm-item-list {
+        display: flex;
         justify-content: space-between;
-        margin-left: 50px;
-        .Nav-item{
-            font-family: Alegreya SC;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 25px;
-            line-height: 50px;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            color: #C4C4C4;
-            text-decoration-line:none;
-        }
-        .Menu-item{
-            font-family: Alegreya SC;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 25px;
-            line-height: 50px;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            color: #C4C4C4;
-            text-decoration-line:none;
-        }
-        .List-menu{
-          color: #6C6C6C;
-        }
-        .CdMenu-item{
-            font-family: Alegreya SC;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 20px;
-            line-height: 45px;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            text-decoration-line: underline;
-            color: #6C6C6C;
-        }
-        .CrDish-item{
-            font-family: Alegreya SC;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 20px;
-            line-height: 45px;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            text-decoration-line: underline;
-            color: #6C6C6C;
-        }
-        .Dir-item{
-          font-family: Alegreya SC;
-          font-style: normal;
-          font-weight: bold;
-          font-size: 25px;
-          line-height: 50px;
-          display: flex;
-          align-items: center;
-          text-align: center;
-          color: #C4C4C4;
-          text-decoration-line:none;
-        }
-        .Contact-item{
-          font-family: Alegreya SC;
-          font-style: normal;
-          font-weight: bold;
-          font-size: 25px;
-          line-height: 50px;
-          display: flex;
-          align-items: center;
-          text-align: center;
-          color: #C4C4C4;
-          text-decoration-line:none;
-        }
+        flex-direction: column;
       }
     }
-    footer {
-      .Sticker{
-        width: 20vw;
-        float: none; 
+    .bm-overlay {
+      top: 0;
+      left: 0;
+    }
+    .user-ifo {
+      display: flex !important;
+      flex-direction: row;
+      justify-content: space-between;
+      top: 25px !important;
+      .Login {
+        font-family: Alegreya SC;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 30px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: #c4c4c4;
+      }
+      .SignIn {
+        font-family: Alegreya SC;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 30px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: #c4c4c4;
+      }
+      .close-button {
+        width: 20px;
+        padding: 0.5px;
+        cursor: pointer;
       }
     }
+    .routes {
+      display: flex !important;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-left: 50px;
+      .Nav-item {
+        font-family: Alegreya SC;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 25px;
+        line-height: 50px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: #c4c4c4;
+        text-decoration-line: none;
+      }
+      .Menu-item {
+        font-family: Alegreya SC;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 25px;
+        line-height: 50px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: #c4c4c4;
+        text-decoration-line: none;
+      }
+      .List-menu {
+        color: #6c6c6c;
+      }
+      .CdMenu-item {
+        font-family: Alegreya SC;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 45px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        text-decoration-line: underline;
+        color: #6c6c6c;
+      }
+      .CrDish-item {
+        font-family: Alegreya SC;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 45px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        text-decoration-line: underline;
+        color: #6c6c6c;
+      }
+      .Dir-item {
+        font-family: Alegreya SC;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 25px;
+        line-height: 50px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: #c4c4c4;
+        text-decoration-line: none;
+      }
+      .Contact-item {
+        font-family: Alegreya SC;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 25px;
+        line-height: 50px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: #c4c4c4;
+        text-decoration-line: none;
+      }
+    }
+  }
+  footer {
+    .Sticker {
+      width: 20vw;
+      float: none;
+    }
+  }
 }
