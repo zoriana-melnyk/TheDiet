@@ -2,14 +2,14 @@
     display: flex;
     justify-content: center;
     padding: 3rem 0;
+    font-family: Alegreya SC;
+
     //Login Main Container
     .login {
         width: 27em;
-        height: 40em;
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-top: 50px;
         position: relative;
         z-index: 99;
         .container {
@@ -17,17 +17,16 @@
             justify-content: center;
             align-items: center;
             background-color: #fff;
-            box-shadow: 0px 0px 12px 2px rgba(15, 15, 15, 0.2);
-            border-radius: 4px;
+            box-shadow: rgba(22, 18, 14, 0.62);
+            border-radius: 20px;
             position: relative;
             z-index: 99;
             width: 100%;
-            height: 100%;
             z-index: 99;
             padding: 17px 10px;
         }
         .right-side {
-            background-color: #350f36;
+            background-color: rgba(53, 41, 30, 0.973);
             border-radius: 6px;
             box-shadow: 0px 0px 12px 2px rgba(15, 15, 15, 0.281);
             cursor: pointer;
@@ -42,9 +41,10 @@
             z-index: 1;
 
             .text {
-                font-size: 21px;
-                font-weight: 500;
-                color: #fff;
+                font-family: Alegreya SC;
+                font-weight: bold;
+                color: #fffdfd;
+                font-size: 20px;
                 margin-right: 3em;
                 margin-left: 3em;
             }
@@ -68,16 +68,19 @@
 
     //Button
     .btn {
+        margin-top: 10px;
         font-size: 21px;
         padding: 5px 20px;
         border: 0;
-        background-color: #350f36;
-        color: #fff;
-        border-radius: 3px;
+        background-color: rgba(53, 41, 30, 0.973);
+        font-family: Alegreya SC;
+        font-weight: bold;
+        color: #fffdfd;
+        border-radius: 20px;
         transition: all 250ms ease-in-out;
         cursor: pointer;
         &:hover {
-            background-color: #ad97ad;
+            background-color: #77716cc2;
         }
         &:focus {
             outline: none;
@@ -94,7 +97,8 @@
 
 .header {
     font-size: 24px;
-    font-family: "Open Sans", sans-serif;
+    font-family: Alegreya SC;
+    font-weight: bold;
 }
 
 .content {
@@ -110,7 +114,8 @@
     }
 
     .form {
-        margin-top: 2em;
+        font-family: inherit;
+        margin-top: 1em;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -122,19 +127,17 @@
         align-items: flex-start;
         width: fit-content;
         label {
-            font-size: 20px;
+            font-size: small;
         }
         input {
             margin-top: 6px;
             min-width: 10em;
-            height: 37px;
             padding: 0px 10px;
-            font-size: 16px;
-            font-family: "Open Sans", sans-serif;
+            font-family: Alegreya SC;
             background-color: #f3f3f3;
             border: 0;
-            border-radius: 4px;
-            margin-bottom: 31px;
+            border-radius: 5px;
+            margin-bottom: 20px;
             //explaine!
             transition: all 250ms ease-in-out;
             &:focus {
