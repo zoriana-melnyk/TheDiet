@@ -1,6 +1,5 @@
 import React from "react";
-// REDO: replace with correct login SVG
-import login from "../img/login.svg"
+import login from "../img/login.jpg"
 
 function LogIn({ onClick }) {
     return (
@@ -9,15 +8,15 @@ function LogIn({ onClick }) {
             <div className="content">
                 <div className="image">
                     <img src={login} alt="login-img" />
-                    <div className="form">
-                        <div className="form-group">
-                            <label htmlFor="username">Username</label>
-                            <input type="text" name="username" placeholder="username" />
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="password">Password</label>
-                            <input type="password" name="password" placeholder="password" />
-                        </div>
+                </div>
+                <div className="form">
+                    <div className="form-group">
+                        <label htmlFor="username">Username</label>
+                        <input type="text" name="username" placeholder="username" />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="password">Password</label>
+                        <input type="password" name="password" placeholder="password" />
                     </div>
                 </div>
             </div>
