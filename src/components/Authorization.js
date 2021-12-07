@@ -60,7 +60,7 @@ function Authorization() {
                 </div>
                 <RightSide
                     ref={asideRef}
-                    selected={isLoginActive ? 'Register' : 'Login'}
+                    selected={isLoginActive ? 'Зареєструватися' : 'Увійти'}
                     onClick={handleAsideClick}
                 />
             </div>
