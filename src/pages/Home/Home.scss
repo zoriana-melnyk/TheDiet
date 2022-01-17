@@ -24,9 +24,19 @@
         .Text-block {
             font-family: Alegreya SC;
             color: #fffdfd;
-            .Text-slogan {
+            .Text-header {
                 font-weight: bold;
                 font-size: 40px;
+            }
+            .Text-info {
+                font-weight: bold;
+                font-size: 20px;
+                margin: 15px 0px 15px 0;
+                color: rgb(219, 200, 163);
+            }
+            .Text-slogan {
+                font-weight: bold;
+                font-size: 30px;
             }
         }
         .GoToMenu {
@@ -34,7 +44,7 @@
             color: #fffdfd;
             font-weight: bold;
             font-size: 25px;
-            margin-top: 70px;
+            margin-top: 60px;
             background: #1b1712e8;
             border: 2px solid #ffffff;
             box-sizing: border-box;
