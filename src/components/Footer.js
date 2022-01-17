@@ -1,7 +1,7 @@
 import React from 'react'
 import './Footer.scss';
-import { Button } from 'react-bootstrap';
-import { ArrowBarUp } from 'react-bootstrap-icons';
+
+import { About } from './About';
 
 import Man from '../img/man.png';
 import Woman from '../img/woman.png';
@@ -11,6 +11,7 @@ import MoslemWoman from '../img/moslem-woman.png';
 function Footer() {
     return (
         <div className="Footer">
+            <About />
             <footer className="Footer-block">
                 <h3 className="Text-reviews-header p-5">
                     Відгуки наших клієнтів
@@ -44,13 +45,6 @@ function Footer() {
                     <img src={MoslemWoman} className="Reviews-container-img Moslem-woman mr-4" alt="moslem-woman_img" />
                 </div>
             </footer>
-            <div className="FooterButton my-3">
-                <Button className="GoToUp" onClick={e => {
-                    window.scrollTo({ top: 0 })
-                }}>
-                    <ArrowBarUp />
-                </Button>
-            </div>
         </div>
     );
 }
