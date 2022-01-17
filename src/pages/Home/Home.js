@@ -13,9 +13,16 @@ function Home() {
             <div className="Main-info">
                 <div className="Main-info-about About d-flex justify-content-between">
                     <div className="Text-block">
-                        <h1 className="Text-slogan">
-                            Здорове харчування - це круто та легко
+                        <h1 className="Text-header">
+                            "У здоровому тілі - здоровий дух"
                         </h1>
+                        <h2 className="Text-info">
+                            Ні для кого не секрет, що запорукою хорошого самопочуття є здорове тіло,<br />
+                            а для цього необхідно дотримуватися збалансованого раціону харчування
+                        </h2>
+                        <h3 className='Text-slogan'>
+                            Свори вже сьогодні свій раціон!
+                        </h3>
                     </div>
                 </div>
                 {/* <div className="Cooperation d-flex justify-content-center">
@@ -27,7 +34,7 @@ function Home() {
                     </div>
                     <img src={cooperationCard} className="Main-info-img CooperationCard mr-4" alt="cooperationCard_img" />
                 </div> */}
-                <Button className="GoToMenu" href="#menu">Перевірити</Button>
+                <Button className="GoToMenu" href="#menu">Вже біжу</Button>
             </div>
 
             {/* <footer className="Footer my-4">
