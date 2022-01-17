@@ -1,0 +1,63 @@
+.Footer {
+    padding-top: 30px;
+    background-color: rgb(17, 17, 16);
+    .Info-block {
+        display: flex;
+        max-width: 80vw;
+        max-height: 100vh;
+        flex-direction: column;
+        text-align: left;
+        .About-container {
+            .Text-about-header {
+                font-family: Alegreya SC;
+                font-weight: bold;
+                color: #fffdfd;
+                font-size: 27px;
+            }
+            .VisionCard {
+                width: 15vw;
+                margin-left: 50px;
+                margin-right: 50px;
+                border-radius: 10px;
+            }
+            .About-container-text {
+                font-family: Alegreya SC;
+                color: #fffdfd;
+                font-size: 22px;
+            }
+        }
+        .Cooperation-container {
+            .Cooperation-container-text {
+                font-family: Alegreya SC;
+                color: #fffdfd;
+                font-size: 22px;
+            }
+            .cooperationCard {
+                width: 20vw;
+                margin-left: 50px;
+                margin-right: 50px;
+                border-radius: 10px;
+            }
+        }
+    }
+}
+
+.Cooperation {
+    padding-top: 50px;
+    .Text-block {
+        font-family: Alegreya SC;
+        color: #fffdfd;
+        width: 300px;
+        .Text-coop {
+            padding-top: 20px;
+            font-size: 22px;
+        }
+    }
+    .CooperationCard {
+        width: 20vw;
+        margin-left: 50px;
+        margin-right: 50px;
+        border-radius: 10px;
+    }
+    padding-bottom: 20px;
+}

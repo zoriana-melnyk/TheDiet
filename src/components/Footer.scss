@@ -1,7 +1,8 @@
-.Footer{
-        display: flex;
-        flex-direction: column;
-    .Footer-block{
+.Footer {
+    background-color: rgb(17, 17, 16);
+    display: flex;
+    flex-direction: column;
+    .Footer-block {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -9,15 +10,10 @@
         max-height: 100vh;
         flex-direction: column;
         margin: 0 auto;
-    
-        background: rgba(73, 60, 47, 0.62);
-        border: 1px solid #000000;
-        box-sizing: border-box;
-        border-radius: 20px;
-        .Text-reviews-header{
+        .Text-reviews-header {
             font-family: Alegreya SC;
             font-weight: bold;
-            color: #FFFDFD;
+            color: #fffdfd;
         }
         .Reviews-container {
             width: 70%;
@@ -31,37 +27,37 @@
             &:nth-child(odd) {
                 margin-left: 200px;
             }
-            &-header{
+            &-header {
                 font-family: Alegreya SC;
-                color: #FFFFFF;
+                color: #ffffff;
                 font-size: 20px;
                 font-weight: bold;
                 display: flex;
                 align-items: center;
                 text-align: center;
             }
-            &-img{
+            &-img {
                 width: 100px;
                 height: 15vh;
             }
         }
         @media only screen and (min-width: 1170px) {
-            .Reviews-container{
+            .Reviews-container {
                 width: 60%;
             }
         }
         @media only screen and (max-width: 920px) {
-            .Reviews-container-header{
+            .Reviews-container-header {
                 font-size: 15px;
             }
         }
     }
-    .FooterButton{
-        .GoToUp{
+    .FooterButton {
+        .GoToUp {
             background: #332820;
-                border: 1px solid #1f1813;
-                box-sizing: border-box;
-                border-radius: 15px;
+            border: 1px solid #1f1813;
+            box-sizing: border-box;
+            border-radius: 15px;
         }
     }
 }
