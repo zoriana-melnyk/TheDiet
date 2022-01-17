@@ -3,27 +3,36 @@
     background-color: rgb(17, 17, 16);
     .Info-block {
         display: flex;
+        justify-content: center;
+        align-items: center;
         max-width: 80vw;
         max-height: 100vh;
         flex-direction: column;
-        text-align: left;
+        margin: 0 auto;
         .About-container {
-            .Text-about-header {
-                font-family: Alegreya SC;
-                font-weight: bold;
-                color: #fffdfd;
-                font-size: 27px;
+            display: flex;
+            justify-content: center;
+            margin-top: -30px;
+            margin-right: 90px;
+            .About-container-row {
+                flex-direction: row;
+                .Text-about-header {
+                    font-family: Alegreya SC;
+                    font-weight: bold;
+                    color: #fffdfd;
+                    font-size: 27px;
+                }
+                .About-container-text {
+                    font-family: Alegreya SC;
+                    color: #fffdfd;
+                    font-size: 22px;
+                }
             }
             .VisionCard {
-                width: 15vw;
+                width: 30vw;
                 margin-left: 50px;
                 margin-right: 50px;
                 border-radius: 10px;
-            }
-            .About-container-text {
-                font-family: Alegreya SC;
-                color: #fffdfd;
-                font-size: 22px;
             }
         }
         .Cooperation-container {
