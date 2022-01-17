@@ -39,7 +39,7 @@ function Header() {
                         <img src={logo} className="App-logo" alt="logo_img" />
                     </Navbar.Brand>
                     {
-                        size?.width < 962
+                        size?.width < 992
                             ? <Menu
                                 right
                                 customCrossIcon={<></>}
