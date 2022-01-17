@@ -1,11 +1,19 @@
 .App-header {
   width: 100%;
-  .App-logo {
-    height: 50px;
-  }
   .App-navbar {
-    height: 100%;
-    background-color: #12101194;
+    position: relative;
+    height: 80px;
+    background-color: #0e0d0dda;
+    .App-logo {
+      position: absolute;
+      height: 150px;
+      text-align: center;
+      top: 50%; /* position the top  edge of the element at the middle of the parent */
+      left: 50%; /* position the left edge of the element at the middle of the parent */
+
+      transform: translate(-50%, -40%);
+      z-index: 2;
+    }
     .bm-burger-button {
       width: 36px;
       height: 30px;

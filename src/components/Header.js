@@ -1,26 +1,26 @@
 import React, { useState } from 'react';
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 import { Container, Navbar } from 'react-bootstrap';
-import { slide as Menu } from 'react-burger-menu'
+// import { slide as Menu } from 'react-burger-menu'
 
 import logo from '../img/logo.png';
-import menuButton from '../img/list.svg';
-import closeMenuButton from '../img/close.svg';
-import userPhoto from '../img/user.png'
-import sticker from '../img/sticker.png'
+// import menuButton from '../img/list.svg';
+// import closeMenuButton from '../img/close.svg';
+// import userPhoto from '../img/user.png'
+// import sticker from '../img/sticker.png'
 
 import './Header.scss';
 
 function Header() {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    // const [isMenuOpen, setIsMenuOpen] = useState(false);
     return (
         <header className="App-header">
             <Navbar className="App-navbar">
-                <Container>
-                    <Navbar.Brand href="#home">
-                        <img src={logo} className="App-logo" alt="logo_img" />
-                    </Navbar.Brand>
-                    <Menu
+                {/* <Container> */}
+                <Navbar.Brand href="#home">
+                    <img src={logo} className="App-logo" alt="logo_img" />
+                </Navbar.Brand>
+                {/* <Menu
                         right
                         customCrossIcon={<></>}
                         isOpen={isMenuOpen}
@@ -52,8 +52,8 @@ function Header() {
                         <footer >
                             <img src={sticker} className="Sticker" alt="sticker_img" />
                         </footer>
-                    </Menu>
-                </Container>
+                    </Menu> */}
+                {/* </Container> */}
             </Navbar>
         </header >
     );
