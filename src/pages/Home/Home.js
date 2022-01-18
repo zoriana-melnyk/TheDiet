@@ -24,7 +24,7 @@ function Home() {
                         </h3>
                     </div>
                 </div>
-                <Button className="GoToMenu" href="#menu">Вже біжу</Button>
+                <Button className="GoToMenu" href="/menu">Вже біжу</Button>
             </div>
         </div >
     );
