@@ -36,37 +36,64 @@
             }
         }
         .Cooperation-container {
-            .Cooperation-container-text {
+            flex-direction: row;
+            margin-top: 70px;
+            margin-right: 90px;
+            .Text-cooperation-header {
                 font-family: Alegreya SC;
+                font-weight: bold;
                 color: #fffdfd;
-                font-size: 22px;
+                font-size: 27px;
             }
-            .cooperationCard {
-                width: 20vw;
-                margin-left: 50px;
-                margin-right: 50px;
-                border-radius: 10px;
+            .Cooperation-container-colum {
+                margin-top: 10px;
+                display: flex;
+                justify-content: center;
+                .cooperationCard {
+                    width: 20vw;
+                    margin-left: 50px;
+                    margin-right: 50px;
+                    border-radius: 10px;
+                }
+                .Cooperation-container-text {
+                    font-family: Alegreya SC;
+                    color: #fffdfd;
+                    font-size: 22px;
+                    margin-top: 10px;
+                }
+            }
+            .GoToContact {
+                font-family: Alegreya SC;
+                color: #ffffff;
+                font-weight: bold;
+                font-size: 25px;
+                margin-top: 15px;
+                background: #9ddb51e8;
+                border: 2px solid #ffffff8e;
+                box-sizing: border-box;
+                border-radius: 15px;
+                display: inline-block;
+                animation: GoToContact 0.7s ease 2s infinite alternate;
+                &:hover {
+                    background-color: #555555;
+                    color: #ffffff;
+                    animation: none;
+                }
             }
         }
     }
 }
-
-.Cooperation {
-    padding-top: 50px;
-    .Text-block {
-        font-family: Alegreya SC;
-        color: #fffdfd;
-        width: 300px;
-        .Text-coop {
-            padding-top: 20px;
-            font-size: 22px;
-        }
+@keyframes GoToContact {
+    0% {
+        -webkit-transform: scale(1.1, 0.9);
+        transform: scale(1.1, 0.9);
     }
-    .CooperationCard {
-        width: 20vw;
-        margin-left: 50px;
-        margin-right: 50px;
-        border-radius: 10px;
+    50% {
+        -webkit-transform: scale(0.9, 1.1) translateY(-0.5rem);
     }
-    padding-bottom: 20px;
+    70% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
 }
+/*END BOUNCER*/
