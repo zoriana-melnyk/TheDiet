@@ -1,0 +1,50 @@
+.Reviews-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 80vw;
+    max-height: 100vh;
+    flex-direction: column;
+    margin: 0 auto;
+    .Text-reviews-header {
+        font-family: Alegreya SC;
+        font-weight: bold;
+        color: #fffdfd;
+    }
+    .Reviews-container {
+        width: 70%;
+        height: 170px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        margin-top: -30px;
+        background: rgba(0, 0, 0, 0.87);
+        margin-right: 90px;
+        &:nth-child(odd) {
+            margin-left: 200px;
+        }
+        &-header {
+            font-family: Alegreya SC;
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+        &-img {
+            width: 100px;
+            height: 15vh;
+        }
+    }
+    @media only screen and (min-width: 1170px) {
+        .Reviews-container {
+            width: 60%;
+        }
+    }
+    @media only screen and (max-width: 920px) {
+        .Reviews-container-header {
+            font-size: 15px;
+        }
+    }
+}
