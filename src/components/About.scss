@@ -1,6 +1,6 @@
-.Footer {
+.Footer-about {
     padding-top: 30px;
-    background-color: rgb(17, 17, 16);
+    background: linear-gradient(#111110 85%, rgba(66, 66, 66, 0.247));
     .Info-block {
         display: flex;
         justify-content: center;
@@ -12,7 +12,6 @@
             display: flex;
             justify-content: center;
             margin-top: -30px;
-            margin-right: 90px;
             .About-container-row {
                 flex-direction: row;
                 .Text-about-header {
@@ -37,7 +36,6 @@
         .Cooperation-container {
             flex-direction: row;
             margin-top: 70px;
-            margin-right: 90px;
             .Text-cooperation-header {
                 font-family: Alegreya SC;
                 font-weight: bold;
@@ -67,7 +65,7 @@
                 font-weight: bold;
                 font-size: 25px;
                 margin-top: 15px;
-                background: #9ddb51e8;
+                background: #7f8124;
                 border: 2px solid #ffffff8e;
                 box-sizing: border-box;
                 border-radius: 15px;

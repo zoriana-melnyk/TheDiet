@@ -1,50 +1,51 @@
-.Reviews-block {
+.Footer-reviews {
+    background: linear-gradient(rgba(66, 66, 66, 0.247) 85%, #111110);
     display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 80vw;
-    max-height: 100vh;
     flex-direction: column;
-    margin: 0 auto;
+    align-items: center;
     .Text-reviews-header {
         font-family: Alegreya SC;
         font-weight: bold;
         color: #fffdfd;
     }
     .Reviews-container {
-        width: 70%;
-        height: 170px;
-        border-radius: 50%;
         display: flex;
-        justify-content: center;
-        margin-top: -30px;
-        background: rgba(0, 0, 0, 0.87);
-        margin-right: 90px;
-        &:nth-child(odd) {
-            margin-left: 200px;
+        img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
         }
-        &-header {
+        &-content {
+            margin-left: 2em;
+            text-align: left;
             font-family: Alegreya SC;
             color: #ffffff;
             font-size: 20px;
             font-weight: bold;
-            display: flex;
-            align-items: center;
-            text-align: center;
-        }
-        &-img {
-            width: 100px;
-            height: 15vh;
+            blockquote {
+                font-size: medium;
+                padding: 15px;
+                background: rgb(58, 58, 58);
+                border-radius: 5px;
+            }
+            blockquote::before {
+                content: "\201C";
+            }
+
+            blockquote::after {
+                content: "\201D";
+            }
         }
     }
-    @media only screen and (min-width: 1170px) {
-        .Reviews-container {
-            width: 60%;
-        }
+}
+
+@media only screen and (min-width: 1170px) {
+    .Reviews-container {
+        width: 60%;
     }
-    @media only screen and (max-width: 920px) {
-        .Reviews-container-header {
-            font-size: 15px;
-        }
+}
+@media only screen and (max-width: 920px) {
+    .Reviews-container-header {
+        font-size: 15px;
     }
 }
