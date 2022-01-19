@@ -37,7 +37,6 @@ function About() {
                     </div>
                     <Button className="GoToContact" href="/contact">Замовити</Button>
                 </div>
-                //TODO:add colum container when screen < 1130
             </footer>
         </div>
     );
