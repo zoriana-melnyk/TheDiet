@@ -8,7 +8,7 @@ import { Button } from 'react-bootstrap';
 
 function About() {
     return (
-        <div className="Footer">
+        <div className="Footer-about">
             <footer className="Info-block">
                 <div className="About-container p-4">
                     <div className="About-container-row">
