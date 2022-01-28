@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Home.scss';
 
 import { Background } from '../../components/Background';
@@ -6,6 +6,12 @@ import { Background } from '../../components/Background';
 import { Button } from 'react-bootstrap';
 
 function Home() {
+    // componentDidMount
+    useEffect(() => {
+        fetch('http://localhost:3001/users').then(res => res.json()).then(users => {
+            console.log(users)
+        })
+    }, [])
     return (
         <div className="Home">
             <Background />
