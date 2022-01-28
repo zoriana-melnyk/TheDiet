@@ -4,18 +4,27 @@ import { Container, Nav, NavDropdown } from 'react-bootstrap';
 
 import './MainMenu.scss';
 
+import auth_img from '../img/auth.png';
+import { Link } from 'react-router-dom';
+
+
 function MainMenu() {
     return (
         <Container id='NavContainer'>
             <Nav className="Navigation">
-                <Nav.Link className="nav Nav-item" href="/">Головна</Nav.Link>
-                {/* <Nav.Link className="nav Menu-item" href="/menu">Меню</Nav.Link> */}
-                <NavDropdown title="Меню" id="DropMenu">
-                    <NavDropdown.Item href="/create-menu" className='CrMenu'>Створити меню</NavDropdown.Item>
-                    <NavDropdown.Item href="create-dish" className='CrDish'>Створити страву</NavDropdown.Item>
+                <NavDropdown title="Меню" id='DropMenu'>
+                    <NavDropdown.Item className='DropItem'><Link to="/menu" id='LinkItem'>Готове меню</Link></NavDropdown.Item>
+                    <NavDropdown.Item className='DropItem'><Link to="/create-menu" id='LinkItem'>Створити меню</Link></NavDropdown.Item>
+                    <NavDropdown.Item className='DropItem'><Link to="/create-dish" id='LinkItem'>Створити страву</Link></NavDropdown.Item>
                 </NavDropdown>
-                <Nav.Link className="nav Dir-item" href="/directory">Довідник</Nav.Link>
-                <Nav.Link className="nav Contact-item" href="/contact">Контакти</Nav.Link>
+                <Nav.Link className="nav Dir-item"><Link to="/directory" id='DropMenu'>Довідник</Link></Nav.Link>
+                <Nav.Link className="nav Contact-item" ><Link to="/contact" id='DropMenu'>Контакти</Link></Nav.Link>
+                <NavDropdown
+                    title={
+                        <img src={auth_img} className="Auth-img" alt="auth_img" dropdown-toggle='display-none' />}>
+                    <NavDropdown.Item className='DropItem'><Link to="/auth/login" id='LinkItem'>Увійти</Link></NavDropdown.Item>
+                    <NavDropdown.Item className='DropItem'><Link to="auth/register" id='LinkItem'>Зареєстуватися</Link></NavDropdown.Item>
+                </NavDropdown>
             </Nav>
         </Container>
     );

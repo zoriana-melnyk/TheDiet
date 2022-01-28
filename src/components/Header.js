@@ -56,8 +56,8 @@ function Header() {
                                     <img className="close-button" onClick={() => setIsMenuOpen(false)} src={closeMenuButton} alt="closeMenu_img" />
                                 </div>
                                 <div className="routes">
+
                                     <a id="home" className="Nav-item" href="/">Головна</a>
-                                    <a id="menu" className="Menu-item" href="/Menu">Готове меню</a>
                                     <ul>
                                         <li className="List-menu">
                                             <a id="cdMenu" className="CdMenu-item" href="/createdMenu">Створити меню</a>
