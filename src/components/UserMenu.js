@@ -21,25 +21,27 @@ function UserMenu() {
                 </h4>
             </div>
             <div className="Nav-container">
-                <div className="Nav-container-colum p-5">
-                    <Button className="NavButton sport-menu">
-                        Меню для спорцменів
-                        <img src={sportIcon} className="Nav-container-img sportIcon row mx-auto p-2" alt="sportIcon_img" />
-                    </Button>
-                    <Button className="NavButton diet-menu">
-                        Дієтичне меню
-                        <img src={dietIcon} className="Nav-container-img dietIcon row mx-auto p-2" alt="dietIcon_img" />
-                    </Button>
-                </div>
-                <div className="Nav-conteiner-row p-5">
-                    <Button className="NavButton kids-menu">
-                        Дитяче меню
-                        <img src={kidsIcon} className="Nav-container-img kidsIcon row mx-auto p-2" alt="kidsIcon_img" />
-                    </Button>
-                    <Button className="NavButton my-menu">
-                        Моє меню
-                        <img src={myMenuIcon} className="Nav-container-img myMenuIcon row mx-auto p-2" alt="myMenuIcon_img" />
-                    </Button>
+                <div className="Nav-container-column">
+                    <div className="Nav-container-column-row">
+                        <Button className="NavButton sport-menu">
+                            Меню для спорцменів
+                            <img src={sportIcon} className="Nav-container-img sportIcon row mx-auto p-2" alt="sportIcon_img" />
+                        </Button>
+                        <Button className="NavButton diet-menu">
+                            Дієтичне меню
+                            <img src={dietIcon} className="Nav-container-img dietIcon row mx-auto p-2" alt="dietIcon_img" />
+                        </Button>
+                    </div>
+                    <div className="Nav-container-column-row">
+                        <Button className="NavButton kids-menu">
+                            Дитяче меню
+                            <img src={kidsIcon} className="Nav-container-img kidsIcon row mx-auto p-2" alt="kidsIcon_img" />
+                        </Button>
+                        <Button className="NavButton my-menu">
+                            Моє меню
+                            <img src={myMenuIcon} className="Nav-container-img myMenuIcon row mx-auto p-2" alt="myMenuIcon_img" />
+                        </Button>
+                    </div>
                 </div>
             </div>
         </div>
