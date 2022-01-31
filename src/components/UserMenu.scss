@@ -1,15 +1,15 @@
 .Main-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     max-width: 70vw;
     margin: 0 auto;
-    margin-top: 50px;
+    margin-top: 70px;
     background: rgb(20 19 19);
     border: 1px solid #000000;
     box-sizing: border-box;
     border-radius: 20px;
+    padding: 1em;
     .Info-row {
         flex-direction: row;
         .Text-header {
@@ -27,24 +27,51 @@
     .Nav-container {
         display: flex;
         justify-content: center;
-        margin-top: -30px;
-        .NavButton {
-            background-color: rgba(51, 40, 32, 0.97);
-            border: 1px solid rgba(0, 0, 0, 0.58);
-            box-sizing: border-box;
-            border-radius: 10px;
-            display: inline-block;
-            text-align: center;
-            font-family: Alegreya SC;
-            color: #fffdfd;
-            font-size: 20px;
-            &:hover {
-                background-color: #7f8124;
-                color: #ffffff;
+        margin: 50px 0 50px 0;
+        flex: 1;
+        width: 100%;
+        &-column {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            gap: 10px;
+            &-row {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                gap: 10px;
+                .NavButton {
+                    width: 215px;
+                    padding: 10px;
+                    background-color: rgba(51, 40, 32, 0.97);
+                    border: 1px solid rgba(0, 0, 0, 0.58);
+                    box-sizing: border-box;
+                    border-radius: 10px;
+                    display: inline-block;
+                    text-align: center;
+                    font-family: Alegreya SC;
+                    color: #fffdfd;
+                    font-size: 20px;
+                    &:hover {
+                        background-color: #7f8124;
+                        color: #ffffff;
+                    }
+                    .Nav-container-img {
+                        width: 50px;
+                        height: 50px;
+                    }
+                }
             }
-            .Nav-container-img {
-                width: 50px;
-                height: 50px;
+        }
+    }
+    // < tablet
+    @media only screen and (max-width: 700px) {
+        .Nav-container {
+            &-column {
+                &-row {
+                    flex-direction: column;
+                    align-items: center;
+                }
             }
         }
     }
