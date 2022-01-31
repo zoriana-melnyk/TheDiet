@@ -6,6 +6,7 @@ import { Home } from "./pages/Home/Home";
 import { Authorization } from "./components/Authorization";
 
 import './App.scss';
+import { UserMenu } from "./components/UserMenu";
 
 // HOC
 const Layout = ({ children, withFooter = true }) => {
@@ -23,6 +24,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout><Home /></Layout>} />
           <Route path="/auth/:type" element={<Layout withFooter={false}><Authorization /></Layout>} />
+          <Route path="/menu" element={<Layout withFooter={false}><UserMenu /></Layout>} />
           {/* <Route path></Route> */}
         </Routes>
       </Router>

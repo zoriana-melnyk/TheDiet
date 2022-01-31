@@ -1,0 +1,51 @@
+.Main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 70vw;
+    margin: 0 auto;
+    margin-top: 50px;
+    background: rgb(20 19 19);
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 20px;
+    .Info-row {
+        flex-direction: row;
+        .Text-header {
+            font-family: Alegreya SC;
+            font-weight: bold;
+            color: #fffdfd;
+            font-size: 27px;
+        }
+        .Text-container {
+            font-family: Alegreya SC;
+            color: #fffdfd;
+            font-size: 22px;
+        }
+    }
+    .Nav-container {
+        display: flex;
+        justify-content: center;
+        margin-top: -30px;
+        .NavButton {
+            background-color: rgba(51, 40, 32, 0.97);
+            border: 1px solid rgba(0, 0, 0, 0.58);
+            box-sizing: border-box;
+            border-radius: 10px;
+            display: inline-block;
+            text-align: center;
+            font-family: Alegreya SC;
+            color: #fffdfd;
+            font-size: 20px;
+            &:hover {
+                background-color: #7f8124;
+                color: #ffffff;
+            }
+            .Nav-container-img {
+                width: 50px;
+                height: 50px;
+            }
+        }
+    }
+}
