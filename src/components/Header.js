@@ -61,10 +61,10 @@ function Header() {
                                     <a id="menu" className="Nav-item" href="/menu">Готове меню</a>
                                     <ul>
                                         <li className="List-menu">
-                                            <a id="cdMenu" className="CdMenu-item" href="/createdMenu">Створити меню</a>
+                                            <a id="cdMenu" className="CdMenu-item" href="/created-menu">Створити меню</a>
                                         </li>
                                         <li className="List-menu">
-                                            <a id="crDish" className="CrDish-item" href="/createDish">Створити страву</a>
+                                            <a id="crDish" className="CrDish-item" href="/create-dish">Створити страву</a>
                                         </li>
                                     </ul>
                                     <a id="directory" className="Dir-item" href="/directory">Довідник</a>

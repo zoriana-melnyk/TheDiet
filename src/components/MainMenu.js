@@ -23,7 +23,7 @@ function MainMenu() {
                     title={
                         <img src={auth_img} className="Auth-img" alt="auth_img" dropdown-toggle='display-none' />}>
                     <NavDropdown.Item className='DropItem'><Link to="/auth/login" id='LinkItem'>Увійти</Link></NavDropdown.Item>
-                    <NavDropdown.Item className='DropItem'><Link to="auth/register" id='LinkItem'>Зареєстуватися</Link></NavDropdown.Item>
+                    <NavDropdown.Item className='DropItem'><Link to="/auth/register" id='LinkItem'>Зареєстуватися</Link></NavDropdown.Item>
                 </NavDropdown>
             </Nav>
         </Container>

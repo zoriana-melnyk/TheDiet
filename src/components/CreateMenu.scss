@@ -1,0 +1,114 @@
+.Main-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 70vw;
+    margin: 0 auto;
+    margin-top: 70px;
+    background: rgb(20 19 19);
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 20px;
+    padding: 1em;
+    .Info-block {
+        flex-direction: row;
+        .Info-text-header {
+            font-family: Alegreya SC;
+            font-weight: bold;
+            color: #fffdfd;
+            font-size: 27px;
+        }
+        .Info-text {
+            font-family: Alegreya SC;
+            color: #fffdfd;
+            font-size: 22px;
+        }
+    }
+    .Menu {
+        &-MenuTitle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+            background: #332820;
+            border: 1px solid #000000;
+            box-sizing: border-box;
+            border-radius: 10px;
+            padding: 5px;
+            &-text {
+                font-family: Alegreya SC;
+                color: #fffdfd;
+                font-size: 22px;
+            }
+        }
+        &-MenuItemn {
+            display: flex;
+            flex-direction: column;
+            &-row {
+                display: flex;
+                justify-content: space-around;
+                gap: 250px;
+                flex-direction: row;
+                padding: 1em;
+                &-Beackfast {
+                    &-header {
+                        font-family: Alegreya SC;
+                        color: #fffdfd;
+                        font-size: 22px;
+                        &-text {
+                            font-family: Alegreya SC;
+                            color: #fffdfd;
+                            font-size: 15px;
+                        }
+                    }
+                }
+                &-Lunch {
+                    &-header {
+                        font-family: Alegreya SC;
+                        color: #fffdfd;
+                        font-size: 22px;
+                        &-text {
+                            font-family: Alegreya SC;
+                            color: #fffdfd;
+                            font-size: 15px;
+                        }
+                    }
+                }
+            }
+            &-Diner {
+                padding: 1em;
+                &-header {
+                    font-family: Alegreya SC;
+                    color: #fffdfd;
+                    font-size: 22px;
+                    &-text {
+                        font-family: Alegreya SC;
+                        color: #fffdfd;
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+        // < tablet
+        @media only screen and (max-width: 700px) {
+            .Menu {
+                &-MenuTitle {
+                    &-title {
+                        flex-direction: column;
+                        align-items: center;
+                    }
+                }
+                &-MenuItemn {
+                    &-row {
+                        flex-direction: column;
+                        align-items: center;
+                        gap: 10px;
+                    }
+                    &-Diner {
+                        padding: 0em;
+                    }
+                }
+            }
+        }
+    }
+}
