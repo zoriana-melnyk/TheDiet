@@ -58,6 +58,7 @@ function Header() {
                                 <div className="routes">
 
                                     <a id="home" className="Nav-item" href="/">Головна</a>
+                                    <a id="menu" className="Nav-item" href="/menu">Готове меню</a>
                                     <ul>
                                         <li className="List-menu">
                                             <a id="cdMenu" className="CdMenu-item" href="/createdMenu">Створити меню</a>
