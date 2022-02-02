@@ -134,21 +134,62 @@ function CreateMenu() {
                             </div>
                         </div>
                     </div>
+                    {/* Diner */}
                     <div className="Menu-MenuItemn-Diner">
                         <h3 className="Menu-MenuItemn-Diner-header">
                             Вечеря:
                         </h3>
-                        <h4 className="Menu-MenuItemn-Diner-header-text itemn-1">
-                            Страва 1
-                        </h4>
-                        <h4 className="Menu-MenuItemn-Diner-header-text itemn-2">
-                            Страва 2
-                        </h4>
-                        <h4 className="Menu-MenuItemn-Diner-header-text itemn-3">
-                            Страва 3
-                        </h4>
+                        {/* Diner Itemn 1 */}
+                        <div className="Menu-MenuItemn-Diner-header-block">
+                            <h4 className="Menu-MenuItemn-Diner-header-block-text itemn-1">
+                                Страва:
+                            </h4>
+                            <Dropdown>
+                                <Dropdown.Toggle className="Menu-MenuItemn-Diner-header-block-text-toggleItemn" variant="secondary" id="DishItemn">
+                                    Оберіть страву
+                                </Dropdown.Toggle>
+                                <Dropdown.Menu className="Menu-MenuItemn-Diner-block-text-toggleItemn-dishItemn">
+                                    <Dropdown.Item href="#/action-1">Тости з авокадо</Dropdown.Item>
+                                    <Dropdown.Item href="#/action-2">Сирнички</Dropdown.Item>
+                                    <Dropdown.Item href="#/action-3">Яйце пашот</Dropdown.Item>
+                                </Dropdown.Menu>
+                            </Dropdown>
+                        </div>
+                        {/* Diner Itemn 2 */}
+                        <div className="Menu-MenuItemn-Diner-header-block">
+                            <h4 className="Menu-MenuItemn-Diner-header-block-text itemn-1">
+                                Страва:
+                            </h4>
+                            <Dropdown>
+                                <Dropdown.Toggle className="Menu-MenuItemn-Diner-header-block-text-toggleItemn" variant="secondary" id="DishItemn">
+                                    Оберіть страву
+                                </Dropdown.Toggle>
+                                <Dropdown.Menu className="Menu-MenuItemn-Diner-block-text-toggleItemn-dishItemn">
+                                    <Dropdown.Item href="#/action-1">Тости з авокадо</Dropdown.Item>
+                                    <Dropdown.Item href="#/action-2">Сирнички</Dropdown.Item>
+                                    <Dropdown.Item href="#/action-3">Яйце пашот</Dropdown.Item>
+                                </Dropdown.Menu>
+                            </Dropdown>
+                        </div>
+                        {/* Diner Itemn 3 */}
+                        <div className="Menu-MenuItemn-Diner-header-block">
+                            <h4 className="Menu-MenuItemn-Diner-header-block-text itemn-1">
+                                Страва:
+                            </h4>
+                            <Dropdown>
+                                <Dropdown.Toggle className="Menu-MenuItemn-Diner-header-block-text-toggleItemn" variant="secondary" id="DishItemn">
+                                    Оберіть страву
+                                </Dropdown.Toggle>
+                                <Dropdown.Menu className="Menu-MenuItemn-Diner-header-block-text-toggleItemn-dishItemn">
+                                    <Dropdown.Item href="#/action-1">Тости з авокадо</Dropdown.Item>
+                                    <Dropdown.Item href="#/action-2">Сирнички</Dropdown.Item>
+                                    <Dropdown.Item href="#/action-3">Яйце пашот</Dropdown.Item>
+                                </Dropdown.Menu>
+                            </Dropdown>
+                        </div>
                     </div>
                 </div>
+
             </div>
         </div>
     );
