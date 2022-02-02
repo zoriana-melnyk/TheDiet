@@ -47,10 +47,10 @@
             &-row {
                 display: flex;
                 justify-content: space-around;
-                gap: 250px;
+                gap: 20px;
                 flex-direction: row;
                 padding: 1em;
-                &-Beackfast {
+                &-Brekfast {
                     &-header {
                         font-family: Alegreya SC;
                         color: #fffdfd;
@@ -89,10 +89,32 @@
                         font-family: Alegreya SC;
                         color: #fffdfd;
                         font-size: 22px;
-                        &-text {
-                            font-family: Alegreya SC;
-                            color: #fffdfd;
-                            font-size: 15px;
+                        &-block {
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            gap: 10px;
+                            padding: 1em;
+                            &-text {
+                                font-family: Alegreya SC;
+                                color: #fffdfd;
+                                font-size: 20px;
+                                &-toggleItemn {
+                                    font-size: 15px;
+                                    color: #fff;
+                                    background-color: #908871de;
+                                    border-color: #908871de;
+                                    &:hover {
+                                        border-color: #908871de;
+                                        background-color: #7f8124;
+                                        color: #ffffff;
+                                    }
+                                    &-dishItemn {
+                                        font-size: 15px;
+                                        font-family: Alegreya SC;
+                                    }
+                                }
+                            }
                         }
                     }
                 }
