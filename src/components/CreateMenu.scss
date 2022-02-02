@@ -1,178 +1,214 @@
-.Main-block {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 70vw;
-    margin: 0 auto;
-    margin-top: 70px;
-    background: rgb(20 19 19);
-    border: 1px solid #000000;
-    box-sizing: border-box;
-    border-radius: 20px;
-    padding: 1em;
-    .Info-block {
-        flex-direction: row;
-        .Info-text-header {
-            font-family: Alegreya SC;
-            font-weight: bold;
-            color: #fffdfd;
-            font-size: 27px;
-        }
-        .Info-text {
-            font-family: Alegreya SC;
-            color: #fffdfd;
-            font-size: 22px;
-        }
-    }
-    .Menu {
-        &-MenuTitle {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 30px;
-            background: #332820;
-            border: 1px solid #000000;
-            box-sizing: border-box;
-            border-radius: 10px;
-            padding: 5px;
-            &-text {
+.CreateManu {
+    padding: 70px 0;
+    .Main-block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 70vw;
+        margin: 0 auto;
+        background: rgb(20 19 19);
+        border: 1px solid #000000;
+        box-sizing: border-box;
+        border-radius: 20px;
+        padding: 1em;
+        .Info-block {
+            flex-direction: row;
+            .Info-text-header {
+                font-family: Alegreya SC;
+                font-weight: bold;
+                color: #fffdfd;
+                font-size: 27px;
+            }
+            .Info-text {
                 font-family: Alegreya SC;
                 color: #fffdfd;
                 font-size: 22px;
             }
         }
-        &-MenuItemn {
+        .Menu {
             display: flex;
             flex-direction: column;
-            &-row {
+            &-MenuTitle {
                 display: flex;
-                justify-content: space-around;
-                gap: 20px;
-                flex-direction: row;
-                padding: 1em;
-                &-Brekfast {
-                    &-header {
-                        font-family: Alegreya SC;
-                        color: #fffdfd;
-                        font-size: 22px;
-                        &-block {
-                            display: flex;
-                            flex-direction: row;
-                            align-items: center;
-                            gap: 10px;
-                            padding: 1em;
-                            &-text {
-                                font-family: Alegreya SC;
-                                color: #fffdfd;
-                                font-size: 20px;
-                                &-toggleItemn {
-                                    font-size: 15px;
-                                    color: #fff;
-                                    background-color: #908871de;
-                                    border-color: #908871de;
-                                    &:hover {
-                                        border-color: #908871de;
-                                        background-color: #7f8124;
-                                        color: #ffffff;
-                                    }
-                                    &-dishItemn {
-                                        font-size: 15px;
-                                        font-family: Alegreya SC;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                &-Lunch {
-                    &-header {
-                        font-family: Alegreya SC;
-                        color: #fffdfd;
-                        font-size: 22px;
-                        &-block {
-                            display: flex;
-                            flex-direction: row;
-                            align-items: center;
-                            gap: 10px;
-                            padding: 1em;
-                            &-text {
-                                font-family: Alegreya SC;
-                                color: #fffdfd;
-                                font-size: 20px;
-                                &-toggleItemn {
-                                    font-size: 15px;
-                                    color: #fff;
-                                    background-color: #908871de;
-                                    border-color: #908871de;
-                                    &:hover {
-                                        border-color: #908871de;
-                                        background-color: #7f8124;
-                                        color: #ffffff;
-                                    }
-                                    &-dishItemn {
-                                        font-size: 15px;
-                                        font-family: Alegreya SC;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            &-Diner {
-                padding: 1em;
-                &-header {
+                justify-content: center;
+                align-items: center;
+                margin-top: 30px;
+                background: #332820;
+                border: 1px solid #000000;
+                box-sizing: border-box;
+                border-radius: 10px;
+                padding: 5px;
+                &-text {
                     font-family: Alegreya SC;
                     color: #fffdfd;
                     font-size: 22px;
-                    &-block {
-                        display: flex;
-                        flex-direction: row;
-                        align-items: center;
-                        justify-content: center;
-                        gap: 10px;
-                        padding: 1em;
-                        &-text {
+                }
+            }
+            &-MenuItemn {
+                display: flex;
+                flex-direction: column;
+                &-row {
+                    display: flex;
+                    justify-content: space-around;
+                    gap: 160px;
+                    flex-direction: row;
+                    padding: 1em;
+                    &-Brekfast {
+                        &-header {
                             font-family: Alegreya SC;
                             color: #fffdfd;
-                            font-size: 20px;
-                            &-toggleItemn {
-                                font-size: 15px;
-                                color: #fff;
-                                background-color: #908871de;
-                                border-color: #908871de;
-                                &:hover {
-                                    border-color: #908871de;
-                                    background-color: #7f8124;
-                                    color: #ffffff;
-                                }
-                                &-dishItemn {
-                                    font-size: 15px;
+                            font-size: 22px;
+                            &-block {
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                                gap: 10px;
+                                padding: 1em;
+                                &-text {
                                     font-family: Alegreya SC;
+                                    color: #fffdfd;
+                                    font-size: 20px;
+                                    &-toggleItemn {
+                                        font-size: 15px;
+                                        color: #fff;
+                                        background-color: #908871de;
+                                        border-color: #908871de;
+                                        &:hover {
+                                            border-color: #908871de;
+                                            background-color: #7f8124;
+                                            color: #ffffff;
+                                        }
+                                        &-dishItemn {
+                                            font-size: 15px;
+                                            font-family: Alegreya SC;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    &-Lunch {
+                        &-header {
+                            font-family: Alegreya SC;
+                            color: #fffdfd;
+                            font-size: 22px;
+                            &-block {
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                                gap: 10px;
+                                padding: 1em;
+                                &-text {
+                                    font-family: Alegreya SC;
+                                    color: #fffdfd;
+                                    font-size: 20px;
+                                    &-toggleItemn {
+                                        font-size: 15px;
+                                        color: #fff;
+                                        background-color: #908871de;
+                                        border-color: #908871de;
+                                        &:hover {
+                                            border-color: #908871de;
+                                            background-color: #7f8124;
+                                            color: #ffffff;
+                                        }
+                                        &-dishItemn {
+                                            font-size: 15px;
+                                            font-family: Alegreya SC;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                &-Diner {
+                    padding: 1em;
+                    &-header {
+                        font-family: Alegreya SC;
+                        color: #fffdfd;
+                        font-size: 22px;
+                        &-block {
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: center;
+                            gap: 10px;
+                            padding: 1em;
+                            &-text {
+                                font-family: Alegreya SC;
+                                color: #fffdfd;
+                                font-size: 20px;
+                                &-toggleItemn {
+                                    font-size: 15px;
+                                    color: #fff;
+                                    background-color: #908871de;
+                                    border-color: #908871de;
+                                    &:hover {
+                                        border-color: #908871de;
+                                        background-color: #7f8124;
+                                        color: #ffffff;
+                                    }
+                                    &-dishItemn {
+                                        font-size: 15px;
+                                        font-family: Alegreya SC;
+                                    }
                                 }
                             }
                         }
                     }
                 }
             }
-        }
-        // < tablet
-        @media only screen and (max-width: 860px) {
-            .Menu {
-                &-MenuTitle {
-                    &-title {
+            &-SubButton {
+                margin: 15px;
+                align-self: end;
+                border-color: #908871de;
+                background-color: #7f8124;
+                box-sizing: border-box;
+                border-radius: 10px;
+                font-family: Alegreya SC;
+                color: #fffdfd;
+                font-size: 20px;
+                &:hover {
+                    background-color: #2c2c12;
+                    border-color: #7f8124;
+                    color: #ffffff;
+                }
+            }
+            // > tablet < laptop
+            @media only screen and (max-width: 1040px) {
+                .Menu {
+                    &-MenuItemn {
+                        display: flex;
                         flex-direction: column;
-                        align-items: center;
+                        &-row {
+                            display: flex;
+                            justify-content: space-around;
+                            gap: 50px;
+                            flex-direction: row;
+                            padding: 1em;
+                        }
                     }
                 }
-                &-MenuItemn {
-                    &-row {
-                        flex-direction: column;
-                        align-items: center;
-                        gap: 10px;
+            }
+            // < tablet
+            @media screen and (max-width: 860px) {
+                .Menu {
+                    &-MenuTitle {
+                        &-title {
+                            flex-direction: column;
+                            align-items: center;
+                        }
                     }
-                    &-Diner {
-                        padding: 0em;
+                    &-MenuItemn {
+                        &-row {
+                            flex-direction: column;
+                            align-items: center;
+                            gap: 10px;
+                        }
+                        &-Diner {
+                            padding: 0em;
+                        }
                     }
                 }
             }
