@@ -4,7 +4,7 @@ import './CreateMenu.scss';
 
 
 
-// import { Button } from 'react-bootstrap';
+import { Dropdown } from 'react-bootstrap';
 
 function CreateMenu() {
     return (
@@ -25,19 +25,59 @@ function CreateMenu() {
                 </div>
                 <div className="Menu-MenuItemn">
                     <div className="Menu-MenuItemn-row">
+                        {/* Breackfast */}
                         <div className="Menu-MenuItemn-row-Beackfast">
                             <h3 className="Menu-MenuItemn-row-Beackfast-header">
                                 Сніданок:
                             </h3>
-                            <h4 className="Menu-MenuItemn-row-Beackfast-header-text itemn-1">
-                                Страва 1
-                            </h4>
-                            <h4 className="Menu-MenuItemn-row-Beackfast-header-text itemn-2">
-                                Страва 2
-                            </h4>
-                            <h4 className="Menu-MenuItemn-row-Beackfast-header-text itemn-3">
-                                Страва 3
-                            </h4>
+                            {/* Breckfast Itemn 1 */}
+                            <div className="Menu-MenuItemn-row-Beackfast-header-block">
+                                <h4 className="Menu-MenuItemn-row-Beackfast-header-block-text itemn-1">
+                                    Страва:
+                                </h4>
+                                <Dropdown>
+                                    <Dropdown.Toggle className="Menu-MenuItemn-row-Beackfast-header-block-text-toggleItemn" variant="secondary" id="DishItemn">
+                                        Оберіть страву
+                                    </Dropdown.Toggle>
+                                    <Dropdown.Menu className="Menu-MenuItemn-row-Beackfast-header-block-text-toggleItemn-dishItemn">
+                                        <Dropdown.Item href="#/action-1">Тости з авокадо</Dropdown.Item>
+                                        <Dropdown.Item href="#/action-2">Сирнички</Dropdown.Item>
+                                        <Dropdown.Item href="#/action-3">Яйце пашот</Dropdown.Item>
+                                    </Dropdown.Menu>
+                                </Dropdown>
+                            </div>
+                            {/* Breckfast Itemn 2 */}
+                            <div className="Menu-MenuItemn-row-Beackfast-header-block">
+                                <h4 className="Menu-MenuItemn-row-Beackfast-header-block-text itemn-1">
+                                    Страва:
+                                </h4>
+                                <Dropdown>
+                                    <Dropdown.Toggle className="Menu-MenuItemn-row-Beackfast-header-block-text-toggleItemn" variant="secondary" id="DishItemn">
+                                        Оберіть страву
+                                    </Dropdown.Toggle>
+                                    <Dropdown.Menu className="Menu-MenuItemn-row-Beackfast-header-block-text-toggleItemn-dishItemn">
+                                        <Dropdown.Item href="#/action-1">Тости з авокадо</Dropdown.Item>
+                                        <Dropdown.Item href="#/action-2">Сирнички</Dropdown.Item>
+                                        <Dropdown.Item href="#/action-3">Яйце пашот</Dropdown.Item>
+                                    </Dropdown.Menu>
+                                </Dropdown>
+                            </div>
+                            {/* Breckfast Itemn 3 */}
+                            <div className="Menu-MenuItemn-row-Beackfast-header-block">
+                                <h4 className="Menu-MenuItemn-row-Beackfast-header-block-text itemn-1">
+                                    Страва:
+                                </h4>
+                                <Dropdown>
+                                    <Dropdown.Toggle className="Menu-MenuItemn-row-Beackfast-header-block-text-toggleItemn" variant="secondary" id="DishItemn">
+                                        Оберіть страву
+                                    </Dropdown.Toggle>
+                                    <Dropdown.Menu className="Menu-MenuItemn-row-Beackfast-header-block-text-toggleItemn-dishItemn">
+                                        <Dropdown.Item href="#/action-1">Тости з авокадо</Dropdown.Item>
+                                        <Dropdown.Item href="#/action-2">Сирнички</Dropdown.Item>
+                                        <Dropdown.Item href="#/action-3">Яйце пашот</Dropdown.Item>
+                                    </Dropdown.Menu>
+                                </Dropdown>
+                            </div>
                         </div>
                         <div className="Menu-MenuItemn-row-Lunch">
                             <h3 className="Menu-MenuItemn-row-Lunch-header">
