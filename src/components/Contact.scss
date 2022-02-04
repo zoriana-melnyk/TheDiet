@@ -4,7 +4,7 @@
     align-items: center;
     max-width: 70vw;
     margin: 0 auto;
-    margin-top: 70px;
+    margin-top: 110px;
     background: rgb(20 19 19);
     border: 1px solid #000000;
     box-sizing: border-box;
@@ -23,18 +23,22 @@
     &__navContainer {
         display: flex;
         justify-content: space-around;
-        gap: 60px;
+        gap: 10px;
         flex-direction: row;
         padding: 1em;
         &__contactsBlock {
-            padding: 1em;
+            padding: 10px;
             &__infoBlock {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
                 background-color: rgba(51, 40, 32, 0.97);
                 border: 1px solid rgba(0, 0, 0, 0.58);
                 border-radius: 10px;
                 text-align: center;
-                margin: 10px;
+                margin: 20px;
                 width: 180px;
+                height: 110px;
                 &--text {
                     font-family: Alegreya SC;
                     color: #fffdfd;
@@ -44,16 +48,32 @@
                     width: 40px;
                 }
             }
-            &--navButton {
-                background-color: #7f8124;
-                font-family: Alegreya SC;
-                color: #fffdfd;
-                font-size: 20px;
+            &__navButton {
+                background-color: #7f8124 !important;
+                border-color: #4f5015 !important;
+                font-family: Alegreya SC !important;
+                color: #fffdfd !important;
+                font-size: 20px !important;
                 &:hover {
-                    background-color: #180b06;
-                    border-color: #7f8124;
-                    color: #ffffff;
+                    background-color: #180b06 !important;
+                    border-color: #7f8124 !important;
+                    color: #ffffff !important;
                 }
+            }
+        }
+    }
+    // < tablet
+    @media screen and (max-width: 991px) {
+        .Contacts {
+            &__info {
+                &__header {
+                    flex-direction: column;
+                    align-items: center;
+                }
+            }
+            &__navContainer {
+                flex-direction: column;
+                align-items: center;
             }
         }
     }

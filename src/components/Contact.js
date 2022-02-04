@@ -10,7 +10,7 @@ import { Button } from 'react-bootstrap';
 
 function Contact() {
     return (
-        <div className="Contacts">
+        <div id="Contacts" className="Contacts">
             <div className="Contacts__info">
                 <h1 className="Contacts__info__header p-2">
                     Контакти
@@ -24,7 +24,7 @@ function Contact() {
                         </h2>
                         <img src={socialIcon} className="Contacts__navContainer__contactsBlock__infoBlock--img row mx-auto p-2" alt="socialIcon_img" />
                     </div>
-                    <Button className="Contacts__navContainer__contactsBlock--navButton">
+                    <Button className="Contacts__navContainer__contactsBlock__navButton">
                         Звʼязатися
                     </Button>
                 </div>
@@ -35,7 +35,7 @@ function Contact() {
                         </h2>
                         <img src={mailIcon} className="Contacts__navContainer__contactsBlock__infoBlock--img row mx-auto p-2" alt="mailIcon_img" />
                     </div>
-                    <Button className="Contacts__navContainer__contactsBlock--navButton">
+                    <Button className="Contacts__navContainer__contactsBlock__navButton">
                         Звʼязатися
                     </Button>
                 </div>
@@ -46,7 +46,7 @@ function Contact() {
                         </h2>
                         <img src={phoneIcon} className="Contacts__navContainer__contactsBlock__infoBlock--img row mx-auto p-2" alt="phoneIcon_img" />
                     </div>
-                    <Button className="Contacts__navContainer__contactsBlock--navButton">
+                    <Button type="button" className="Contacts__navContainer__contactsBlock__navButton">
                         Звʼязатися
                     </Button>
                 </div>
