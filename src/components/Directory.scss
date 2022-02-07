@@ -1,0 +1,53 @@
+.Directory {
+    padding: 70px 0;
+    &__mainBlock {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 70vw;
+        margin: 0 auto;
+        background: rgb(20 19 19);
+        border: 1px solid #000000;
+        box-sizing: border-box;
+        border-radius: 20px;
+        padding: 1em;
+        &__info {
+            flex-direction: row;
+            &__header {
+                font-family: Alegreya SC;
+                font-weight: bold;
+                color: #fffdfd;
+                font-size: 27px;
+            }
+            &__text {
+                font-family: Alegreya SC;
+                color: #fffdfd;
+                font-size: 22px;
+            }
+        }
+        &__tableContainer {
+            padding: 1em;
+            &__table {
+                background: #7f8124d9;
+                border: 1px solid rgba(0, 0, 0, 0.58);
+                border-color: rgba(0, 0, 0, 0.58) !important;
+                box-sizing: border-box;
+                border-radius: 10px;
+                &__head {
+                    background: #1f1812;
+                    font-family: Alegreya SC;
+                    color: #fffdfd;
+                    font-size: 20px;
+                }
+                &__body {
+                    font-family: Alegreya SC;
+                    color: #000000;
+                    font-size: 15px;
+                    tr td {
+                        vertical-align: middle;
+                    }
+                }
+            }
+        }
+    }
+}

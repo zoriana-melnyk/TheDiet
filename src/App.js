@@ -8,6 +8,8 @@ import { Authorization } from "./components/Authorization";
 import { UserMenu } from "./components/UserMenu";
 import { CreateMenu } from "./components/CreateMenu";
 import { Contact } from "./components/Contact";
+import { Directory } from "./components/Directory";
+
 
 // HOC
 const Layout = ({ children, withFooter = true }) => {
@@ -28,6 +30,8 @@ function App() {
           <Route path="/menu" element={<Layout withFooter={false}><UserMenu /></Layout>} />
           <Route path="/create-menu" element={<Layout withFooter={false}><CreateMenu /></Layout>} />
           <Route path="/contact" element={<Layout withFooter={false}><Contact /></Layout>} />
+          <Route path="/directory" element={<Layout withFooter={false}><Directory /></Layout>} />
+
         </Routes>
       </Router>
     </div>
