@@ -18,6 +18,7 @@ function Directory() {
                     </h2>
                 </div>
                 <div className="Directory__mainBlock__tableContainer">
+                    <p className="Directory__mainBlock__tableContainer__tablerHeader">Фізіологічні потреби чоловіків</p>
                     <Table bordered className="Directory__mainBlock__tableContainer__table">
                         <thead className="Directory__mainBlock__tableContainer__table__head">
                             <tr>
@@ -79,6 +80,71 @@ function Directory() {
                                 <td>528<br />
                                     504<br />
                                     472</td>
+                            </tr>
+                        </tbody>
+                    </Table>
+                    <p className="Directory__mainBlock__tableContainer__tablerHeader">Фізіологічні потреби жінок</p>
+                    <Table bordered className="Directory__mainBlock__tableContainer__table">
+                        <thead className="Directory__mainBlock__tableContainer__table__head">
+                            <tr>
+                                <th>Група інтенсивності праці</th>
+                                <th>Вікова група</th>
+                                <th>Енергія</th>
+                                <th>Білки</th>
+                                <th>Жири</th>
+                                <th>Вуглеводи</th>
+                            </tr>
+                        </thead>
+                        <tbody className="Directory__mainBlock__tableContainer__table__body">
+                            <tr>
+                                <td>I</td>
+                                <td>18-29</td>
+                                <td>2000<br />
+                                    1900<br />
+                                    1800</td>
+                                <td >55<br />
+                                    52<br />
+                                    50</td>
+                                <td >56<br />
+                                    53<br />
+                                    51</td>
+                                <td>320<br />
+                                    304<br />
+                                    288</td>
+                            </tr>
+                            <tr>
+                                <td>II</td>
+                                <td>30-39</td>
+                                <td>2200<br />
+                                    2150<br />
+                                    2100</td>
+                                <td>61<br />
+                                    59<br />
+                                    58</td>
+                                <td>62<br />
+                                    60<br />
+                                    59</td>
+                                <td>352<br />
+                                    344<br />
+                                    336</td>
+                            </tr>
+                            <tr>
+                                <td>III</td>
+                                <td>40-59</td>
+                                <td>2600<br />
+                                    2550<br />
+                                    2500</td>
+                                <td>
+                                    72<br />
+                                    70<br />
+                                    69
+                                </td>
+                                <td>73<br />
+                                    71<br />
+                                    70</td>
+                                <td>416<br />
+                                    408<br />
+                                    400</td>
                             </tr>
                         </tbody>
                     </Table>
