@@ -150,7 +150,7 @@ function CreateMenu() {
                                     <Dropdown.Toggle className="Menu-MenuItemn-Diner-header-block-text-toggleItemn" variant="secondary" id="DishItemn">
                                         Оберіть страву
                                     </Dropdown.Toggle>
-                                    <Dropdown.Menu className="Menu-MenuItemn-Diner-block-text-toggleItemn-dishItemn">
+                                    <Dropdown.Menu className="Menu-MenuItemn-Diner-header-block-text-toggleItemn-dishItemn">
                                         <Dropdown.Item href="#/action-1">Сирна нарізка</Dropdown.Item>
                                         <Dropdown.Item href="#/action-2">Запечені овочі</Dropdown.Item>
                                         <Dropdown.Item href="#/action-3">Качка по пекінськи</Dropdown.Item>
@@ -166,7 +166,7 @@ function CreateMenu() {
                                     <Dropdown.Toggle className="Menu-MenuItemn-Diner-header-block-text-toggleItemn" variant="secondary" id="DishItemn">
                                         Оберіть страву
                                     </Dropdown.Toggle>
-                                    <Dropdown.Menu className="Menu-MenuItemn-Diner-block-text-toggleItemn-dishItemn">
+                                    <Dropdown.Menu className="Menu-MenuItemn-Diner-header-block-text-toggleItemn-dishItemn">
                                         <Dropdown.Item href="#/action-1">Паста болоньєзе</Dropdown.Item>
                                         <Dropdown.Item href="#/action-2">Сік фруктовий</Dropdown.Item>
                                         <Dropdown.Item href="#/action-3">Овочі свіжі</Dropdown.Item>
