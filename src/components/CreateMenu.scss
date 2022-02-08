@@ -44,7 +44,7 @@
                     font-size: 22px;
                 }
             }
-            &-MenuItemn {
+            &-MenuItem {
                 display: flex;
                 flex-direction: column;
                 &-row {
@@ -68,7 +68,7 @@
                                     font-family: Alegreya SC;
                                     color: #fffdfd;
                                     font-size: 20px;
-                                    &-toggleItemn {
+                                    &-toggleItem {
                                         font-size: 15px;
                                         color: #fff;
                                         background-color: #908871de;
@@ -78,7 +78,7 @@
                                             background-color: #7f8124;
                                             color: #ffffff;
                                         }
-                                        &-dishItemn {
+                                        &-dishItem {
                                             font-size: 15px;
                                             font-family: Alegreya SC;
                                         }
@@ -102,7 +102,7 @@
                                     font-family: Alegreya SC;
                                     color: #fffdfd;
                                     font-size: 20px;
-                                    &-toggleItemn {
+                                    &-toggleItem {
                                         font-size: 15px;
                                         color: #fff;
                                         background-color: #908871de;
@@ -112,7 +112,7 @@
                                             background-color: #7f8124;
                                             color: #ffffff;
                                         }
-                                        &-dishItemn {
+                                        &-dishItem {
                                             font-size: 15px;
                                             font-family: Alegreya SC;
                                         }
@@ -139,7 +139,7 @@
                                 font-family: Alegreya SC;
                                 color: #fffdfd;
                                 font-size: 20px;
-                                &-toggleItemn {
+                                &-toggleItem {
                                     font-size: 15px;
                                     color: #fff;
                                     background-color: #908871de;
@@ -149,7 +149,7 @@
                                         background-color: #7f8124;
                                         color: #ffffff;
                                     }
-                                    &-dishItemn {
+                                    &-dishItem {
                                         font-size: 15px;
                                         font-family: Alegreya SC;
                                     }
@@ -178,7 +178,7 @@
             // > tablet < laptop
             @media only screen and (max-width: 1040px) {
                 .Menu {
-                    &-MenuItemn {
+                    &-MenuItem {
                         display: flex;
                         flex-direction: column;
                         &-row {
@@ -200,7 +200,7 @@
                             align-items: center;
                         }
                     }
-                    &-MenuItemn {
+                    &-MenuItem {
                         &-row {
                             flex-direction: column;
                             align-items: center;
