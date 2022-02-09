@@ -1,0 +1,29 @@
+.CreateDish {
+    padding: 70px 0;
+    &__mainBlock {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 70vw;
+        margin: 0 auto;
+        background: rgb(20 19 19);
+        border: 1px solid #000000;
+        box-sizing: border-box;
+        border-radius: 20px;
+        padding: 1em;
+        &__infoBlock {
+            flex-direction: row;
+            &__header {
+                font-family: Alegreya SC;
+                font-weight: bold;
+                color: #fffdfd;
+                font-size: 27px;
+            }
+            &__text {
+                font-family: Alegreya SC;
+                color: #fffdfd;
+                font-size: 22px;
+            }
+        }
+    }
+}
