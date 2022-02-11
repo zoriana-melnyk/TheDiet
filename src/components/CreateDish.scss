@@ -25,5 +25,85 @@
                 font-size: 22px;
             }
         }
+        &__form {
+            margin-top: 2em;
+            &__label {
+                display: inline-block;
+                margin: 0 0.5em;
+                color: white;
+                text-align: left;
+            }
+            input,
+            select {
+                margin-top: 0.5em;
+            }
+        }
+        &__results {
+            li {
+                color: white;
+            }
+        }
+        // &__Dish {
+        //     &__itemProduct {
+        //         display: flex;
+        //         flex-direction: row;
+        //         align-items: center;
+        //         &__headBlock {
+        //             display: flex;
+        //             flex-direction: column;
+        //             align-items: center;
+        //             gap: 10px;
+        //             padding: 1em;
+        //             &__head {
+        //                 font-family: Alegreya SC;
+        //                 color: #fffdfd;
+        //                 font-size: 20px;
+        //                 margin: 0px;
+        //             }
+        //             &__toggleItem {
+        //                 font-size: 15px;
+        //                 color: #fff;
+        //                 background-color: #908871de !important;
+        //                 border-color: #908871de !important;
+        //                 &:hover {
+        //                     border-color: #908871de !important;
+        //                     background-color: #7f8124 !important;
+        //                     color: #ffffff;
+        //                 }
+        //                 &__productItem {
+        //                     font-size: 15px;
+        //                     font-family: Alegreya SC;
+        //                 }
+        //             }
+        //         }
+        //         &__productCount,
+        //         &__productKll {
+        //             display: flex;
+        //             flex-direction: row;
+        //             align-items: center;
+        //             gap: 10px;
+        //             padding: 1em;
+        //             &__infoText {
+        //                 display: flex;
+        //                 flex-direction: row;
+        //                 flex-wrap: nowrap;
+        //                 align-items: center;
+        //                 gap: 10px;
+        //                 padding: 1em;
+        //                 &__lable {
+        //                     margin-bottom: 0rem !important;
+        //                     font-family: Alegreya SC;
+        //                     color: #fffdfd;
+        //                     font-size: 20px;
+        //                 }
+        //                 &__inputText {
+        //                     font-family: Alegreya SC;
+        //                     color: #fffdfd;
+        //                     font-size: 20px;
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
     }
 }
