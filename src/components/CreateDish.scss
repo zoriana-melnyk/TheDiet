@@ -1,3 +1,5 @@
+@import "../assets/styles/animation";
+
 .CreateDish {
     padding: 70px 0;
     &__mainBlock {
@@ -30,8 +32,8 @@
             background: #332820;
             border: 1px solid #000000;
             box-sizing: border-box;
-            border-radius: 20px;
-            padding: 5px;
+            border-radius: 10px;
+            padding: 2em;
             &__label {
                 display: inline-block;
                 margin: 0 0.5em;
@@ -51,7 +53,6 @@
                 box-sizing: border-box;
                 font-family: Alegreya SC;
                 color: #fffdfd;
-                font-size: 20px;
                 &:hover {
                     background-color: #2c2c12 !important;
                     border-color: #7f8124 !important;
@@ -64,27 +65,30 @@
                 box-sizing: border-box;
                 font-family: Alegreya SC;
                 color: #030303 !important;
-                font-size: 20px;
+                animation: btnJump 0.7s ease 2s infinite alternate;
+
                 &:hover {
                     background-color: #7f8124 !important;
                     border-color: #2c2c12 !important;
                     color: #ffffff !important;
+                    animation: none;
                 }
             }
-        }
-        &__results {
-            background-color: #00000042;
-            border-radius: 10px;
-            &__label {
-                margin: 0 0.5em;
-                font-family: Alegreya SC;
-                color: #fffdfd;
-                font-size: 20px;
-            }
-            li {
-                font-family: Alegreya SC;
-                color: #fffdfd;
-                font-size: 15px;
+            &__results {
+                background-color: #00000042;
+                border-radius: 10px;
+                margin: 1em;
+                &__label {
+                    margin: 0 0.5em;
+                    font-family: Alegreya SC;
+                    color: #fffdfd;
+                    font-size: 20px;
+                }
+                li {
+                    font-family: Alegreya SC;
+                    color: #fffdfd;
+                    font-size: 15px;
+                }
             }
         }
     }

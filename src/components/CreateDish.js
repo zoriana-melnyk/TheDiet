@@ -53,39 +53,78 @@ function CreateDish() {
                         Оберіть продукт та створіть свою страву
                     </h2>
                 </div>
+
+                {/* product choise */}
                 <Form className="CreateDish__mainBlock__form" onSubmit={onFormSubmit}>
                     <Form.Label className="CreateDish__mainBlock__form__label">
                         Продукт:
                         <Form.Select aria-label="Chose product" name="product" value={formValues.product} onChange={onInputChange}>
-                            <option> Оберіть продукт</option>
+                            <option>оберіть продукт</option>
                             {proudctOptions.map(opt => <option key={opt.value} value={opt.value}>{opt.label}</option>)}
                         </Form.Select>
                     </Form.Label>
+
+                    {/* product count */}
                     <Form.Label className="CreateDish__mainBlock__form__label">
                         Кількість продукту:
                         <Form.Control type="number" min="1" placeholder="к-сть продукту" name="amount" value={formValues.amount} onChange={onInputChange} />
                     </Form.Label>
+
+                    {/* product kll */}
                     <Form.Label className="CreateDish__mainBlock__form__label">
                         Калорійність продукту:
                         <Form.Control type="number" readOnly placeholder="калорійність" name="kll" value={calculatedKll} />
                     </Form.Label>
-                    <Form.Label className="CreateDish__mainBlock__form__label">
-                        Вага продукту відповідно до рецепту:
-                        <Form.Control type="number" placeholder="вага продукту" name="weight" value={formValues.weight} onChange={onInputChange} />
-                    </Form.Label>
-                    <Button className="CreateDish__mainBlock__form__button" type="submit">Додати до рецепту</Button>
 
-                    <div className="CreateDish__mainBlock__results">
-                        <Form.Label className="CreateDish__mainBlock__results__label">Ваш рецепт:</Form.Label>
+                    {/* weight of poduct */}
+                    <div className="d-flex justify-content-start m-2">
+                        <Form.Label className="CreateDish__mainBlock__form__label">
+                            Вага продукту відповідно до рецепту:
+                            <Form.Control type="number" placeholder="вага продукту" name="weight" value={formValues.weight} onChange={onInputChange} />
+                        </Form.Label>
+                    </div>
+
+                    <Button className="CreateDish__mainBlock__form__button" type="submit">Додати до рецепту</Button>
+                    {/* recipe */}
+                    <div className="CreateDish__mainBlock__form__results">
+                        <Form.Label className="CreateDish__mainBlock__form__results__label">Ваш рецепт:</Form.Label>
                         <ul>{createdProducts.map(product => <li>{product.amount} {product.weight} {product.product}</li>)}</ul>
                     </div>
 
-                    <Form.Label className="CreateDish__mainBlock__form__label">Введіть вагу готової страви:
-                        <Form.Control type="number" placeholder="вага готової страви" name="weight">
-                        </Form.Control>
-                    </Form.Label>
-                    <Button className="CreateDish__mainBlock__form__buttonInfo" onClick={onAlertToggle}>?</Button>
+                    {/* weight created dish */}
+                    <div className="d-flex justify-content-start align-items-center m-2">
+                        <Form.Label className="CreateDish__mainBlock__form__label">Введіть вагу готової страви:
+                            <Form.Control type="number" placeholder="вага готової страви" name="weight">
+                            </Form.Control>
+                        </Form.Label>
+                        {/* alert info */}
+                        <Button className="CreateDish__mainBlock__form__buttonInfo" onClick={onAlertToggle}>?</Button>
+                    </div>
                     <AlertInfo show={showAlert} onClick={onAlertToggle} />
+
+                    {/* calc button */}
+                    <Button className="CreateDish__mainBlock__form__button">Обчислити калорійність готової страви</Button>
+
+                    {/* kll created dish */}
+                    <div className="d-flex justify-content-start m-2">
+                        <Form.Label className="CreateDish__mainBlock__form__label">Калорійність готової страви:
+                            <Form.Control type="number" readOnly placeholder="калорійність" name="kll">
+                            </Form.Control>
+                        </Form.Label>
+                    </div>
+
+                    {/* name of dish */}
+                    <div className="d-flex justify-content-center m-2">
+                        <Form.Label className="CreateDish__mainBlock__form__label">Назва страви:
+                            <Form.Control type="text" placeholder="додайте назву" name="dishName">
+                            </Form.Control>
+                        </Form.Label>
+                    </div>
+
+                    {/* save name of dish button */}
+                    <div className="d-flex justify-content-end m-2">
+                        <Button className="CreateDish__mainBlock__form__button">Зберегти страву</Button>
+                    </div>
                 </Form>
             </div>
         </div >
