@@ -1,12 +1,14 @@
 import React from "react";
 import { Button, Alert } from 'react-bootstrap';
 
+import "./AlertInfo.scss"
+
 function AlertInfo({ show = false, onClick }) {
     return (
         <div>
-            <Alert show={show} variant="info">
-                <Alert.Heading>Як зважити готову страву?</Alert.Heading>
-                <p>
+            <Alert className="Alert" show={show} variant="info">
+                <Alert.Heading className="Alert__header">Як зважити готову страву?</Alert.Heading>
+                <p className="Alert__text">
                     Складні страви необхідно розрахувати під час приготування.
                     Спочатку підраховується загальна калорійність сирих продуктів.
                     Далі зважується каструля, в якій буде варитися блюдо.
@@ -16,7 +18,7 @@ function AlertInfo({ show = false, onClick }) {
                 </p>
                 <hr />
                 <div className="d-flex justify-content-end">
-                    <Button onClick={() => onClick(false)} variant="outline-success">
+                    <Button className="Alert__button" onClick={() => onClick(false)} variant="outline-success">
                         Зрозуміло
                     </Button>
                 </div>
