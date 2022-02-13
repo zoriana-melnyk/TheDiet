@@ -1,3 +1,5 @@
+@import "../assets/styles/animation";
+
 .Footer-about {
     padding-top: 30px;
     background: linear-gradient(#111110 85%, rgba(66, 66, 66, 0.247));
@@ -70,7 +72,7 @@
                 box-sizing: border-box;
                 border-radius: 15px;
                 display: inline-block;
-                animation: GoToContact 0.7s ease 2s infinite alternate;
+                animation: btnJump 0.7s ease 2s infinite alternate;
                 &:hover {
                     background-color: #555555;
                     color: #ffffff;
@@ -80,21 +82,6 @@
         }
     }
 }
-/*BOUNCER*/
-@keyframes GoToContact {
-    0% {
-        -webkit-transform: scale(1.1, 0.9);
-        transform: scale(1.1, 0.9);
-    }
-    50% {
-        -webkit-transform: scale(0.9, 1.1) translateY(-0.5rem);
-    }
-    70% {
-        -webkit-transform: scale(1);
-        transform: scale(1);
-    }
-}
-/*END BOUNCER*/
 
 @media only screen and (max-width: 1030px) {
     .Cooperation-container {
