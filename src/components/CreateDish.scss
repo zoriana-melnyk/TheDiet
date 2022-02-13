@@ -58,10 +58,38 @@
                     color: #ffffff;
                 }
             }
+            &__buttonInfo {
+                border-color: #908871de !important;
+                background-color: #fff06c !important;
+                box-sizing: border-box;
+                font-family: Alegreya SC;
+                color: #030303 !important;
+                font-size: 20px;
+                &:hover {
+                    background-color: #7f8124 !important;
+                    border-color: #2c2c12 !important;
+                    color: #ffffff !important;
+                }
+            }
+            // &__alert {
+            //     color: #000000;
+            //     background-color: #c4c4c4;
+            //     border-color: #908871;
+            // }
         }
         &__results {
+            background-color: #00000042;
+            border-radius: 10px;
+            &__label {
+                margin: 0 0.5em;
+                font-family: Alegreya SC;
+                color: #fffdfd;
+                font-size: 20px;
+            }
             li {
-                color: white;
+                font-family: Alegreya SC;
+                color: #fffdfd;
+                font-size: 15px;
             }
         }
     }

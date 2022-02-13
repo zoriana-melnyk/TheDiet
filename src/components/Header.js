@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { Container, Navbar } from 'react-bootstrap';
 import { slide as Menu } from 'react-burger-menu'
 
@@ -35,9 +35,9 @@ function Header() {
         <header className="App-header" ref={target}>
             <Navbar className="App-navbar">
                 <Container>
-                    <Navbar.Brand href="/">
+                    <Link to="/" className='navbar-brand'>
                         <img src={logo} className="App-logo" alt="logo_img" />
-                    </Navbar.Brand>
+                    </Link>
                     {
                         size?.width < 992
                             ? <Menu

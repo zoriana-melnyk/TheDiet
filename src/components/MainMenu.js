@@ -13,17 +13,15 @@ function MainMenu() {
         <Container id='NavContainer'>
             <Nav className="Navigation">
                 <NavDropdown title="Меню" id='DropMenu'>
-                    <NavDropdown.Item className='DropItem'><Link to="/menu" id='LinkItem'>Готове меню</Link></NavDropdown.Item>
-                    <NavDropdown.Item className='DropItem'><Link to="/create-menu" id='LinkItem'>Створити меню</Link></NavDropdown.Item>
-                    <NavDropdown.Item className='DropItem'><Link to="/create-dish" id='LinkItem'>Створити страву</Link></NavDropdown.Item>
+                    <Link to="/menu" className="DropItem" id='LinkItem'>Готове меню</Link>
+                    <Link to="/create-menu" className="DropItem" id='LinkItem'>Створити меню</Link>
+                    <Link to="/create-dish" className="DropItem" id='LinkItem'>Створити страву</Link>
                 </NavDropdown>
-                <Nav.Link className="nav Dir-item"><Link to="/directory" id='DropMenu'>Довідник</Link></Nav.Link>
-                <Nav.Link className="nav Contact-item" ><Link to="/contact" id='DropMenu'>Контакти</Link></Nav.Link>
-                <NavDropdown
-                    title={
-                        <img src={auth_img} className="Auth-img" alt="auth_img" dropdown-toggle='display-none' />}>
-                    <NavDropdown.Item className='DropItem'><Link to="/auth/login" id='LinkItem'>Увійти</Link></NavDropdown.Item>
-                    <NavDropdown.Item className='DropItem'><Link to="/auth/register" id='LinkItem'>Зареєстуватися</Link></NavDropdown.Item>
+                <Link className="DropItem" to="/directory" id='DropMenu'>Довідник</Link>
+                <Link className="DropItem" to="/contact" id='DropMenu'>Контакти</Link>
+                <NavDropdown title={<img src={auth_img} className="Auth-img" alt="auth_img" dropdown-toggle='display-none' />}>
+                    <Link className="DropItem" to="/auth/login" id='LinkItem'>Увійти</Link>
+                    <Link className="DropItem" to="/auth/register" id='LinkItem'>Зареєстуватися</Link>
                 </NavDropdown>
             </Nav>
         </Container>

@@ -2,6 +2,9 @@
     .Navigation {
         justify-content: space-between;
         margin-right: 50px;
+        .dropdown-menu {
+            padding: 0;
+        }
         .nav {
             font-family: Alegreya SC;
             font-style: normal;
@@ -28,6 +31,12 @@
         }
         .DropItem {
             background-color: #0e0d0dda;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+            &:hover {
+                opacity: 0.8;
+            }
         }
         #LinkItem {
             text-decoration: none;
