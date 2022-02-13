@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import './CreateDish.scss';
-
-
+import { AlertInfo } from './AlertInfo';
 
 import { Form, Button } from 'react-bootstrap';
 
 function CreateDish() {
+    const [showAlert, setShowAlert] = useState(false);
     const [formValues, setFormValues] = useState({
         product: undefined,
         amount: 1,
@@ -24,6 +24,11 @@ function CreateDish() {
         })
     }
 
+    // info alert 
+    const onAlertToggle = () => {
+        setShowAlert(!showAlert);
+    }
+    // end info alert
     const proudctOptions = [{
         label: 'Aвокадо',
         value: 159
@@ -34,6 +39,9 @@ function CreateDish() {
         label: 'Яйце',
         value: 175
     }];
+
+    const calculatedKll = (Number(formValues.amount) + Number(formValues.product)) || 0;
+
     return (
         <div className="CreateDish">
             <div className="CreateDish__mainBlock">
@@ -50,27 +58,35 @@ function CreateDish() {
                         Продукт:
                         <Form.Select aria-label="Chose product" name="product" value={formValues.product} onChange={onInputChange}>
                             <option> Оберіть продукт</option>
-                            {proudctOptions.map(opt => <option value={opt.value}>{opt.label}</option>)}
+                            {proudctOptions.map(opt => <option key={opt.value} value={opt.value}>{opt.label}</option>)}
                         </Form.Select>
                     </Form.Label>
                     <Form.Label className="CreateDish__mainBlock__form__label">
                         Кількість продукту:
-                        <Form.Control type="number" min="1" max="10" placeholder="к-сть продукту" name="amount" value={formValues.amount} onChange={onInputChange} />
+                        <Form.Control type="number" min="1" placeholder="к-сть продукту" name="amount" value={formValues.amount} onChange={onInputChange} />
                     </Form.Label>
                     <Form.Label className="CreateDish__mainBlock__form__label">
                         Калорійність продукту:
-                        <Form.Control type="number" readOnly placeholder="калорійність" name="kll" value={Number(formValues.amount) + Number(formValues.product)} />
+                        <Form.Control type="number" readOnly placeholder="калорійність" name="kll" value={calculatedKll} />
                     </Form.Label>
                     <Form.Label className="CreateDish__mainBlock__form__label">
                         Вага продукту відповідно до рецепту:
                         <Form.Control type="number" placeholder="вага продукту" name="weight" value={formValues.weight} onChange={onInputChange} />
                     </Form.Label>
                     <Button className="CreateDish__mainBlock__form__button" type="submit">Додати до рецепту</Button>
-                </Form>
 
-                <ul className="CreateDish__mainBlock__results">
-                    {createdProducts.map(product => <li>{product.amount} {product.weight} {product.product}</li>)}
-                </ul>
+                    <div className="CreateDish__mainBlock__results">
+                        <Form.Label className="CreateDish__mainBlock__results__label">Ваш рецепт:</Form.Label>
+                        <ul>{createdProducts.map(product => <li>{product.amount} {product.weight} {product.product}</li>)}</ul>
+                    </div>
+
+                    <Form.Label className="CreateDish__mainBlock__form__label">Введіть вагу готової страви:
+                        <Form.Control type="number" placeholder="вага готової страви" name="weight">
+                        </Form.Control>
+                    </Form.Label>
+                    <Button className="CreateDish__mainBlock__form__buttonInfo" onClick={onAlertToggle}>?</Button>
+                    <AlertInfo show={showAlert} onClick={onAlertToggle} />
+                </Form>
             </div>
         </div >
     );
