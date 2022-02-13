@@ -27,15 +27,36 @@
         }
         &__form {
             margin-top: 2em;
+            background: #332820;
+            border: 1px solid #000000;
+            box-sizing: border-box;
+            border-radius: 20px;
+            padding: 5px;
             &__label {
                 display: inline-block;
                 margin: 0 0.5em;
-                color: white;
+                font-family: Alegreya SC;
+                color: #fffdfd;
+                font-size: 20px;
                 text-align: left;
             }
             input,
             select {
                 margin-top: 0.5em;
+            }
+            &__button {
+                margin: 15px;
+                border-color: #908871de !important;
+                background-color: #7f8124 !important;
+                box-sizing: border-box;
+                font-family: Alegreya SC;
+                color: #fffdfd;
+                font-size: 20px;
+                &:hover {
+                    background-color: #2c2c12 !important;
+                    border-color: #7f8124 !important;
+                    color: #ffffff;
+                }
             }
         }
         &__results {
@@ -43,67 +64,5 @@
                 color: white;
             }
         }
-        // &__Dish {
-        //     &__itemProduct {
-        //         display: flex;
-        //         flex-direction: row;
-        //         align-items: center;
-        //         &__headBlock {
-        //             display: flex;
-        //             flex-direction: column;
-        //             align-items: center;
-        //             gap: 10px;
-        //             padding: 1em;
-        //             &__head {
-        //                 font-family: Alegreya SC;
-        //                 color: #fffdfd;
-        //                 font-size: 20px;
-        //                 margin: 0px;
-        //             }
-        //             &__toggleItem {
-        //                 font-size: 15px;
-        //                 color: #fff;
-        //                 background-color: #908871de !important;
-        //                 border-color: #908871de !important;
-        //                 &:hover {
-        //                     border-color: #908871de !important;
-        //                     background-color: #7f8124 !important;
-        //                     color: #ffffff;
-        //                 }
-        //                 &__productItem {
-        //                     font-size: 15px;
-        //                     font-family: Alegreya SC;
-        //                 }
-        //             }
-        //         }
-        //         &__productCount,
-        //         &__productKll {
-        //             display: flex;
-        //             flex-direction: row;
-        //             align-items: center;
-        //             gap: 10px;
-        //             padding: 1em;
-        //             &__infoText {
-        //                 display: flex;
-        //                 flex-direction: row;
-        //                 flex-wrap: nowrap;
-        //                 align-items: center;
-        //                 gap: 10px;
-        //                 padding: 1em;
-        //                 &__lable {
-        //                     margin-bottom: 0rem !important;
-        //                     font-family: Alegreya SC;
-        //                     color: #fffdfd;
-        //                     font-size: 20px;
-        //                 }
-        //                 &__inputText {
-        //                     font-family: Alegreya SC;
-        //                     color: #fffdfd;
-        //                     font-size: 20px;
-        //                 }
-        //             }
-        //         }
-        //     }
-        // }
     }
 }

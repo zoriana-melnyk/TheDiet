@@ -41,14 +41,14 @@ function CreateDish() {
                     <h1 className="CreateDish__mainBlock__infoBlock__header p-2">
                         Створення власної страви
                     </h1>
-                    <h2 className="CreateDish__mainBlock__infoBlock__text p-2">
+                    <h2 className="CreateDish__mainBlock__infoBlock__text">
                         Оберіть продукт та створіть свою страву
                     </h2>
                 </div>
                 <Form className="CreateDish__mainBlock__form" onSubmit={onFormSubmit}>
                     <Form.Label className="CreateDish__mainBlock__form__label">
                         Продукт:
-                        <Form.Select aria-label="Default select example" name="product" value={formValues.product} onChange={onInputChange}>
+                        <Form.Select aria-label="Chose product" name="product" value={formValues.product} onChange={onInputChange}>
                             <option> Оберіть продукт</option>
                             {proudctOptions.map(opt => <option value={opt.value}>{opt.label}</option>)}
                         </Form.Select>
@@ -65,7 +65,7 @@ function CreateDish() {
                         Вага продукту відповідно до рецепту:
                         <Form.Control type="number" placeholder="вага продукту" name="weight" value={formValues.weight} onChange={onInputChange} />
                     </Form.Label>
-                    <Button type="submit">Додати до рецепту</Button>
+                    <Button className="CreateDish__mainBlock__form__button" type="submit">Додати до рецепту</Button>
                 </Form>
 
                 <ul className="CreateDish__mainBlock__results">
