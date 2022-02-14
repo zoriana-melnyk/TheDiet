@@ -5,30 +5,7 @@ import { AlertInfo } from './AlertInfo';
 import { Form, Button } from 'react-bootstrap';
 
 function CreateDish() {
-    const [showAlert, setShowAlert] = useState(false);
-    const [formValues, setFormValues] = useState({
-        product: undefined,
-        amount: 1,
-        weight: 0
-    });
-    const [createdProducts, setCreatedProducts] = useState([]);
-    const onFormSubmit = (e) => {
-        e.preventDefault();
-        setCreatedProducts([...createdProducts, formValues]);
-    }
-    const onInputChange = (e) => {
-        const { name, value } = e.target;
-        setFormValues({
-            ...formValues,
-            [name]: value,
-        })
-    }
 
-    // info alert 
-    const onAlertToggle = () => {
-        setShowAlert(!showAlert);
-    }
-    // end info alert
     const proudctOptions = [{
         label: 'Aвокадо',
         value: 159
@@ -39,8 +16,33 @@ function CreateDish() {
         label: 'Яйце',
         value: 175
     }];
+    const [showAlert, setShowAlert] = useState(false);
+    const [formValues, setFormValues] = useState({
+        product: '',
+        amount: 1,
+        weight: ''
+    });
+    const [createdProducts, setCreatedProducts] = useState([]);
+    const onFormSubmit = (e) => {
+        e.preventDefault();
+        const foundProduct = proudctOptions.find(product => product.value === Number(formValues.product)); // { label, vlaue }
+        setCreatedProducts([...createdProducts, { ...formValues, ...foundProduct }]);
+    }
+    const onInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormValues({
+            ...formValues,
+            [name]: value,
+        })
+    }
+    const calculatedKll = (Number(formValues.amount) + Number(formValues.product)) || undefined;
 
-    const calculatedKll = (Number(formValues.amount) + Number(formValues.product)) || 0;
+    // info alert 
+    const onAlertToggle = () => {
+        setShowAlert(!showAlert);
+    }
+    // end info alert
+
 
     return (
         <div className="CreateDish">
@@ -58,8 +60,8 @@ function CreateDish() {
                 <Form className="CreateDish__mainBlock__form" onSubmit={onFormSubmit}>
                     <Form.Label className="CreateDish__mainBlock__form__label">
                         Продукт:
-                        <Form.Select aria-label="Chose product" name="product" value={formValues.product} onChange={onInputChange}>
-                            <option>оберіть продукт</option>
+                        <Form.Select required aria-label="Chose product" name="product" value={formValues.product} onChange={onInputChange}>
+                            <option value="">оберіть продукт</option>
                             {proudctOptions.map(opt => <option key={opt.value} value={opt.value}>{opt.label}</option>)}
                         </Form.Select>
                     </Form.Label>
@@ -80,15 +82,19 @@ function CreateDish() {
                     <div className="d-flex justify-content-start m-2">
                         <Form.Label className="CreateDish__mainBlock__form__label">
                             Вага продукту відповідно до рецепту:
-                            <Form.Control type="number" placeholder="вага продукту" name="weight" value={formValues.weight} onChange={onInputChange} />
+                            <Form.Control required type="number" placeholder="вага продукту (г)" name="weight" value={formValues.weight} onChange={onInputChange} />
                         </Form.Label>
                     </div>
-
+                    {/* add to recipe button */}
                     <Button className="CreateDish__mainBlock__form__button" type="submit">Додати до рецепту</Button>
                     {/* recipe */}
                     <div className="CreateDish__mainBlock__form__results">
                         <Form.Label className="CreateDish__mainBlock__form__results__label">Ваш рецепт:</Form.Label>
-                        <ul>{createdProducts.map(product => <li>{product.amount} {product.weight} {product.product}</li>)}</ul>
+                        <ul id="productList">
+                            {createdProducts.map((prod, idx) => {
+                                return <li key={`product-${idx}`}>{`${prod.label} — ${prod.weight} г`}</li>
+                            })}
+                        </ul>
                     </div>
 
                     {/* weight created dish */}
