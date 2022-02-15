@@ -41,6 +41,14 @@
                 color: #fffdfd;
                 font-size: 20px;
                 text-align: left;
+                &__options {
+                    min-width: 200px;
+                    font-size: 1rem;
+                    color: #212529;
+                    background-color: #fff;
+                    background-clip: padding-box;
+                    border-radius: 10px;
+                }
             }
             input,
             select {

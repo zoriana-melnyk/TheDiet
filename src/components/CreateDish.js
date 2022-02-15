@@ -1,26 +1,36 @@
 import React, { useState } from "react";
-import './CreateDish.scss';
-import { AlertInfo } from './AlertInfo';
+import Select from 'react-select';
 
+import './CreateDish.scss';
+
+import { AlertInfo } from './AlertInfo';
 import { Form, Button } from 'react-bootstrap';
 
 function CreateDish() {
 
+    // NOTE: value - ідентифікатор, kll - енергетична цінність за 100 г, label - назва
     const proudctOptions = [{
         label: 'Aвокадо',
-        value: 159
+        value: 0,
+        kll: 159,
     }, {
         label: 'Сир твердий',
-        value: 241
+        value: 1,
+        kll: 241
     }, {
         label: 'Яйце',
-        value: 175
+        value: 2,
+        kll: 412
     }];
+
+
     const [showAlert, setShowAlert] = useState(false);
     const [formValues, setFormValues] = useState({
         product: '',
-        amount: 1,
-        weight: ''
+        label: '',
+        kll: '',
+        weight: '',
+        value: 0
     });
     const [createdProducts, setCreatedProducts] = useState([]);
     const onFormSubmit = (e) => {
@@ -35,7 +45,13 @@ function CreateDish() {
             [name]: value,
         })
     }
-    const calculatedKll = (Number(formValues.amount) + Number(formValues.product)) || undefined;
+
+    const onSelectproduct = (opt) => { // label, value
+        setFormValues({
+            ...formValues,
+            ...opt,
+        })
+    }
 
     // info alert 
     const onAlertToggle = () => {
@@ -43,6 +59,24 @@ function CreateDish() {
     }
     // end info alert
 
+    // calculation kll of create dish
+    const [createDishValues, setCreateDishValues] = useState({
+        weightCreatedDish: ''
+    });
+
+    const [createdDish, setCreatedDish] = useState([]);
+    const onCreatetedDishFormSubmit = (e) => {
+        e.preventDefault();
+        setCreatedDish([...createdDish, createDishValues]);
+    }
+
+    const onCreateInputChange = (e) => {
+        const { name, value } = e.target;
+        setCreateDishValues({
+            ...createDishValues,
+            [name]: value,
+        })
+    }
 
     return (
         <div className="CreateDish">
@@ -60,22 +94,19 @@ function CreateDish() {
                 <Form className="CreateDish__mainBlock__form" onSubmit={onFormSubmit}>
                     <Form.Label className="CreateDish__mainBlock__form__label">
                         Продукт:
-                        <Form.Select required aria-label="Chose product" name="product" value={formValues.product} onChange={onInputChange}>
-                            <option value="">оберіть продукт</option>
-                            {proudctOptions.map(opt => <option key={opt.value} value={opt.value}>{opt.label}</option>)}
-                        </Form.Select>
+                        <Select className="CreateDish__mainBlock__form__label__options" placeholder="оберіть продукт"
+                            defaultValue={formValues.product}
+                            onChange={onSelectproduct}
+                            options={proudctOptions}
+                            isSearchable
+                        />
                     </Form.Label>
 
-                    {/* product count */}
-                    <Form.Label className="CreateDish__mainBlock__form__label">
-                        Кількість продукту:
-                        <Form.Control type="number" min="1" placeholder="к-сть продукту" name="amount" value={formValues.amount} onChange={onInputChange} />
-                    </Form.Label>
 
                     {/* product kll */}
                     <Form.Label className="CreateDish__mainBlock__form__label">
                         Калорійність продукту:
-                        <Form.Control type="number" readOnly placeholder="калорійність" name="kll" value={calculatedKll} />
+                        <Form.Control type="number" readOnly placeholder="калорійність" name="kll" value={formValues.kll} />
                     </Form.Label>
 
                     {/* weight of poduct */}
@@ -95,21 +126,24 @@ function CreateDish() {
                                 return <li key={`product-${idx}`}>{`${prod.label} — ${prod.weight} г`}</li>
                             })}
                         </ul>
+                        {!createdProducts.length ? <Form.Label className="CreateDish__mainBlock__form__results__label text-muted h6">Немає інгрідієнтів</Form.Label> : null}
                     </div>
+                </Form>
 
+                <Form className="CreateDish__mainBlock__form" onSubmit={onCreatetedDishFormSubmit}>
                     {/* weight created dish */}
                     <div className="d-flex justify-content-start align-items-center m-2">
                         <Form.Label className="CreateDish__mainBlock__form__label">Введіть вагу готової страви:
-                            <Form.Control type="number" placeholder="вага готової страви" name="weight">
+                            <Form.Control required type="number" placeholder="вага готової страви" name="weightCreatedDish"
+                                value={createDishValues.weightCreatedDish} onChange={onCreateInputChange}>
                             </Form.Control>
                         </Form.Label>
                         {/* alert info */}
                         <Button className="CreateDish__mainBlock__form__buttonInfo" onClick={onAlertToggle}>?</Button>
                     </div>
                     <AlertInfo show={showAlert} onClick={onAlertToggle} />
-
                     {/* calc button */}
-                    <Button className="CreateDish__mainBlock__form__button">Обчислити калорійність готової страви</Button>
+                    <Button className="CreateDish__mainBlock__form__button" type="submit">Обчислити калорійність готової страви</Button>
 
                     {/* kll created dish */}
                     <div className="d-flex justify-content-start m-2">
