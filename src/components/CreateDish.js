@@ -5,6 +5,7 @@ import './CreateDish.scss';
 
 import { AlertInfo } from './AlertInfo';
 import { Form, Button } from 'react-bootstrap';
+import { Recipe } from "./Recipe";
 
 function CreateDish() {
 
@@ -135,7 +136,6 @@ function CreateDish() {
                         />
                     </Form.Label>
 
-
                     {/* product kll */}
                     <Form.Label className="CreateDish__mainBlock__form__label">
                         Калорійність продукту:
@@ -162,11 +162,12 @@ function CreateDish() {
                     {/* recipe */}
                     <div className="CreateDish__mainBlock__form__results">
                         <Form.Label className="CreateDish__mainBlock__form__results__label">Ваш рецепт:</Form.Label>
-                        <ul id="productList">
+                        <Recipe recipe={createdProducts} />
+                        {/* <ul id="productList">
                             {createdProducts.map((prod, idx) => {
                                 return <li key={`product-${idx}`}>{`${prod.label} — ${prod.weight} г`}</li>
                             })}
-                        </ul>
+                        </ul> */}
                         {!createdProducts.length ? <Form.Label className="CreateDish__mainBlock__form__results__label text-muted h6">Немає інгрідієнтів</Form.Label> : null}
                     </div>
                 </Form>
