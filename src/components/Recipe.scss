@@ -21,8 +21,16 @@
                 font-family: Alegreya SC;
                 color: #000000;
                 font-size: 15px;
-                tr td {
-                    vertical-align: middle;
+                tr {
+                    &:hover {
+                        background-color: rgb(201, 201, 201);
+                    }
+                    td {
+                        vertical-align: middle;
+                    }
+                }
+                tr:last-child {
+                    background-color: rgb(148, 148, 148);
                 }
             }
         }

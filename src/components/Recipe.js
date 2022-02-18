@@ -25,31 +25,40 @@ function Recipe(props) {
                     <thead className="Recipe__tableContainer__table__head">
                         <tr>
                             <th>Продукт</th>
-                            <th>Калорійність</th>
                             <th>Вага</th>
+                            <th>Калорійність за 100г</th>
+                            <th>Калорійність</th>
                         </tr>
                     </thead>
                     <tbody className="Recipe__tableContainer__table__body">
                         {props.recipe.map((prod, idx) => (
                             <tr key={`product-${idx}`}>
                                 <td>{prod.label}</td>
-                                <td>{prod.kll}</td>
                                 <td>{`${prod.weight} г`}</td>
+                                <td>{prod.fullKll}</td>
+                                <td>{prod.kll}</td>
                             </tr>
 
                         ))}
                         <tr >
                             <td>Загальна цінність</td>
+                            <td>{`${props.recipe.reduce(
+                                (acc, el) => { return acc + el.weight },
+                                0
+                            )} г`}</td>
+                            <td>{
+                                `${props.recipe.reduce(
+                                    (acc, el) => { return acc + el.fullKll },
+                                    0
+                                )} клл`
+                            }</td>
                             <td>{
                                 `${props.recipe.reduce(
                                     (acc, el) => { return acc + el.kll },
                                     0
                                 )} клл`
                             }</td>
-                            <td>{`${props.recipe.reduce(
-                                (acc, el) => { return acc + el.weight },
-                                0
-                            )} г`}</td>
+
                         </tr>
                     </tbody>
                 </Table>

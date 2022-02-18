@@ -12,15 +12,15 @@ function CreateDish() {
     const proudctOptions = [{
         label: 'Aвокадо',
         value: 1,
-        kll: 159,
+        fullKll: 159,
     }, {
         label: 'Сир твердий',
         value: 2,
-        kll: 241
+        fullKll: 241
     }, {
         label: 'Яйце',
         value: 3,
-        kll: 412
+        fullKll: 412
     }];
     const preparetionOptions = [
         { label: 'Варити', value: 1.05 },
@@ -31,7 +31,7 @@ function CreateDish() {
     const weightOptions = Array(40).fill(0).map((value, idx) => ({ value: (idx + 1) * 25, label: (idx + 1) * 25, weight: (idx + 1) * 25 }));
     const [formValues, setFormValues] = useState({
         label: '',
-        kll: '',
+        fullKll: '',
         weight: '',
         value: 0
     });
@@ -77,8 +77,10 @@ function CreateDish() {
         if (!isFormValid) {
             return;
         }
-        const foundProduct = proudctOptions.find(product => product.value === Number(formValues.product)); // { label, vlaue }
-        setCreatedProducts([...createdProducts, { ...formValues, ...foundProduct }]);
+        // const foundProduct = proudctOptions.find(product => product.value === Number(formValues.product)); // { label, vlaue }   
+        const kll = Number(formValues.weight) * formValues.fullKll / 100;
+        const newProduct = { ...formValues, kll };
+        setCreatedProducts([...createdProducts, newProduct]);
     }
     const onWeightChange = ({ weight }) => {
         setFormValues({
@@ -110,7 +112,9 @@ function CreateDish() {
     const finalProductWeight = rawWeight * saveOption.value;
 
     const rawKll = createdProducts.reduce((acc, el) => acc + Number(el.kll), 0);
-    const finalKll = ((rawKll / finalProductWeight) * 100);
+    const finalKll100 = ((rawKll / finalProductWeight) * 100);
+    const finalKll = (rawKll * finalProductWeight) / rawWeight;
+
     return (
         <div className="CreateDish">
             <div className="CreateDish__mainBlock">
@@ -140,7 +144,7 @@ function CreateDish() {
                     {/* product kll */}
                     <Form.Label className="CreateDish__mainBlock__form__label">
                         Калорійність продукту:
-                        <Form.Control type="number" readOnly placeholder="калорійність" name="kll" value={formValues.kll} />
+                        <Form.Control type="number" readOnly placeholder="калорійність" name="kll" value={formValues.fullKll} />
                     </Form.Label>
 
                     {/* weight of poduct */}
