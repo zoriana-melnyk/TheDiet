@@ -4,6 +4,20 @@ import { Table } from "react-bootstrap";
 import './Recipe.scss';
 
 function Recipe(props) {
+
+    // const [showResult, setShowResult] = useState([]);
+
+    // const calculation = (e) => {
+    //     e.preventDefault();
+    //     // const isFormValid = formValidation(); // boolean
+    //     // if (!isFormValid) {
+    //     //     return;
+    //     // }
+    //     const createdRecipe = props.find((prod, idx) => prod.kll === Number(formValues.kll));
+    //     setShowResult([...showResult, { ...formValues, ...createdRecipe }]);
+    // }
+
+
     return (
         <div className="Recipe">
             <div className="Recipe__tableContainer">
@@ -22,7 +36,21 @@ function Recipe(props) {
                                 <td>{prod.kll}</td>
                                 <td>{`${prod.weight} г`}</td>
                             </tr>
+
                         ))}
+                        <tr >
+                            <td>Загальна цінність</td>
+                            <td>{
+                                `${props.recipe.reduce(
+                                    (acc, el) => { return acc + el.kll },
+                                    0
+                                )} клл`
+                            }</td>
+                            <td>{`${props.recipe.reduce(
+                                (acc, el) => { return acc + el.weight },
+                                0
+                            )} г`}</td>
+                        </tr>
                     </tbody>
                 </Table>
             </div>
