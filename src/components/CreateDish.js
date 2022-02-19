@@ -4,7 +4,7 @@ import Select from 'react-select';
 import './CreateDish.scss';
 
 import { Form, Button } from 'react-bootstrap';
-import { Recipe } from "./Recipe";
+import { Recipe, cookingOptions, defaultOptionIndex } from "./Recipe";
 
 function CreateDish() {
 
@@ -22,17 +22,14 @@ function CreateDish() {
         value: 3,
         fullKll: 412
     }];
-    const preparetionOptions = [
-        { label: 'Варити', value: 1.05 },
-        { label: 'Смажити', value: 1.02 },
-        { label: 'Запікати', value: .87 }
-    ];
 
     const weightOptions = Array(40).fill(0).map((value, idx) => ({ value: (idx + 1) * 25, label: (idx + 1) * 25, weight: (idx + 1) * 25 }));
     const [formValues, setFormValues] = useState({
         label: '',
-        fullKll: '',
         weight: '',
+        fullKll: '',
+        kll: 0,
+        cookKll: 0,
         value: 0
     });
     const [errors, setErrors] = useState({
@@ -40,11 +37,6 @@ function CreateDish() {
         weight: '',
     });
     const [createdProducts, setCreatedProducts] = useState([]);
-
-    const [saveOption, setSaveOption] = useState({
-        label: '',
-        value: 0
-    });
 
     const formValidation = () => {
         const requiredFields = {};
@@ -79,9 +71,11 @@ function CreateDish() {
         }
         // const foundProduct = proudctOptions.find(product => product.value === Number(formValues.product)); // { label, vlaue }   
         const kll = Number(formValues.weight) * formValues.fullKll / 100;
-        const newProduct = { ...formValues, kll };
+        const cookKll = kll * cookingOptions[defaultOptionIndex].value;
+        const newProduct = { ...formValues, kll, cookKll };
         setCreatedProducts([...createdProducts, newProduct]);
     }
+
     const onWeightChange = ({ weight }) => {
         setFormValues({
             ...formValues,
@@ -95,25 +89,6 @@ function CreateDish() {
             ...opt,
         })
     }
-
-
-    // calculation kll of create dish
-    const [createDishValues, setCreateDishValues] = useState({
-        weightCreatedDish: ''
-    });
-
-    const [createdDish, setCreatedDish] = useState([]);
-    const onCreatetedDishFormSubmit = (e) => {
-        e.preventDefault();
-        setCreatedDish([...createdDish, createDishValues]);
-    }
-
-    const rawWeight = createdProducts.reduce((acc, el) => acc + Number(el.weight), 0);
-    const finalProductWeight = rawWeight * saveOption.value;
-
-    const rawKll = createdProducts.reduce((acc, el) => acc + Number(el.kll), 0);
-    const finalKll100 = ((rawKll / finalProductWeight) * 100);
-    const finalKll = (rawKll * finalProductWeight) / rawWeight;
 
     return (
         <div className="CreateDish">
@@ -170,63 +145,30 @@ function CreateDish() {
                         {
                             !createdProducts.length
                                 ? <Form.Label className="CreateDish__mainBlock__form__results__label text-muted h6 mt-5">Немає інгрідієнтів</Form.Label>
-                                : <Recipe recipe={createdProducts} />
+                                : <Recipe
+                                    recipe={createdProducts}
+                                    onCookingOptionChange={(createProductIndex, selectedOption) => {
+                                        const cloneProducts = [...createdProducts];
+                                        const prod = cloneProducts[createProductIndex]
+                                        prod.cookKll = prod.kll * selectedOption.value;
+                                        setCreatedProducts(cloneProducts);
+                                    }}
+                                />
                         }
                     </div>
+                    {/* name of dish */}
+                    <div className="d-flex justify-content-center m-2">
+                        <Form.Label className="CreateDish__mainBlock__form__label">Назва страви:
+                            <Form.Control type="text" placeholder="додайте назву" name="dishName">
+                            </Form.Control>
+                        </Form.Label>
+                    </div>
+
+                    {/* save name of dish button */}
+                    <div className="d-flex justify-content-end m-2">
+                        <Button className="CreateDish__mainBlock__form__button">Зберегти страву</Button>
+                    </div>
                 </Form>
-
-                {
-                    createdProducts.length
-                        ? <Form className="CreateDish__mainBlock__form" onSubmit={onCreatetedDishFormSubmit}>
-                            {/* weight created dish */}
-                            <div className="d-flex flex-column justify-content-start align-items-center m-2">
-                                <Form.Label className="CreateDish__mainBlock__form__label">Оберіть спосіб приготування:</Form.Label>
-                                <div className="d-flex">
-                                    {preparetionOptions.map((opt) => (
-                                        <div key={`inline-${opt.label}`} className="mb-3">
-                                            <Form.Check type={'radio'}>
-                                                <Form.Check.Label className="CreateDish__mainBlock__form__label">{`${opt.label}`}
-                                                    <Form.Check.Input
-                                                        type={'radio'}
-                                                        checked={opt.label === saveOption.label}
-                                                        onChange={e => setSaveOption(opt)}
-                                                    />
-                                                </Form.Check.Label>
-                                            </Form.Check>
-                                        </div>
-                                    ))}
-                                </div>
-                                <div className="d-flex flex-row justify-content-start align-items-center m-2">
-
-                                    <Form.Label className="CreateDish__mainBlock__form__label">
-                                        Готова продукція:
-                                        <Form.Control type="number" readOnly placeholder="калорійність" name="kll" value={finalProductWeight} />
-                                    </Form.Label>
-                                    {/* kll created dish */}
-
-                                    <Form.Label className="CreateDish__mainBlock__form__label">Калорійність готової страви:
-                                        <Form.Control type="number" readOnly placeholder="калорійність" name="kll" value={finalKll}>
-                                        </Form.Control>
-                                    </Form.Label>
-                                </div>
-                            </div>
-
-
-                            {/* name of dish */}
-                            <div className="d-flex justify-content-center m-2">
-                                <Form.Label className="CreateDish__mainBlock__form__label">Назва страви:
-                                    <Form.Control type="text" placeholder="додайте назву" name="dishName">
-                                    </Form.Control>
-                                </Form.Label>
-                            </div>
-
-                            {/* save name of dish button */}
-                            <div className="d-flex justify-content-end m-2">
-                                <Button className="CreateDish__mainBlock__form__button">Зберегти страву</Button>
-                            </div>
-                        </Form>
-                        : null
-                }
             </div>
         </div >
     );
