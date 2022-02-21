@@ -29,7 +29,7 @@ function Reviews() {
                     return <div key={user?.name?.first} className="Reviews-container p-4">
                         <img src={user?.picture?.medium} alt="img" />
                         <div className="Reviews-container-content">
-                            <h4>{user?.name?.first} {user?.name?.last}</h4>
+                            <h4>{user?.name?.first}</h4>
                             <blockquote>{COMMENTS[idx]}</blockquote>
                         </div>
                     </div>
