@@ -1,6 +1,7 @@
 .Recipe {
     &__tableContainer {
         padding: 1em;
+        overflow-x: auto;
         &__table {
             background: #ffffff;
             border: 1px solid #141313;

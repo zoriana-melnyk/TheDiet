@@ -51,7 +51,7 @@ function Recipe(props) {
 
     return (
         <div className="Recipe">
-            <div className="Recipe__tableContainer">
+            <div className="Recipe__tableContainer" >
                 <Table bordered className="Recipe__tableContainer__table">
                     <thead className="Recipe__tableContainer__table__head">
                         <tr>
