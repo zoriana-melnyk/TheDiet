@@ -104,26 +104,26 @@ function CreateDish() {
 
                 {/* product choise */}
                 <Form className="CreateDish__mainBlock__form" onSubmit={onFormSubmit}>
-                    <Form.Label className="CreateDish__mainBlock__form__label">
-                        Продукт:&nbsp;
-                        {errors.label && <span className="text-danger ml-1 h6">{errors.label}</span>}
-                        <Select className="CreateDish__mainBlock__form__label__options" placeholder="оберіть продукт"
-                            defaultValue={formValues.product}
-                            onChange={onSelectproduct}
-                            options={proudctOptions}
-                            isSearchable
-                            isRequired
-                        />
-                    </Form.Label>
+                    <div className="d-flex flex-wrap">
+                        <Form.Label className="CreateDish__mainBlock__form__label">
+                            Продукт:&nbsp;
+                            {errors.label && <span className="text-danger ml-1 h6">{errors.label}</span>}
+                            <Select className="CreateDish__mainBlock__form__label__options" placeholder="оберіть продукт"
+                                defaultValue={formValues.product}
+                                onChange={onSelectproduct}
+                                options={proudctOptions}
+                                isSearchable
+                                isRequired
+                            />
+                        </Form.Label>
 
-                    {/* product kll */}
-                    <Form.Label className="CreateDish__mainBlock__form__label">
-                        Калорійність продукту:
-                        <Form.Control type="number" readOnly placeholder="калорійність" name="kll" value={formValues.fullKll} />
-                    </Form.Label>
+                        {/* product kll */}
+                        <Form.Label className="CreateDish__mainBlock__form__label">
+                            Калорійність продукту:
+                            <Form.Control className="m-0" type="number" readOnly placeholder="калорійність" name="kll" value={formValues.fullKll} />
+                        </Form.Label>
 
-                    {/* weight of poduct */}
-                    <div className="d-flex justify-content-start m-2">
+                        {/* weight of poduct */}
                         <Form.Label className="CreateDish__mainBlock__form__label">
                             Вага продукту відповідно до рецепту:&nbsp;
                             {errors.weight && <span className="text-danger h6">{errors.weight}</span>}
@@ -156,8 +156,9 @@ function CreateDish() {
                                 />
                         }
                     </div>
+
                     {/* name of dish */}
-                    <div className="d-flex justify-content-center m-2">
+                    <div className="d-flex justify-content-left m-2">
                         <Form.Label className="CreateDish__mainBlock__form__label">Назва страви:
                             <Form.Control type="text" placeholder="додайте назву" name="dishName">
                             </Form.Control>
