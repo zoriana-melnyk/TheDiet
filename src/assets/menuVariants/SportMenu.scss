@@ -1,0 +1,83 @@
+.SportMenu {
+    padding: 70px 0;
+    &__block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 70vw;
+        margin: 0 auto;
+        background: rgb(20 19 19);
+        border: 1px solid #000000;
+        box-sizing: border-box;
+        border-radius: 20px;
+        padding: 1em;
+        &__infoBlock {
+            display: flex;
+            flex-direction: row;
+            &__header {
+                font-family: Alegreya SC;
+                font-weight: bold;
+                color: #fffdfd;
+                font-size: 27px;
+            }
+        }
+        &__menu {
+            display: flex;
+            flex-direction: column;
+            &__info {
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+                margin: 30px;
+                background: #332820;
+                border: 1px solid #000000;
+                box-sizing: border-box;
+                border-radius: 10px;
+                padding: 5px;
+                &__header {
+                    font-family: Alegreya SC;
+                    color: #fffdfd;
+                    font-size: 20px;
+                    padding: 1px;
+                }
+                &__discription {
+                    display: flex;
+                    justify-content: center;
+                    font-family: Alegreya SC;
+                    color: #fffdfd87;
+                    font-size: 18px;
+                    margin: 0px;
+                }
+            }
+            &__table {
+                background: #ffffff;
+                border: 1px solid #141313;
+                border-color: #141313 !important;
+                box-sizing: border-box;
+                border-radius: 5px;
+                border-style: hidden;
+                &__body {
+                    font-family: Alegreya SC;
+                    color: #000000;
+                    font-size: 15px;
+                    &__head {
+                        background-color: #242424 !important;
+                        font-family: Alegreya SC;
+                        color: #fffdfd;
+                        font-size: 20px;
+                        vertical-align: middle;
+                    }
+                    tr {
+                        &:hover {
+                            background-color: rgb(201, 201, 201);
+                        }
+                        td {
+                            vertical-align: middle;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

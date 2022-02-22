@@ -6,7 +6,6 @@ import dietIcon from '../img/svg_img/diet.svg'
 import kidsIcon from '../img/svg_img/kids.svg'
 import myMenuIcon from '../img/svg_img/myMenu.svg'
 
-
 import { Button } from 'react-bootstrap';
 
 function UserMenu() {
@@ -23,7 +22,7 @@ function UserMenu() {
             <div className="Nav-container">
                 <div className="Nav-container-column">
                     <div className="Nav-container-column-row">
-                        <Button className="NavButton sport-menu">
+                        <Button className="NavButton sport-menu" href="/sport-menu">
                             Меню для спорцменів
                             <img src={sportIcon} className="Nav-container-img sportIcon row mx-auto p-2" alt="sportIcon_img" />
                         </Button>
