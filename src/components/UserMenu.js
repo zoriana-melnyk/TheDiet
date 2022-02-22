@@ -26,7 +26,7 @@ function UserMenu() {
                             Меню для спорцменів
                             <img src={sportIcon} className="Nav-container-img sportIcon row mx-auto p-2" alt="sportIcon_img" />
                         </Button>
-                        <Button className="NavButton diet-menu">
+                        <Button className="NavButton diet-menu" href="/diet-menu">
                             Дієтичне меню
                             <img src={dietIcon} className="Nav-container-img dietIcon row mx-auto p-2" alt="dietIcon_img" />
                         </Button>
@@ -36,7 +36,7 @@ function UserMenu() {
                             Дитяче меню
                             <img src={kidsIcon} className="Nav-container-img kidsIcon row mx-auto p-2" alt="kidsIcon_img" />
                         </Button>
-                        <Button className="NavButton my-menu">
+                        <Button className="NavButton my-menu" href="/create-menu">
                             Моє меню
                             <img src={myMenuIcon} className="Nav-container-img myMenuIcon row mx-auto p-2" alt="myMenuIcon_img" />
                         </Button>
