@@ -12,6 +12,7 @@ import { Directory } from "./components/Directory";
 import { CreateDish } from "./components/CreateDish";
 import { SportMenu } from "./assets/menuVariants/SportMenu";
 import { ChildrenMenu } from "./assets/menuVariants/ChildrenMenu";
+import { DietMenu } from "./assets/menuVariants/DietMenu";
 
 
 // HOC
@@ -37,6 +38,7 @@ function App() {
           <Route path="/create-dish" element={<Layout withFooter={false}><CreateDish /></Layout>} />
           <Route path="/sport-menu" element={<Layout withFooter={false}><SportMenu /></Layout>} />
           <Route path="/children-menu" element={<Layout withFooter={false}><ChildrenMenu /></Layout>} />
+          <Route path="/diet-menu" element={<Layout withFooter={false}><DietMenu /></Layout>} />
         </Routes>
       </Router>
     </div>
