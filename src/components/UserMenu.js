@@ -32,7 +32,7 @@ function UserMenu() {
                         </Button>
                     </div>
                     <div className="Nav-container-column-row">
-                        <Button className="NavButton kids-menu">
+                        <Button className="NavButton kids-menu" href="/children-menu">
                             Дитяче меню
                             <img src={kidsIcon} className="Nav-container-img kidsIcon row mx-auto p-2" alt="kidsIcon_img" />
                         </Button>
