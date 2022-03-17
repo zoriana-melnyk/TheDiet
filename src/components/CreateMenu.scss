@@ -1,6 +1,6 @@
 .CreateManu {
     padding: 70px 0;
-    .Main-block {
+    &__MainBlock {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -11,24 +11,24 @@
         box-sizing: border-box;
         border-radius: 20px;
         padding: 1em;
-        .Info-block {
+        &__InfoBlock {
             flex-direction: row;
-            .Info-text-header {
+            &__header {
                 font-family: Alegreya SC;
                 font-weight: bold;
                 color: #fffdfd;
                 font-size: 27px;
             }
-            .Info-text {
+            &__text {
                 font-family: Alegreya SC;
                 color: #fffdfd;
                 font-size: 22px;
             }
         }
-        .Menu {
+        &__Menu {
             display: flex;
             flex-direction: column;
-            &-MenuTitle {
+            &__MenuTitle {
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -38,150 +38,50 @@
                 box-sizing: border-box;
                 border-radius: 10px;
                 padding: 5px;
-                &-text {
+                &__text {
                     font-family: Alegreya SC;
                     color: #fffdfd;
                     font-size: 22px;
                 }
             }
-            &-MenuItem {
+            &__MenuItem {
                 display: flex;
                 flex-direction: column;
-                &-row {
+                align-items: center;
+                &__row {
                     display: flex;
                     justify-content: space-around;
                     gap: 160px;
                     flex-direction: row;
                     padding: 1em;
-                    &-Brekfast {
-                        &-header {
-                            font-family: Alegreya SC;
-                            color: #fffdfd;
-                            font-size: 22px;
-                            &-block {
-                                display: flex;
-                                flex-direction: row;
-                                align-items: center;
-                                gap: 10px;
-                                padding: 1em;
-                                &-text {
-                                    font-family: Alegreya SC;
-                                    color: #fffdfd;
-                                    font-size: 20px;
-                                    &-toggleItem {
-                                        font-size: 15px;
-                                        color: #fff;
-                                        background-color: #908871de;
-                                        border-color: #908871de;
-                                        &:hover {
-                                            border-color: #908871de;
-                                            background-color: #7f8124;
-                                            color: #ffffff;
-                                        }
-                                        &-dishItem {
-                                            font-size: 15px;
-                                            font-family: Alegreya SC;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    &-Lunch {
-                        &-header {
-                            font-family: Alegreya SC;
-                            color: #fffdfd;
-                            font-size: 22px;
-                            &-block {
-                                display: flex;
-                                flex-direction: row;
-                                align-items: center;
-                                gap: 10px;
-                                padding: 1em;
-                                &-text {
-                                    font-family: Alegreya SC;
-                                    color: #fffdfd;
-                                    font-size: 20px;
-                                    &-toggleItem {
-                                        font-size: 15px;
-                                        color: #fff;
-                                        background-color: #908871de;
-                                        border-color: #908871de;
-                                        &:hover {
-                                            border-color: #908871de;
-                                            background-color: #7f8124;
-                                            color: #ffffff;
-                                        }
-                                        &-dishItem {
-                                            font-size: 15px;
-                                            font-family: Alegreya SC;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                &-Diner {
-                    padding: 1em;
-                    &-header {
-                        font-family: Alegreya SC;
-                        color: #fffdfd;
-                        font-size: 22px;
-                        &-block {
-                            display: flex;
-                            flex-direction: row;
-                            align-items: center;
-                            justify-content: center;
-                            gap: 10px;
-                            padding: 1em;
-                            &-text {
-                                font-family: Alegreya SC;
-                                color: #fffdfd;
-                                font-size: 20px;
-                                &-toggleItem {
-                                    font-size: 15px;
-                                    color: #fff;
-                                    background-color: #908871de;
-                                    border-color: #908871de;
-                                    &:hover {
-                                        border-color: #908871de;
-                                        background-color: #7f8124;
-                                        color: #ffffff;
-                                    }
-                                    &-dishItem {
-                                        font-size: 15px;
-                                        font-family: Alegreya SC;
-                                    }
-                                }
-                            }
-                        }
-                    }
                 }
             }
-            &-SubButton {
-                margin: 15px;
+            &__SubButton {
+                margin: 15px !important;
                 align-self: end;
-                border-color: #908871de;
-                background-color: #7f8124;
+                border-color: #908871de !important;
+                background-color: #7f8124 !important;
                 box-sizing: border-box;
-                border-radius: 10px;
                 font-family: Alegreya SC;
-                color: #fffdfd;
+                color: #fffdfd !important;
                 font-size: 20px;
                 &:hover {
-                    background-color: #2c2c12;
-                    border-color: #7f8124;
-                    color: #ffffff;
+                    background-color: #2c2c12 !important;
+                    border-color: #7f8124 !important;
+                    color: #ffffff !important;
                 }
             }
-            // > tablet < laptop
-            @media only screen and (max-width: 1040px) {
-                .Menu {
-                    &-MenuItem {
+        }
+    }
+    // > tablet < laptop
+    @media only screen and (max-width: 1083px) {
+        .CreateManu {
+            &__MainBlock {
+                &__Menu {
+                    &__MenuItem {
                         display: flex;
                         flex-direction: column;
-                        &-row {
+                        &__row {
                             display: flex;
                             justify-content: space-around;
                             gap: 50px;
@@ -191,22 +91,26 @@
                     }
                 }
             }
-            // < tablet
-            @media screen and (max-width: 860px) {
-                .Menu {
-                    &-MenuTitle {
-                        &-title {
+        }
+    }
+    // < tablet
+    @media screen and (max-width: 900px) {
+        .CreateManu {
+            &__MainBlock {
+                &__Menu {
+                    &__MenuTitle {
+                        &__text {
                             flex-direction: column;
                             align-items: center;
                         }
                     }
-                    &-MenuItem {
-                        &-row {
+                    &__MenuItem {
+                        &__row {
                             flex-direction: column;
                             align-items: center;
                             gap: 10px;
                         }
-                        &-Diner {
+                        &__Diner {
                             padding: 0em;
                         }
                     }
