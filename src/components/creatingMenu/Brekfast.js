@@ -51,9 +51,9 @@ function Brekfast() {
                 <h3 className="CreatingMenu__Menu__header">
                     Сніданок:
                 </h3>
-                {/* Brekfast Item 1 */}
                 <div className="CreatingMenu__Menu__block">
                     <Form className="CreatingMenu__Menu__block__form">
+                        {/* Brekfast Item 1 */}
                         <div className="d-flex flex-wrap align-items-center">
                             <h4 className="CreatingMenu__Menu__block__form__text item-1">
                                 Страва:
