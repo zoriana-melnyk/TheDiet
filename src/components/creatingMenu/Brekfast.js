@@ -67,7 +67,12 @@ function Brekfast() {
                                     isRequired
                                 />
                             </Form.Label>
+                            {/* dish kll */}
+                            <Form.Label className="CreatingMenu__Menu__block__form__formItem">
+                                <Form.Control className="m-0" type="number" readOnly placeholder="калорійність" name="fullkll" value={formValues.fullKll} />
+                            </Form.Label>
                         </div>
+
                         {/* Breckfast Item 2 */}
                         <div className="d-flex flex-wrap">
                             <h4 className="CreatingMenu__Menu__block__form__text item-1">
@@ -82,7 +87,12 @@ function Brekfast() {
                                     isRequired
                                 />
                             </Form.Label>
+                            {/* dish kll */}
+                            <Form.Label className="CreatingMenu__Menu__block__form__formItem">
+                                <Form.Control className="m-0" type="number" readOnly placeholder="калорійність" name="fullkll" value={formValues.fullKll} />
+                            </Form.Label>
                         </div>
+
                         {/* Brekfast Item 3 */}
                         <div className="d-flex flex-wrap">
                             <h4 className="CreatingMenu__Menu__block__form__text item-1">
@@ -96,6 +106,10 @@ function Brekfast() {
                                     isSearchable
                                     isRequired
                                 />
+                            </Form.Label>
+                            {/* dish kll */}
+                            <Form.Label className="CreatingMenu__Menu__block__form__formItem">
+                                <Form.Control className="m-0" type="number" readOnly placeholder="калорійність" name="fullkll" value={formValues.fullKll} />
                             </Form.Label>
                         </div>
                     </Form>
