@@ -28,10 +28,8 @@ function CreateMenu() {
                     </div>
                     {/* Menu selectors */}
                     <div className="CreateManu__MainBlock__Menu__MenuItem">
-                        <div className="CreateManu__MainBlock__Menu__MenuItem__row">
-                            <Brekfast />
-                            <Lunch />
-                        </div>
+                        <Brekfast />
+                        <Lunch />
                         <Diner />
                     </div>
                     <Button className="CreateManu__MainBlock__Menu__SubButton" type="submit" variant="Success">

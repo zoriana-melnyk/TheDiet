@@ -65,6 +65,10 @@ function Lunch() {
                                     isRequired
                                 />
                             </Form.Label>
+                            {/* dish kll */}
+                            <Form.Label className="CreatingMenu__Menu__block__form__formItem">
+                                <Form.Control className="m-0" type="number" readOnly placeholder="калорійність" name="fullkll" value={formValues.fullKll} />
+                            </Form.Label>
                         </div>
                         {/* Lunch Item 2 */}
                         <div className="d-flex flex-wrap">
@@ -80,6 +84,10 @@ function Lunch() {
                                     isRequired
                                 />
                             </Form.Label>
+                            {/* dish kll */}
+                            <Form.Label className="CreatingMenu__Menu__block__form__formItem">
+                                <Form.Control className="m-0" type="number" readOnly placeholder="калорійність" name="fullkll" value={formValues.fullKll} />
+                            </Form.Label>
                         </div>
                         {/* Lunch Item 3 */}
                         <div className="d-flex flex-wrap">
@@ -94,6 +102,10 @@ function Lunch() {
                                     isSearchable
                                     isRequired
                                 />
+                            </Form.Label>
+                            {/* dish kll */}
+                            <Form.Label className="CreatingMenu__Menu__block__form__formItem">
+                                <Form.Control className="m-0" type="number" readOnly placeholder="калорійність" name="fullkll" value={formValues.fullKll} />
                             </Form.Label>
                         </div>
                     </Form>
