@@ -1,9 +1,50 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './CreatingMenu.scss';
-import { Dropdown } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
+import Select from 'react-select';
+
 
 
 function Brekfast() {
+
+    const dishOptions = [{
+        label: 'Фруктовий сет',
+        value: 1,
+        kcal: 159,
+    }, {
+        label: 'Сирний крем-суп',
+        value: 2,
+        kcal: 479,
+    }, {
+        label: 'Омлет',
+        value: 3,
+        fullKll: 412
+    }, {
+        label: 'Млинці',
+        value: 4,
+        fullKll: 503
+    }, {
+        label: 'Сухофрукти',
+        value: 5,
+        fullKll: 205
+    }, {
+        label: 'Вівсянка',
+        value: 6,
+        fullKll: 250
+    }];
+    const [formValues, setFormValues] = useState({
+        label: '',
+        weight: '',
+        fullKll: '',
+        value: 0
+    });
+
+    const onSelectproduct = (opt) => { // label, value
+        setFormValues({
+            ...formValues,
+            ...opt,
+        })
+    }
     return (
         <div className="CreatingMenu">
             <div className="CreatingMenu__Menu">
@@ -12,51 +53,52 @@ function Brekfast() {
                 </h3>
                 {/* Brekfast Item 1 */}
                 <div className="CreatingMenu__Menu__block">
-                    <h4 className="CreatingMenu__Menu__block__text item-1">
-                        Страва:
-                    </h4>
-                    <Dropdown>
-                        <Dropdown.Toggle className="CreatingMenu__Menu__block__toggleItem" variant="secondary" id="DishItem">
-                            Оберіть страву
-                        </Dropdown.Toggle>
-                        <Dropdown.Menu className="CreatingMenu__Menu__block__toggleItem__dishItem">
-                            <Dropdown.Item href="#/action-1">Тости з авокадо</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Сирнички</Dropdown.Item>
-                            <Dropdown.Item href="#/action-3">Яйце пашот</Dropdown.Item>
-                        </Dropdown.Menu>
-                    </Dropdown>
-                </div>
-                {/* Breckfast Item 2 */}
-                <div className="CreatingMenu__Menu__block">
-                    <h4 className="CreatingMenu__Menu__block__text item-2">
-                        Страва:
-                    </h4>
-                    <Dropdown>
-                        <Dropdown.Toggle className="CreatingMenu__Menu__block__toggleItem" variant="secondary" id="DishItem">
-                            Оберіть страву
-                        </Dropdown.Toggle>
-                        <Dropdown.Menu className="CreatingMenu__Menu__block__toggleItem__dishItem">
-                            <Dropdown.Item href="#/action-1">Фруктовий сет</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Сирний крем-суп</Dropdown.Item>
-                            <Dropdown.Item href="#/action-3">Омлет</Dropdown.Item>
-                        </Dropdown.Menu>
-                    </Dropdown>
-                </div>
-                {/* Brekfast Item 3 */}
-                <div className="CreatingMenu__Menu__block">
-                    <h4 className="CreatingMenu__Menu__block__text item-3">
-                        Страва:
-                    </h4>
-                    <Dropdown>
-                        <Dropdown.Toggle className="CreatingMenu__Menu__block__toggleItem" variant="secondary" id="DishItem">
-                            Оберіть страву
-                        </Dropdown.Toggle>
-                        <Dropdown.Menu className="CreatingMenu__Menu__block__toggleItem__dishItem">
-                            <Dropdown.Item href="#/action-1">Млинці</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Сухофрукти</Dropdown.Item>
-                            <Dropdown.Item href="#/action-3">Вівсянка</Dropdown.Item>
-                        </Dropdown.Menu>
-                    </Dropdown>
+                    <Form className="CreatingMenu__Menu__block__form">
+                        <div className="d-flex flex-wrap align-items-center">
+                            <h4 className="CreatingMenu__Menu__block__form__text item-1">
+                                Страва:
+                            </h4>
+                            <Form.Label className="CreatingMenu__Menu__block__form__formItem" variant="secondary" id="DishItem">
+                                <Select className="CreatingMenu__Menu__block__form__formItem__dishItem" placeholder="оберіть стравут"
+                                    defaultValue={formValues.dish}
+                                    onChange={onSelectproduct}
+                                    options={dishOptions}
+                                    isSearchable
+                                    isRequired
+                                />
+                            </Form.Label>
+                        </div>
+                        {/* Breckfast Item 2 */}
+                        <div className="d-flex flex-wrap">
+                            <h4 className="CreatingMenu__Menu__block__form__text item-1">
+                                Страва:
+                            </h4>
+                            <Form.Label className="CreatingMenu__Menu__block__form__formItem" variant="secondary" id="DishItem">
+                                <Select className="CreatingMenu__Menu__block__form__formItem__dishItem" placeholder="оберіть стравут"
+                                    defaultValue={formValues.dish}
+                                    onChange={onSelectproduct}
+                                    options={dishOptions}
+                                    isSearchable
+                                    isRequired
+                                />
+                            </Form.Label>
+                        </div>
+                        {/* Brekfast Item 3 */}
+                        <div className="d-flex flex-wrap">
+                            <h4 className="CreatingMenu__Menu__block__form__text item-1">
+                                Страва:
+                            </h4>
+                            <Form.Label className="CreatingMenu__Menu__block__form__formItem" variant="secondary" id="DishItem">
+                                <Select className="CreatingMenu__Menu__block__form__formItem__dishItem" placeholder="оберіть стравут"
+                                    defaultValue={formValues.dish}
+                                    onChange={onSelectproduct}
+                                    options={dishOptions}
+                                    isSearchable
+                                    isRequired
+                                />
+                            </Form.Label>
+                        </div>
+                    </Form>
                 </div>
             </div>
         </div >
