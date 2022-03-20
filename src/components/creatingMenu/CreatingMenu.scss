@@ -11,24 +11,31 @@
             align-items: center;
             gap: 10px;
             padding: 1em;
-            &__text {
-                font-family: Alegreya SC;
-                color: #fffdfd;
-                font-size: 20px;
-            }
-            &__toggleItem {
-                font-size: 15px;
-                color: #fff !important;
-                background-color: #908871de !important;
-                border-color: #908871de !important;
-                &:hover {
-                    border-color: #908871de !important;
-                    background-color: #7f8124 !important;
-                    color: #ffffff !important;
-                }
-                &__dishItem {
-                    font-size: 15px;
+            &__form {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+                &__text {
                     font-family: Alegreya SC;
+                    color: #fffdfd;
+                    font-size: 20px;
+                }
+                &__formItem {
+                    display: inline-block;
+                    margin: 0 0.5em;
+                    font-family: Alegreya SC;
+                    color: #fffdfd;
+                    font-size: 20px;
+                    text-align: left;
+                    &__dishItem {
+                        min-width: 200px;
+                        font-size: 1rem;
+                        color: #212529;
+                        background-color: #fff;
+                        background-clip: padding-box;
+                        border-radius: 10px;
+                    }
                 }
             }
         }
@@ -46,24 +53,31 @@
             align-items: center;
             gap: 10px;
             padding: 1em;
-            &__text {
-                font-family: Alegreya SC;
-                color: #fffdfd;
-                font-size: 20px;
-            }
-            &__toggleItem {
-                font-size: 15px;
-                color: #fff !important;
-                background-color: #908871de !important;
-                border-color: #908871de !important;
-                &:hover {
-                    border-color: #908871de !important;
-                    background-color: #7f8124 !important;
-                    color: #ffffff !important;
-                }
-                &__dishItem {
-                    font-size: 15px;
+            &__form {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+                &__text {
                     font-family: Alegreya SC;
+                    color: #fffdfd;
+                    font-size: 20px;
+                }
+                &__formItem {
+                    display: inline-block;
+                    margin: 0 0.5em;
+                    font-family: Alegreya SC;
+                    color: #fffdfd;
+                    font-size: 20px;
+                    text-align: left;
+                    &__dishItem {
+                        min-width: 200px;
+                        font-size: 1rem;
+                        color: #212529;
+                        background-color: #fff;
+                        background-clip: padding-box;
+                        border-radius: 10px;
+                    }
                 }
             }
         }
