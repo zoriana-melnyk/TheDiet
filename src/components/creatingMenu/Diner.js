@@ -1,9 +1,47 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './CreatingMenu.scss';
-import { Dropdown } from 'react-bootstrap';
-
+import { Form } from 'react-bootstrap';
+import Select from 'react-select';
 
 function Diner() {
+    const dishOptions = [{
+        label: 'Сирна нарізка',
+        value: 1,
+        kcal: 112,
+    }, {
+        label: 'Запечені овочі',
+        value: 2,
+        kcal: 250,
+    }, {
+        label: 'Равіолі з індичкою',
+        value: 3,
+        fullKll: 612
+    }, {
+        label: 'Качка по пекінськи',
+        value: 4,
+        fullKll: 403
+    }, {
+        label: 'Соус песто',
+        value: 5,
+        fullKll: 35
+    }, {
+        label: 'Чай фруктовий',
+        value: 6,
+        fullKll: 10
+    }];
+    const [formValues, setFormValues] = useState({
+        label: '',
+        weight: '',
+        fullKll: '',
+        value: 0
+    });
+
+    const onSelectproduct = (opt) => { // label, value
+        setFormValues({
+            ...formValues,
+            ...opt,
+        })
+    }
     return (
         <div className="CreatingMenu">
             <div className="CreatingMenu__Diner">
@@ -12,51 +50,53 @@ function Diner() {
                 </h3>
                 {/* Diner Item 1 */}
                 <div className="CreatingMenu__Diner__block">
-                    <h4 className="CreatingMenu__Diner__block__text item-1">
-                        Страва:
-                    </h4>
-                    <Dropdown>
-                        <Dropdown.Toggle className="CreatingMenu__Diner__block__toggleItem" variant="secondary" id="DishItem">
-                            Оберіть страву
-                        </Dropdown.Toggle>
-                        <Dropdown.Menu className="CreatingMenu__Diner__block__toggleItem__dishItem">
-                            <Dropdown.Item href="#/action-1">Сирна нарізка</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Запечені овочі</Dropdown.Item>
-                            <Dropdown.Item href="#/action-3">Качка по пекінськи</Dropdown.Item>
-                        </Dropdown.Menu>
-                    </Dropdown>
-                </div>
-                {/* Diner Item 2 */}
-                <div className="CreatingMenu__Diner__block">
-                    <h4 className="CreatingMenu__Diner__block__text item-2">
-                        Страва:
-                    </h4>
-                    <Dropdown>
-                        <Dropdown.Toggle className="CreatingMenu__Diner__block__toggleItem" variant="secondary" id="DishItem">
-                            Оберіть страву
-                        </Dropdown.Toggle>
-                        <Dropdown.Menu className="CreatingMenu__Diner__block__toggleItem__dishItem">
-                            <Dropdown.Item href="#/action-1">Паста болоньєзе</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Сік фруктовий</Dropdown.Item>
-                            <Dropdown.Item href="#/action-3">Овочі свіжі</Dropdown.Item>
-                        </Dropdown.Menu>
-                    </Dropdown>
-                </div>
-                {/* Diner Item 3 */}
-                <div className="CreatingMenu__Diner__block">
-                    <h4 className="CreatingMenu__Diner__block__text item-3">
-                        Страва:
-                    </h4>
-                    <Dropdown>
-                        <Dropdown.Toggle className="CreatingMenu__Diner__block__toggleItem" variant="secondary" id="DishItem">
-                            Оберіть страву
-                        </Dropdown.Toggle>
-                        <Dropdown.Menu className="CreatingMenu__Diner__block__toggleItem__dishItem">
-                            <Dropdown.Item href="#/action-1">Равіолі з індичкою</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Соус песто</Dropdown.Item>
-                            <Dropdown.Item href="#/action-3">Чай фруктовий</Dropdown.Item>
-                        </Dropdown.Menu>
-                    </Dropdown>
+                    <Form className="CreatingMenu__Diner__block__form">
+                        {/* Lunch Item 1 */}
+                        <div className="d-flex flex-wrap align-items-center">
+                            <h4 className="CreatingMenu__Diner__block__form__text item-1">
+                                Страва:
+                            </h4>
+                            <Form.Label className="CreatingMenu__Diner__block__form__formItem" variant="secondary" id="DishItem">
+                                <Select className="CreatingMenu__Diner__block__form__formItem__dishItem" placeholder="оберіть стравут"
+                                    defaultValue={formValues.dish}
+                                    onChange={onSelectproduct}
+                                    options={dishOptions}
+                                    isSearchable
+                                    isRequired
+                                />
+                            </Form.Label>
+                        </div>
+                        {/* Lunch Item 2 */}
+                        <div className="d-flex flex-wrap">
+                            <h4 className="CreatingMenu__Diner__block__form__text item-1">
+                                Страва:
+                            </h4>
+                            <Form.Label className="CreatingMenu__Diner__block__form__formItem" variant="secondary" id="DishItem">
+                                <Select className="CreatingMenu__Diner__block__form__formItem__dishItem" placeholder="оберіть стравут"
+                                    defaultValue={formValues.dish}
+                                    onChange={onSelectproduct}
+                                    options={dishOptions}
+                                    isSearchable
+                                    isRequired
+                                />
+                            </Form.Label>
+                        </div>
+                        {/* Lunch Item 3 */}
+                        <div className="d-flex flex-wrap">
+                            <h4 className="CreatingMenu__Diner__block__form__text item-1">
+                                Страва:
+                            </h4>
+                            <Form.Label className="CreatingMenu__Diner__block__form__formItem" variant="secondary" id="DishItem">
+                                <Select className="CreatingMenu__Diner__block__form__formItem__dishItem" placeholder="оберіть стравут"
+                                    defaultValue={formValues.dish}
+                                    onChange={onSelectproduct}
+                                    options={dishOptions}
+                                    isSearchable
+                                    isRequired
+                                />
+                            </Form.Label>
+                        </div>
+                    </Form>
                 </div>
             </div>
         </div >
