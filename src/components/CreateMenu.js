@@ -49,14 +49,16 @@ function CreateMenu() {
                     <div className="CreateManu__MainBlock__Menu__FullKcal">
                         <Form>
                             <Form.Label className="CreatingMenu__Menu__block__form__formItem">
-                                {/* <Form.Control className="m-0" type="number" readOnly placeholder="калорійність" name="fullkll" value={fullKcal} /> */}
+                                Назва меню:
+                                <Form.Control className="m-0" type="text" placeholder="додайте назву" name="menuName" />
+                            </Form.Label>
+                            <Form.Label className="CreatingMenu__Menu__block__form__formItem">
+                                Загальна калорійність меню:
+                                <Form.Control className="m-0" type="number" readOnly placeholder="калорійність" name="fullKll"
+                                    value={createdMenu.reduce((acc, el) => acc + Number(el.fullKcal), 0)} />
                             </Form.Label>
                         </Form>
                     </div>
-                    <h1>{createdMenu.reduce(
-                        (acc, el) => acc + Number(el.fullKcal),
-                        0
-                    )}</h1>
                     <Button className="CreateManu__MainBlock__Menu__SubButton" type="submit" variant="Success">
                         Зберегти
                     </Button>
