@@ -5,6 +5,9 @@ import { Background } from '../../components/Background';
 
 import { Button } from 'react-bootstrap';
 
+import { useLittera } from "@assembless/react-littera";
+import { translations } from "../../languages";
+
 function Home() {
     // componentDidMount
     // useEffect(() => {
@@ -12,6 +15,8 @@ function Home() {
     //         console.log(users)
     //     })
     // }, [])
+    const translated = useLittera(translations);
+
     return (
         <div className="Home">
             <Background />
@@ -19,11 +24,12 @@ function Home() {
                 <div className="Main-info-about About d-flex justify-content-between">
                     <div className="Text-block">
                         <h1 className="Text-header">
-                            "У здоровому тілі - здоровий дух"
+                            {translated.example}
                         </h1>
-                        <h2 className="Text-info">
-                            Ні для кого не секрет, що запорукою хорошого самопочуття є здорове тіло,<br />
-                            а для цього необхідно дотримуватися збалансованого раціону харчування
+
+                        <h2 className="Text-info">{translated.example_1}
+                            {/* Ні для кого не секрет, що запорукою хорошого самопочуття є здорове тіло,<br />
+                            а для цього необхідно дотримуватися збалансованого раціону харчування */}
                         </h2>
                         <h3 className='Text-slogan'>
                             Свори вже сьогодні свій раціон!
