@@ -29,7 +29,7 @@ const Layout = ({ children, withFooter = true }) => {
 function App() {
   return (
     <div className="App">
-      <LitteraProvider locales={["en_US", "pl_PL", "de_DE"]} initialLocale="uk_UA">
+      <LitteraProvider locales={["en_US", 'uk_UA', "pl_PL", "de_DE"]} initialLocale="uk_UA">
         <Router>
           <Routes>
             <Route path="/" element={<Layout><Home /></Layout>} />

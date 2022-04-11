@@ -19,6 +19,7 @@ function MainMenu() {
                 </NavDropdown>
                 <Link className="DropItem" to="/directory" id='DropMenu'>Довідник</Link>
                 <Link className="DropItem" to="/contact" id='DropMenu'>Контакти</Link>
+
                 <NavDropdown title={<img src={auth_img} className="Auth-img" alt="auth_img" dropdown-toggle='display-none' />}>
                     <Link className="DropItem" to="/auth/login" id='LinkItem'>Увійти</Link>
                     <Link className="DropItem" to="/auth/register" id='LinkItem'>Зареєстуватися</Link>

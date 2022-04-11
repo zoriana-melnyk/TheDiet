@@ -14,6 +14,61 @@ import { MainMenu } from './MainMenu';
 
 import useResizeObserver from '@react-hook/resize-observer'
 
+import { useLitteraMethods } from "@assembless/react-littera";
+import Select from 'react-select';
+
+// const languageOptions = [{
+//     label: 'Українська',
+//     value: 'uk_UA'
+// }, {
+//     label: 'English',
+//     value: 'en_US'
+// },
+// {
+//     label: 'Polish',
+//     value: 'pl_PL'
+// },
+// {
+//     label: 'German',
+//     value: 'de_DE'
+// }
+// ]
+const languageOptions = [{
+    label: '🇺🇦',
+    value: 'uk_UA'
+}, {
+    label: '🇬🇧',
+    value: 'en_US'
+},
+{
+    label: '🇵🇱',
+    value: 'pl_PL'
+},
+{
+    label: '🇩🇪',
+    value: 'de_DE'
+}
+]
+
+const customStyles = {
+    option: (provided, state) => ({
+        backgroundColor: '#363636'
+    }),
+    control: (provided) => ({
+        ...provided,
+        backgroundColor: '#363636',
+        border: 'none'
+    }),
+    menu: (provided) => ({
+        ...provided,
+        backgroundColor: '#363636'
+    }),
+    singleValue: (provided, state) => {
+        const opacity = state.isDisabled ? 0.5 : 1;
+        const transition = 'opacity 300ms';
+        return { ...provided, opacity, transition };
+    }
+}
 
 const useSize = (target) => {
     const [size, setSize] = React.useState()
@@ -32,6 +87,13 @@ function Header() {
 
     const target = React.useRef(null)
     const size = useSize(target)
+
+    const methods = useLitteraMethods();
+
+    const handleLocaleChange = (languageOption) => {
+        // console.log(languageOption);
+        methods.setLocale(languageOption.value);
+    }
 
     return (
         <header className="App-header" ref={target}>
@@ -72,11 +134,29 @@ function Header() {
                                     <a id="directory" className="Dir-item" href="/directory">Довідник</a>
                                     <a id="contact" className="Contact-item" href="/contact">Контакти</a>
                                 </div>
+                                <Select
+                                    className="Footer__langOptions"
+                                    // placeholder="Змінити мову"
+                                    defaultValue={languageOptions[0]}
+                                    onChange={handleLocaleChange}
+                                    options={languageOptions}
+                                    isSearchable={false}
+                                    styles={customStyles}
+                                />
                                 <footer >
                                     <img src={sticker} className="Sticker" alt="sticker_img" />
                                 </footer>
+
                             </Menu>
-                            : <MainMenu />
+                            : <> <MainMenu />
+                                <Select
+                                    className="Footer__langOptions"
+                                    defaultValue={languageOptions[0]}
+                                    onChange={handleLocaleChange}
+                                    options={languageOptions}
+                                    isSearchable={false}
+                                    styles={customStyles}
+                                /></>
                     }
                 </Container>
             </Navbar>

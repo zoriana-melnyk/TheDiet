@@ -1,7 +1,8 @@
 #NavContainer {
     .Navigation {
+        // &__pages {
+        display: flex;
         justify-content: space-between;
-        margin-right: 50px;
         .dropdown-menu {
             padding: 0;
         }
@@ -28,6 +29,7 @@
             text-align: center;
             color: #c4c4c4;
             text-decoration-line: none;
+            padding-left: 10px;
         }
         .DropItem {
             background-color: #0e0d0dda;
@@ -46,7 +48,12 @@
             color: #c4c4c4;
         }
         .Auth-img {
+            // padding-left: 20em;
             height: 50px;
         }
+        // }
+        // &__user {
+
+        // }
     }
 }
