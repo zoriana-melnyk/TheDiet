@@ -14,6 +14,7 @@ import { MainMenu } from './MainMenu';
 
 import useResizeObserver from '@react-hook/resize-observer'
 
+
 const useSize = (target) => {
     const [size, setSize] = React.useState()
 
@@ -31,6 +32,7 @@ function Header() {
 
     const target = React.useRef(null)
     const size = useSize(target)
+
     return (
         <header className="App-header" ref={target}>
             <Navbar className="App-navbar">
