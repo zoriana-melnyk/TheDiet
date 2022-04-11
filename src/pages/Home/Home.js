@@ -24,15 +24,15 @@ function Home() {
                 <div className="Main-info-about About d-flex justify-content-between">
                     <div className="Text-block">
                         <h1 className="Text-header">
-                            {translated.example}
+                            {translated.header}
                         </h1>
 
-                        <h2 className="Text-info">{translated.example_1}
+                        <h2 className="Text-info">{translated.paragraph}
                             {/* Ні для кого не секрет, що запорукою хорошого самопочуття є здорове тіло,<br />
                             а для цього необхідно дотримуватися збалансованого раціону харчування */}
                         </h2>
                         <h3 className='Text-slogan'>
-                            Свори вже сьогодні свій раціон!
+                            {translated.motto}
                         </h3>
                     </div>
                 </div>
