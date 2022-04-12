@@ -16,7 +16,7 @@ import useResizeObserver from '@react-hook/resize-observer'
 
 import { useLitteraMethods } from "@assembless/react-littera";
 import { useLittera } from "@assembless/react-littera";
-import { headerTranslations } from "../languages";
+import { headerTranslations } from "../HeaderTranslation";
 
 import Select from 'react-select';
 
