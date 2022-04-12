@@ -6,7 +6,7 @@ import { Background } from '../../components/Background';
 import { Button } from 'react-bootstrap';
 
 import { useLittera } from "@assembless/react-littera";
-import { translations } from "../../languages";
+import { homeTranslations } from "../../languages";
 
 function Home() {
     // componentDidMount
@@ -15,7 +15,7 @@ function Home() {
     //         console.log(users)
     //     })
     // }, [])
-    const translated = useLittera(translations);
+    const translated = useLittera(homeTranslations);
 
     return (
         <div className="Home">
@@ -26,17 +26,14 @@ function Home() {
                         <h1 className="Text-header">
                             {translated.header}
                         </h1>
-
                         <h2 className="Text-info">{translated.paragraph}
-                            {/* Ні для кого не секрет, що запорукою хорошого самопочуття є здорове тіло,<br />
-                            а для цього необхідно дотримуватися збалансованого раціону харчування */}
                         </h2>
                         <h3 className='Text-slogan'>
                             {translated.motto}
                         </h3>
                     </div>
                 </div>
-                <Button className="GoToMenu" href="/menu">Вже біжу</Button>
+                <Button className="GoToMenu" href="/menu">{translated.button}</Button>
             </div>
         </div >
     );
