@@ -6,7 +6,7 @@ import { Background } from '../../components/Background';
 import { Button } from 'react-bootstrap';
 
 import { useLittera } from "@assembless/react-littera";
-import { homeTranslations } from "../../languages";
+import { homeTranslations } from "../../HomeTranslation";
 
 function Home() {
     // componentDidMount
