@@ -1,4 +1,10 @@
 const headerTranslations = {
+    home: {
+        uk_UA: "Головна",
+        en_US: "Home",
+        pl_PL: "Strona główna",
+        de_DE: "Hauptseite"
+    },
     menu: {
         uk_UA: "Меню",
         en_US: "Menu",
