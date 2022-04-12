@@ -1,5 +1,4 @@
-// key: [UA, EN, FR];
-const translations = {
+const homeTranslations = {
     header: {
         uk_UA: "У здоровому тілі - здоровий дух",
         en_US: "Healthy body healthy mind",
@@ -17,11 +16,17 @@ const translations = {
         dass der Schlüssel zu einer guten Gesundheit ein gesunder Körper ist, und dafür müssen Sie sich ausgewogen ernähren`
     },
     motto: {
-        uk_UA: "Свори вже сьогодні свій раціон!",
+        uk_UA: "Створи вже сьогодні свій раціон!",
         en_US: "Make your diet today!",
         pl_PL: "Zrób swoją dietę już dziś!",
         de_DE: "Machen Sie Ihre Diät noch heute!"
     },
+    button: {
+        uk_UA: "Вже біжу",
+        en_US: "Let's go",
+        pl_PL: "Chodźmy",
+        de_DE: "Lass uns gehen"
+    },
 };
 
-export { translations };
+export { homeTranslations };
