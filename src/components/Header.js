@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Container, Navbar } from 'react-bootstrap';
 import { slide as Menu } from 'react-burger-menu'
 
@@ -15,24 +15,11 @@ import { MainMenu } from './MainMenu';
 import useResizeObserver from '@react-hook/resize-observer'
 
 import { useLitteraMethods } from "@assembless/react-littera";
+import { useLittera } from "@assembless/react-littera";
+import { headerTranslations } from "../languages";
+
 import Select from 'react-select';
 
-// const languageOptions = [{
-//     label: 'Українська',
-//     value: 'uk_UA'
-// }, {
-//     label: 'English',
-//     value: 'en_US'
-// },
-// {
-//     label: 'Polish',
-//     value: 'pl_PL'
-// },
-// {
-//     label: 'German',
-//     value: 'de_DE'
-// }
-// ]
 const languageOptions = [{
     label: '🇺🇦',
     value: 'uk_UA'
@@ -91,9 +78,10 @@ function Header() {
     const methods = useLitteraMethods();
 
     const handleLocaleChange = (languageOption) => {
-        // console.log(languageOption);
         methods.setLocale(languageOption.value);
     }
+
+    const translated = useLittera(headerTranslations);
 
     return (
         <header className="App-header" ref={target}>
@@ -115,24 +103,24 @@ function Header() {
                             >
                                 <div className="user-ifo">
                                     <img src={userPhoto} alt="userPhoto" width="35px" height="35px" />
-                                    <NavLink id="login" className="Login" to={'/auth/login'}>Увійти</NavLink>
-                                    <NavLink id="signIn" className="SignIn" to={'/auth/register'}>Зареєстуватися</NavLink>
+                                    <Link id="login" className="Login" to={'/auth/login'}>{translated.login}</Link>
+                                    <Link id="signIn" className="SignIn" to={'/auth/register'}>{translated.register}</Link>
                                     <img className="close-button" onClick={() => setIsMenuOpen(false)} src={closeMenuButton} alt="closeMenu_img" />
                                 </div>
                                 <div className="routes">
 
-                                    <a id="home" className="Nav-item" href="/">Головна</a>
-                                    <a id="menu" className="Nav-item" href="/menu">Готове меню</a>
+                                    <Link id="home" className="Nav-item" to="/">{translated.home}</Link>
+                                    <Link id="menu" className="Nav-item" to="/menu">{translated.UserMenu}</Link>
                                     <ul>
                                         <li className="List-menu">
-                                            <a id="cdMenu" className="CdMenu-item" href="/created-menu">Створити меню</a>
+                                            <Link id="cdMenu" className="CdMenu-item" to="/created-menu">{translated.crMenu}</Link>
                                         </li>
                                         <li className="List-menu">
-                                            <a id="crDish" className="CrDish-item" href="/create-dish">Створити страву</a>
+                                            <Link id="crDish" className="CrDish-item" to="/create-dish">{translated.crDish}</Link>
                                         </li>
                                     </ul>
-                                    <a id="directory" className="Dir-item" href="/directory">Довідник</a>
-                                    <a id="contact" className="Contact-item" href="/contact">Контакти</a>
+                                    <Link id="directory" className="Dir-item" to="/directory">{translated.directory}</Link>
+                                    <Link id="contact" className="Contact-item" to="/contact">{translated.contact}</Link>
                                 </div>
                                 <Select
                                     className="Footer__langOptions"
