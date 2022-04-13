@@ -1,15 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import './Reviews.scss';
 
-const COMMENTS = [
-    'Чудовий сервіс! Дуже зручний функціонал.',
-    `Клас! Це саме той сайт, що я так довго шукала.
-    Дуже зручно розраховувати калорійність готових страв та складати денний раціон.`,
-    `Сайт зручний, але мінус у тому, що потрібно зареєструватися для того,
-    щоб зберегти створене меню або страву`,
-    `Все добре. Можна легко створити страву та меню. З доставкою  є нюанси.
-    Та, сайт зручний у користування`
-]
+import { useLittera } from "@assembless/react-littera";
+import { reviewsTranslation } from "../ReviewsTranslation";
+
 function Reviews() {
     const [users, setUsers] = useState([]);
     const getUsers = async () => {
@@ -19,11 +13,21 @@ function Reviews() {
     useEffect(() => {
         getUsers();
     }, [])
+
+    const translated = useLittera(reviewsTranslation);
+
+    const COMMENTS = [
+        translated.first,
+        translated.second,
+        translated.third,
+        translated.fourth
+    ]
+
     return (
         <div className="Footer-reviews">
             <footer className="Reviews-block">
                 <h3 className="Text-reviews-header p-5">
-                    Відгуки наших клієнтів
+                    {translated.header}
                 </h3>
                 {users.map((user, idx) => {
                     return <div key={user?.name?.first} className="Reviews-container p-4">
