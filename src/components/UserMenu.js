@@ -8,36 +8,42 @@ import myMenuIcon from '../img/svg_img/myMenu.svg'
 
 import { Button } from 'react-bootstrap';
 
+import { useLittera } from "@assembless/react-littera";
+import { userMenuTranslations } from "../UserMenuTranslation";
+
 function UserMenu() {
+
+    const translated = useLittera(userMenuTranslations);
+
     return (
         <div className="Main-container">
             <div className="Info-row">
                 <h3 className="Text-header p-2">
-                    Готове меню
+                    {translated.header}
                 </h3>
                 <h4 className="Text-container">
-                    Оберіть меню розроблене нашими дієтологами або створене вами
+                    {translated.paragraph}
                 </h4>
             </div>
             <div className="Nav-container">
                 <div className="Nav-container-column">
                     <div className="Nav-container-column-row">
                         <Button className="NavButton sport-menu" href="/sport-menu">
-                            Меню для спорцменів
+                            {translated.SportMenu}
                             <img src={sportIcon} className="Nav-container-img sportIcon row mx-auto p-2" alt="sportIcon_img" />
                         </Button>
                         <Button className="NavButton diet-menu" href="/diet-menu">
-                            Дієтичне меню
+                            {translated.DietMenu}
                             <img src={dietIcon} className="Nav-container-img dietIcon row mx-auto p-2" alt="dietIcon_img" />
                         </Button>
                     </div>
                     <div className="Nav-container-column-row">
                         <Button className="NavButton kids-menu" href="/children-menu">
-                            Дитяче меню
+                            {translated.ChildrenMenu}
                             <img src={kidsIcon} className="Nav-container-img kidsIcon row mx-auto p-2" alt="kidsIcon_img" />
                         </Button>
                         <Button className="NavButton my-menu" href="/create-menu">
-                            Моє меню
+                            {translated.MyMenu}
                             <img src={myMenuIcon} className="Nav-container-img myMenuIcon row mx-auto p-2" alt="myMenuIcon_img" />
                         </Button>
                     </div>
