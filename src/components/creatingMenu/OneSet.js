@@ -3,6 +3,8 @@ import './CreatingMenu.scss';
 import { Form } from 'react-bootstrap';
 import Select from 'react-select';
 
+import { useLittera } from "@assembless/react-littera";
+import { createMenuTranslations } from "../../CreateMenuTranslation";
 
 function OneSet({ setIdx, title, onChange }) {
     const dishOptions = [{
@@ -50,6 +52,8 @@ function OneSet({ setIdx, title, onChange }) {
         setFormValues(cloneValue);
     }
 
+    const translated = useLittera(createMenuTranslations);
+
     return (
         <div className="CreatingMenu">
             <div className="CreatingMenu__Menu">
@@ -62,7 +66,7 @@ function OneSet({ setIdx, title, onChange }) {
                             formValues.map((val, idx) => {
                                 return <div key={'option' + idx} className="d-flex flex-wrap align-items-center">
                                     <h4 className="CreatingMenu__Menu__block__form__text item-1">
-                                        Страва:
+                                        {translated.dishOption}
                                     </h4>
                                     <Form.Label className="CreatingMenu__Menu__block__form__formItem" variant="secondary" id="DishItem">
                                         <Select className="CreatingMenu__Menu__block__form__formItem__dishItem" placeholder="оберіть стравут"

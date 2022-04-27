@@ -6,8 +6,13 @@ import { Button, Form } from 'react-bootstrap';
 
 import { OneSet } from './creatingMenu/OneSet';
 
+import { useLittera } from "@assembless/react-littera";
+import { createMenuTranslations } from "../CreateMenuTranslation";
+
 function CreateMenu() {
-    const sets = ['Сніданок', 'Обід', 'Вечеря'];
+    const translated = useLittera(createMenuTranslations);
+
+    const sets = [`${translated.firstSet}`, `${translated.secondSet}`, `${translated.thirdSet}`];
     const [createdMenu, setCreatedMenu] = useState([
         { title: sets[0], fullKcal: 0 },
         { title: sets[1], fullKcal: 0 },
@@ -26,16 +31,16 @@ function CreateMenu() {
             <div className="CreateManu__MainBlock">
                 <div className="CreateManu__MainBlock__InfoBlock">
                     <h1 className="CreateManu__MainBlock__InfoBlock__header p-2">
-                        Сам собі шеф-кухар
+                        {translated.header}
                     </h1>
                     <h2 className="CreateManu__MainBlock__InfoBlock__text">
-                        Створити своє меню ніколи ще не було так легко!)
+                        {translated.paragraph}
                     </h2>
                 </div>
                 <div className="CreateManu__MainBlock__Menu">
                     <div className="CreateManu__MainBlock__Menu__MenuTitle">
                         <h3 className="CreateManu__MainBlock__Menu__MenuTitle__text">
-                            Ваше меню:
+                            {translated.discription}
                         </h3>
                     </div>
                     {/* Menu selectors */}
@@ -49,18 +54,18 @@ function CreateMenu() {
                     <div className="CreateManu__MainBlock__Menu__FullKcal">
                         <Form>
                             <Form.Label className="CreatingMenu__Menu__block__form__formItem">
-                                Назва меню:
+                                {translated.nameOfMenu}
                                 <Form.Control className="m-0" type="text" placeholder="додайте назву" name="menuName" />
                             </Form.Label>
                             <Form.Label className="CreatingMenu__Menu__block__form__formItem">
-                                Загальна калорійність меню:
+                                {translated.kcalOfMenu}
                                 <Form.Control className="m-0" type="number" readOnly placeholder="калорійність" name="fullKll"
                                     value={createdMenu.reduce((acc, el) => acc + Number(el.fullKcal), 0)} />
                             </Form.Label>
                         </Form>
                     </div>
                     <Button className="CreateManu__MainBlock__Menu__SubButton" type="submit" variant="Success">
-                        Зберегти
+                        {translated.saveMenu}
                     </Button>
                 </div>
             </div>
