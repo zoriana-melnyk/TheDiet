@@ -6,10 +6,10 @@ import './Directory.scss';
 import { Table } from 'react-bootstrap';
 
 import { useLittera } from "@assembless/react-littera";
-import { directoryTslations } from "../DirectoryTranslation";
+import { directoryTranslations } from "../DirectoryTranslation";
 
 function Directory() {
-    const translated = useLittera(directoryTslations);
+    const translated = useLittera(directoryTranslations);
 
     return (
         <div className="Directory">

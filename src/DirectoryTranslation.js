@@ -1,4 +1,4 @@
-const directoryTslations = {
+const directoryTranslations = {
     header: {
         uk_UA: "Довідник",
         en_US: "Directory",
@@ -61,4 +61,4 @@ const directoryTslations = {
     },
 };
 
-export { directoryTslations };
+export { directoryTranslations };
