@@ -6,6 +6,9 @@ import './CreateDish.scss';
 import { Form, Button } from 'react-bootstrap';
 import { Recipe, cookingOptions, defaultOptionIndex } from "./Recipe";
 
+import { useLittera } from "@assembless/react-littera";
+import { createDishTranslations } from "../CreateDishTranslation";
+
 function CreateDish() {
 
     // NOTE: value - ідентифікатор, kll - енергетична цінність за 100 г, label - назва
@@ -42,12 +45,12 @@ function CreateDish() {
         const requiredFields = {};
         let isValid = true;
         if (!formValues.label) {
-            requiredFields.label = 'Обовʼязкове поле';
+            requiredFields.label = `${translated.error}`;
         } else {
             requiredFields.label = '';
         }
         if (!formValues.weight) {
-            requiredFields.weight = 'Обовʼязкове поле';
+            requiredFields.weight = `${translated.error}`;
         } else {
             requiredFields.weight = '';
         }
@@ -90,15 +93,17 @@ function CreateDish() {
         })
     }
 
+    const translated = useLittera(createDishTranslations);
+
     return (
         <div className="CreateDish">
             <div className="CreateDish__mainBlock">
                 <div className="CreateDish__mainBlock__infoBlock">
                     <h1 className="CreateDish__mainBlock__infoBlock__header p-2">
-                        Створення власної страви
+                        {translated.header}
                     </h1>
                     <h2 className="CreateDish__mainBlock__infoBlock__text">
-                        Оберіть продукт та створіть свою страву
+                        {translated.paragraph}
                     </h2>
                 </div>
 
@@ -106,7 +111,7 @@ function CreateDish() {
                 <Form className="CreateDish__mainBlock__form" onSubmit={onFormSubmit}>
                     <div className="d-flex flex-wrap">
                         <Form.Label className="CreateDish__mainBlock__form__label">
-                            Продукт:&nbsp;
+                            {translated.discription}&nbsp;
                             {errors.label && <span className="text-danger ml-1 h6">{errors.label}</span>}
                             <Select className="CreateDish__mainBlock__form__label__options" placeholder="оберіть продукт"
                                 defaultValue={formValues.product}
@@ -119,13 +124,13 @@ function CreateDish() {
 
                         {/* product kll */}
                         <Form.Label className="CreateDish__mainBlock__form__label">
-                            Калорійність продукту:
+                            {translated.kcalOfProduct}
                             <Form.Control className="m-0" type="number" readOnly placeholder="калорійність" name="kll" value={formValues.fullKll} />
                         </Form.Label>
 
                         {/* weight of poduct */}
                         <Form.Label className="CreateDish__mainBlock__form__label">
-                            Вага продукту відповідно до рецепту:&nbsp;
+                            {translated.weightOfProduct}&nbsp;
                             {errors.weight && <span className="text-danger h6">{errors.weight}</span>}
                             <Select required className="CreateDish__mainBlock__form__label__options" placeholder="вага продукту (г)"
                                 defaultValue={formValues.weight}
@@ -137,14 +142,14 @@ function CreateDish() {
                     </div>
 
                     {/* add to recipe button */}
-                    <Button className="CreateDish__mainBlock__form__button" type="submit">Додати до рецепту</Button>
+                    <Button className="CreateDish__mainBlock__form__button" type="submit">{translated.addToRecipe}</Button>
 
                     {/* recipe */}
                     <div className="CreateDish__mainBlock__form__results">
-                        <Form.Label className="CreateDish__mainBlock__form__results__label">Ваш рецепт:</Form.Label>< br />
+                        <Form.Label className="CreateDish__mainBlock__form__results__label">{translated.recipe}</Form.Label>< br />
                         {
                             !createdProducts.length
-                                ? <Form.Label className="CreateDish__mainBlock__form__results__label text-muted h6 mt-5">Немає інгрідієнтів</Form.Label>
+                                ? <Form.Label className="CreateDish__mainBlock__form__results__label text-muted h6 mt-5">{translated.empty}</Form.Label>
                                 : <Recipe
                                     recipe={createdProducts}
                                     onCookingOptionChange={(createProductIndex, selectedOption) => {
@@ -159,7 +164,7 @@ function CreateDish() {
 
                     {/* name of dish */}
                     <div className="d-flex justify-content-left m-2">
-                        <Form.Label className="CreateDish__mainBlock__form__label">Назва страви:
+                        <Form.Label className="CreateDish__mainBlock__form__label">{translated.nameOfDish}
                             <Form.Control type="text" placeholder="додайте назву" name="dishName">
                             </Form.Control>
                         </Form.Label>
@@ -167,7 +172,7 @@ function CreateDish() {
 
                     {/* save name of dish button */}
                     <div className="d-flex justify-content-end m-2">
-                        <Button className="CreateDish__mainBlock__form__button">Зберегти страву</Button>
+                        <Button className="CreateDish__mainBlock__form__button">{translated.saveDish}</Button>
                     </div>
                 </Form>
             </div>
