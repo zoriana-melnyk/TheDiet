@@ -5,29 +5,34 @@ import './Directory.scss';
 
 import { Table } from 'react-bootstrap';
 
+import { useLittera } from "@assembless/react-littera";
+import { directoryTslations } from "../DirectoryTranslation";
+
 function Directory() {
+    const translated = useLittera(directoryTslations);
+
     return (
         <div className="Directory">
             <div className="Directory__mainBlock">
                 <div className="Directory__mainBlock__info">
                     <h1 className="Directory__mainBlock__info__header pt-2">
-                        Довідник
+                        {translated.header}
                     </h1>
                     <h2 className="Directory__mainBlock__info__text">
-                        добової норми калорій для людини
+                        {translated.paragraph}
                     </h2>
                 </div>
                 <div className="Directory__mainBlock__tableContainer">
-                    <p className="Directory__mainBlock__tableContainer__tablerHeader">Фізіологічні потреби чоловіків</p>
+                    <p className="Directory__mainBlock__tableContainer__tablerHeader">{translated.menCalorie}</p>
                     <Table bordered className="Directory__mainBlock__tableContainer__table">
                         <thead className="Directory__mainBlock__tableContainer__table__head">
                             <tr>
-                                <th>Група інтенсивності праці</th>
-                                <th>Вікова група</th>
-                                <th>Енергія</th>
-                                <th>Білки</th>
-                                <th>Жири</th>
-                                <th>Вуглеводи</th>
+                                <th>{translated.workGroup}</th>
+                                <th>{translated.ageGroup}</th>
+                                <th>{translated.energy}</th>
+                                <th>{translated.proteins}</th>
+                                <th>{translated.fats}</th>
+                                <th>{translated.carbohydrates}</th>
                             </tr>
                         </thead>
                         <tbody className="Directory__mainBlock__tableContainer__table__body">
@@ -83,16 +88,16 @@ function Directory() {
                             </tr>
                         </tbody>
                     </Table>
-                    <p className="Directory__mainBlock__tableContainer__tablerHeader">Фізіологічні потреби жінок</p>
+                    <p className="Directory__mainBlock__tableContainer__tablerHeader">{translated.womenCalorie}</p>
                     <Table bordered className="Directory__mainBlock__tableContainer__table">
                         <thead className="Directory__mainBlock__tableContainer__table__head">
                             <tr>
-                                <th>Група інтенсивності праці</th>
-                                <th>Вікова група</th>
-                                <th>Енергія</th>
-                                <th>Білки</th>
-                                <th>Жири</th>
-                                <th>Вуглеводи</th>
+                                <th>{translated.workGroup}</th>
+                                <th>{translated.ageGroup}</th>
+                                <th>{translated.energy}</th>
+                                <th>{translated.proteins}</th>
+                                <th>{translated.fats}</th>
+                                <th>{translated.carbohydrates}</th>
                             </tr>
                         </thead>
                         <tbody className="Directory__mainBlock__tableContainer__table__body">
