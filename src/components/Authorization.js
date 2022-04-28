@@ -4,6 +4,11 @@ import { LogIn } from "./LogIn";
 import { Register } from './Register';
 import './Authorization.scss';
 
+import { useLittera } from "@assembless/react-littera";
+import { loginTranslations } from "../LoginTranslation";
+import { registerTranslations } from "../RegisterTranslation";
+
+
 const RightSide = forwardRef((props, ref) => {
     return <div className="right-side" onClick={props.onClick} ref={ref}>
         <h5 className="text">{props.selected}</h5>
@@ -51,6 +56,9 @@ function Authorization() {
         })
     }, [isLogin]);
 
+    const translate = useLittera(registerTranslations);
+    const translated = useLittera(loginTranslations);
+
     return (
         <div className="Authorization">
             <div className="login">
@@ -60,7 +68,7 @@ function Authorization() {
                 </div>
                 <RightSide
                     ref={asideRef}
-                    selected={isLoginActive ? 'Зареєструватися' : 'Увійти'}
+                    selected={isLoginActive ? `${translate.header}` : `${translated.header}`}
                     onClick={handleAsideClick}
                 />
             </div>
