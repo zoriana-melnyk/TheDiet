@@ -8,7 +8,7 @@ import phoneIcon from '../img/svg_img/phone.svg'
 import { Button } from 'react-bootstrap';
 
 import { useLittera } from "@assembless/react-littera";
-import { contactTranslations } from "../ContactTranslation";
+import { contactTranslations } from "../localization/ContactTranslation";
 
 function Contact() {
 

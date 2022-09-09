@@ -9,7 +9,7 @@ import myMenuIcon from '../img/svg_img/myMenu.svg'
 import { Button } from 'react-bootstrap';
 
 import { useLittera } from "@assembless/react-littera";
-import { userMenuTranslations } from "../UserMenuTranslation";
+import { userMenuTranslations } from "../localization/UserMenuTranslation";
 
 function UserMenu() {
 

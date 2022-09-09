@@ -7,7 +7,7 @@ import { Button, Form } from 'react-bootstrap';
 import { OneSet } from './creatingMenu/OneSet';
 
 import { useLittera } from "@assembless/react-littera";
-import { createMenuTranslations } from "../CreateMenuTranslation";
+import { createMenuTranslations } from "../localization/CreateMenuTranslation";
 
 function CreateMenu() {
     const translated = useLittera(createMenuTranslations);

@@ -2,7 +2,7 @@ import React from "react";
 import login from "../img/login.jpg"
 
 import { useLittera } from "@assembless/react-littera";
-import { loginTranslations } from "../LoginTranslation";
+import { loginTranslations } from "../localization/LoginTranslation";
 
 
 function LogIn({ onClick }) {

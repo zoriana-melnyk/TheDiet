@@ -7,7 +7,7 @@ import { Form, Button } from 'react-bootstrap';
 import { Recipe, cookingOptions, defaultOptionIndex } from "./Recipe";
 
 import { useLittera } from "@assembless/react-littera";
-import { createDishTranslations } from "../CreateDishTranslation";
+import { createDishTranslations } from "../localization/CreateDishTranslation";
 
 function CreateDish() {
 

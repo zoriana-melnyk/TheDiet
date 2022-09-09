@@ -4,7 +4,7 @@ import { Form } from 'react-bootstrap';
 import Select from 'react-select';
 
 import { useLittera } from "@assembless/react-littera";
-import { createMenuTranslations } from "../../CreateMenuTranslation";
+import { createMenuTranslations } from "../../localization/CreateMenuTranslation";
 
 function OneSet({ setIdx, title, onChange }) {
     const dishOptions = [{

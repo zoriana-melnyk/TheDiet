@@ -7,7 +7,7 @@ import cooperationCard from '../img/cooperationCard.jpg';
 import { Button } from 'react-bootstrap';
 
 import { useLittera } from "@assembless/react-littera";
-import { aboutTranslations } from "../AboutTranslation";
+import { aboutTranslations } from "../localization/AboutTranslation";
 
 function About() {
 
