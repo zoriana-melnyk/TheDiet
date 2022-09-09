@@ -6,7 +6,7 @@ import './Directory.scss';
 import { Table } from 'react-bootstrap';
 
 import { useLittera } from "@assembless/react-littera";
-import { directoryTranslations } from "../DirectoryTranslation";
+import { directoryTranslations } from "../localization/DirectoryTranslation";
 
 function Directory() {
     const translated = useLittera(directoryTranslations);

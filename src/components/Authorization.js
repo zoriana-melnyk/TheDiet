@@ -5,8 +5,8 @@ import { Register } from './Register';
 import './Authorization.scss';
 
 import { useLittera } from "@assembless/react-littera";
-import { loginTranslations } from "../LoginTranslation";
-import { registerTranslations } from "../RegisterTranslation";
+import { loginTranslations } from "../localization/LoginTranslation";
+import { registerTranslations } from "../localization/RegisterTranslation";
 
 
 const RightSide = forwardRef((props, ref) => {

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './Reviews.scss';
 
 import { useLittera } from "@assembless/react-littera";
-import { reviewsTranslation } from "../ReviewsTranslation";
+import { reviewsTranslation } from "../localization/ReviewsTranslation";
 
 function Reviews() {
     const [users, setUsers] = useState([]);

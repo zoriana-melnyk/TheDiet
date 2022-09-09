@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 
 
 import { useLittera } from "@assembless/react-littera";
-import { headerTranslations } from "../HeaderTranslation";
+import { headerTranslations } from "../localization/HeaderTranslation";
 
 function MainMenu() {
 
