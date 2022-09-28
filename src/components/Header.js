@@ -113,7 +113,7 @@ function Header() {
                                     <Link id="menu" className="Nav-item" to="/menu">{translated.UserMenu}</Link>
                                     <ul>
                                         <li className="List-menu">
-                                            <Link id="cdMenu" className="CdMenu-item" to="/created-menu">{translated.crMenu}</Link>
+                                            <Link id="cdMenu" className="CdMenu-item" to="/create-menu">{translated.crMenu}</Link>
                                         </li>
                                         <li className="List-menu">
                                             <Link id="crDish" className="CrDish-item" to="/create-dish">{translated.crDish}</Link>
