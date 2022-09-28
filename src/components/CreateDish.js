@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Select from 'react-select';
 
 import './CreateDish.scss';
@@ -8,23 +8,33 @@ import { Recipe, cookingOptions, defaultOptionIndex } from "./Recipe";
 
 import { useLittera } from "@assembless/react-littera";
 import { createDishTranslations } from "../localization/CreateDishTranslation";
+import { ProductApi } from "../api/products.api";
+import { DishApi } from "../api/dish.api";
+
+const normizeliProducst = (prods) => {
+    return prods.map(p => ({
+        label: p.name,
+        value: p._id,
+        fullKll: p.kcal
+    }))
+}
 
 function CreateDish() {
+    const [products, setProducts] = useState([]);
+    const [dish, setDish] = useState({ name: '' });
+
+    const fetchData = async () => {
+        const { data } = await ProductApi.getAll();
+        setProducts(data);
+    }
+
+    useEffect(() => {
+        fetchData();
+        /* ts-ignore */
+    }, []);
 
     // NOTE: value - ідентифікатор, kll - енергетична цінність за 100 г, label - назва
-    const proudctOptions = [{
-        label: 'Aвокадо',
-        value: 1,
-        fullKll: 159,
-    }, {
-        label: 'Сир твердий',
-        value: 2,
-        fullKll: 241
-    }, {
-        label: 'Яйце',
-        value: 3,
-        fullKll: 412
-    }];
+    const proudctOptions = normizeliProducst(products);
 
     const weightOptions = Array(40).fill(0).map((value, idx) => ({ value: (idx + 1) * 25, label: (idx + 1) * 25, weight: (idx + 1) * 25 }));
     const [formValues, setFormValues] = useState({
@@ -91,6 +101,14 @@ function CreateDish() {
             ...formValues,
             ...opt,
         })
+    }
+
+    const onDishCreate = () => {
+        DishApi.create({
+            dish_name: dish.name,
+            kcal: formValues.fullKll,
+            products: createdProducts
+        });
     }
 
     const translated = useLittera(createDishTranslations);
@@ -165,14 +183,14 @@ function CreateDish() {
                     {/* name of dish */}
                     <div className="d-flex justify-content-left m-2">
                         <Form.Label className="CreateDish__mainBlock__form__label">{translated.nameOfDish}
-                            <Form.Control type="text" placeholder="додайте назву" name="dishName">
+                            <Form.Control onChange={e => setDish({ name: e.target.value })} type="text" placeholder="додайте назву" name="dishName" value={dish.name}>
                             </Form.Control>
                         </Form.Label>
                     </div>
 
                     {/* save name of dish button */}
                     <div className="d-flex justify-content-end m-2">
-                        <Button className="CreateDish__mainBlock__form__button">{translated.saveDish}</Button>
+                        <Button onClick={onDishCreate} className="CreateDish__mainBlock__form__button">{translated.saveDish}</Button>
                     </div>
                 </Form>
             </div>
