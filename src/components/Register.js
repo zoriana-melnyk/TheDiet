@@ -7,8 +7,10 @@ import { registerTranslations } from "../localization/RegisterTranslation";
 import { Form, Button } from 'react-bootstrap';
 import { toast } from 'react-toastify';
 import { UserApi } from "../api/user.api";
+import { useNavigate } from "react-router-dom";
 
 const Register = ({ onClick }) => {
+    const navigate = useNavigate();
     const translated = useLittera(registerTranslations);
     const [errorMessage, setErrorMessage] = useState({});
     const [, setIsValid] = useState(true);
@@ -57,7 +59,9 @@ const Register = ({ onClick }) => {
             setIsValid(true);
         }
         try {
-            await UserApi.register(formProps);
+            const { data } = await UserApi.register(formProps);
+            localStorage.setItem('user', JSON.stringify(data))
+            navigate('/');
             toast.success('Юзер успішно створений');
         } catch(e) {
             const { response: { data: { message, code } } } = e;
