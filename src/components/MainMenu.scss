@@ -5,6 +5,7 @@
         justify-content: space-between;
         .dropdown-menu {
             padding: 0;
+            border: none !important;
         }
         .nav {
             font-family: Alegreya SC;
@@ -36,6 +37,8 @@
             display: flex;
             justify-content: center;
             padding: 10px 0;
+            color: #c4c4c4;
+            cursor: pointer;
             &:hover {
                 opacity: 0.8;
             }
@@ -48,12 +51,13 @@
             color: #c4c4c4;
         }
         .Auth-img {
-            // padding-left: 20em;
             height: 50px;
         }
-        // }
-        // &__user {
-
-        // }
+        .user-info {
+            color: #c4c4c4;
+            h5 {
+                margin: 0
+            }
+        }
     }
 }

@@ -5,47 +5,72 @@ import { useLittera } from "@assembless/react-littera";
 import { registerTranslations } from "../localization/RegisterTranslation";
 
 import { Form, Button } from 'react-bootstrap';
+import { toast } from 'react-toastify';
+import { UserApi } from "../api/user.api";
 
-
-import validator from 'validator';
-
-function Register({ onClick }) {
-
+const Register = ({ onClick }) => {
     const translated = useLittera(registerTranslations);
+    const [errorMessage, setErrorMessage] = useState({});
+    const [, setIsValid] = useState(true);
 
-    const current = new Date().toISOString().split("T")[0];
-
-    const [errorMessage, setErrorMessage] = useState('');
-
-    const validateDate = (value) => {
-
-        if (validator.isDate(value)) {
-            setErrorMessage('')
-        } else {
-            setErrorMessage('Зазначте дату свого народження!')
-        }
-    }
-
-    const formValidation = (value) => {
-        const requiredFields = {};
+    const formValidation = (values) => {
+        const requiredFields = errorMessage;
         let isValid = true;
-        if (!validator.isDate(value)) {
-            requiredFields.label = `${translated.error}`;
-        } else {
-            requiredFields.label = '';
-        }
-        return isValid;
-    }
-    const [register, setRegister] = useState([]);
 
-    const onFormSubmit = (e) => {
-        e.preventDefault();
-        const isFormValid = formValidation(); // boolean
-        if (!isFormValid) {
-            return;
+        // password validate
+        if (values.password !== values.repassword) {
+            isValid = false;
+            requiredFields.password = 'Пароль не співпадає з підтвердженням';
+        } else {
+            delete requiredFields.password;
         }
-        // const defaultDate = Date(value) >= defaultValue;
-        setRegister([...register]);
+        // birthdate validate
+        const date = new Date(values.birthdate).getTime();
+        const from = new Date("02/08/1960").getTime();
+        const to = new Date().getTime();
+        if(date <= from || date >= to) {
+            isValid = false;
+            requiredFields.birthdate = 'Помилкова дата'
+        } else {
+            delete requiredFields.birthdate;
+        }
+
+        return {
+            isValid,
+            requiredFields
+        };
+    }
+
+    const onFormSubmit = async (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const formProps = Object.fromEntries(formData);
+        const isFormValid = formValidation(formProps);
+
+        if (!isFormValid.isValid) {
+            // set validation results
+            setErrorMessage(isFormValid.requiredFields);
+            setIsValid(false);
+            return;
+        } else {
+            setErrorMessage({});
+            setIsValid(true);
+        }
+        try {
+            await UserApi.register(formProps);
+            toast.success('Юзер успішно створений');
+        } catch(e) {
+            const { response: { data: { message, code } } } = e;
+            if (code === 11000) {
+                toast.error('Така пошта вже використовується іншим користувачем');
+            } else {
+                toast.error(message);
+            }
+        }
+    }
+
+    const ErrorMessage = ({ children }) => {
+        return <span style={{ color: 'red', fontSize: 'small' }}>{children}</span>
     }
 
     return (
@@ -66,23 +91,29 @@ function Register({ onClick }) {
                     </div>
                     <div className="form-group">
                         <label htmlFor="d-bthday">{translated.bithday}</label>
-                        <input type="date" name="birthdate" placeholder="оберіть дату народження"
-                            defaultValue="2004-01-01" max={current}
-                            onChange={(e) => validateDate(e.target.value)} required />
-                        {errorMessage}
+                        <input
+                            type="date"
+                            name="birthdate"
+                            placeholder="оберіть дату народження"
+                            defaultValue="2004-01-01"
+                            required
+                        />
+                        <ErrorMessage>{errorMessage.birthdate}</ErrorMessage>
                     </div>
                     <div className="form-group">
                         <label htmlFor="password">{translated.password}</label>
                         <input type="password" name="password" placeholder="пароль" required />
+                        <ErrorMessage>{errorMessage.password}</ErrorMessage>
                     </div>
                     <div className="form-group">
                         <label htmlFor="password">{translated.password}</label>
-                        <input type="password" name="password" placeholder="підтвердження паролю" required />
+                        <input type="password" name="repassword" placeholder="підтвердження паролю" required />
+                        <ErrorMessage>{errorMessage.password}</ErrorMessage>
+                    </div>
+                    <div className="footer">
+                        <Button type="submit" className="btn">{translated.header}</Button>
                     </div>
                 </Form>
-            </div>
-            <div className="footer">
-                <Button type="buttton" className="btn">{translated.header}</Button>
             </div>
         </div>
     );

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Container, Navbar } from 'react-bootstrap';
 import { slide as Menu } from 'react-burger-menu'
 
@@ -70,6 +70,8 @@ const useSize = (target) => {
 }
 
 function Header() {
+    const navigate = useNavigate();
+    const user = JSON.parse(localStorage.getItem('user'));
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const target = React.useRef(null)
@@ -81,8 +83,12 @@ function Header() {
         methods.setLocale(languageOption.value);
     }
 
-    const translated = useLittera(headerTranslations);
+    const onLogout = () => {
+        localStorage.removeItem('user');
+        navigate(0)
+    }
 
+    const translated = useLittera(headerTranslations);
     return (
         <header className="App-header" ref={target}>
             <Navbar className="App-navbar">
@@ -101,12 +107,21 @@ function Header() {
                                 width={500}
                                 customBurgerIcon={<img src={menuButton} alt="menu_img" />}
                             >
-                                <div className="user-ifo">
-                                    <img src={userPhoto} alt="userPhoto" width="35px" height="35px" />
-                                    <Link id="login" className="Login" to={'/auth/login'}>{translated.login}</Link>
-                                    <Link id="signIn" className="SignIn" to={'/auth/register'}>{translated.register}</Link>
-                                    <img className="close-button" onClick={() => setIsMenuOpen(false)} src={closeMenuButton} alt="closeMenu_img" />
-                                </div>
+                                {
+                                    user?.email
+                                        ? <div className="user-info">
+                                            <img src={userPhoto} alt="userPhoto" width="35px" height="35px" />
+                                            <h3>{user.username}</h3>
+                                            <button onClick={onLogout}>Вийти</button>
+                                        </div>
+                                        : <div className="user-ifo">
+                                            <img src={userPhoto} alt="userPhoto" width="35px" height="35px" />
+                                            <Link id="login" className="Login" to={'/auth/login'}>{translated.login}</Link>
+                                            <Link id="signIn" className="SignIn" to={'/auth/register'}>{translated.register}</Link>
+                                            <img className="close-button" onClick={() => setIsMenuOpen(false)} src={closeMenuButton} alt="closeMenu_img" />
+                                        </div>
+                                }
+
                                 <div className="routes">
 
                                     <Link id="home" className="Nav-item" to="/">{translated.home}</Link>
@@ -136,7 +151,8 @@ function Header() {
                                 </footer>
 
                             </Menu>
-                            : <> <MainMenu />
+                            : <>
+                                <MainMenu user={user} onLogout={onLogout} />
                                 <Select
                                     className="Footer__langOptions"
                                     defaultValue={languageOptions[0]}
@@ -144,7 +160,8 @@ function Header() {
                                     options={languageOptions}
                                     isSearchable={false}
                                     styles={customStyles}
-                                /></>
+                                />
+                            </>
                     }
                 </Container>
             </Navbar>
