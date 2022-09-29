@@ -16,6 +16,9 @@ import { DietMenu } from "./assets/menuVariants/DietMenu";
 
 import { LitteraProvider } from "@assembless/react-littera";
 
+// toasts
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // HOC
 const Layout = ({ children, withFooter = true }) => {
@@ -45,7 +48,18 @@ function App() {
           </Routes>
         </Router>
       </LitteraProvider>
-
+      <ToastContainer
+        position="bottom-right"
+        theme="dark"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </div>
   );
 }

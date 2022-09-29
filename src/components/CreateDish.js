@@ -11,6 +11,8 @@ import { createDishTranslations } from "../localization/CreateDishTranslation";
 import { ProductApi } from "../api/products.api";
 import { DishApi } from "../api/dish.api";
 
+import { toast } from 'react-toastify';
+
 const normizeliProducst = (prods) => {
     return prods.map(p => ({
         label: p.name,
@@ -82,10 +84,9 @@ function CreateDish() {
         if (!isFormValid) {
             return;
         }
-        // const foundProduct = proudctOptions.find(product => product.value === Number(formValues.product)); // { label, vlaue }   
         const kll = Number(formValues.weight) * formValues.fullKll / 100;
         const cookKll = kll * cookingOptions[defaultOptionIndex].value;
-        const newProduct = { ...formValues, kll, cookKll };
+        const newProduct = { ...formValues, kll, cookKll, label: formValues.label };
         setCreatedProducts([...createdProducts, newProduct]);
     }
 
@@ -103,12 +104,18 @@ function CreateDish() {
         })
     }
 
-    const onDishCreate = () => {
-        DishApi.create({
-            dish_name: dish.name,
-            kcal: formValues.fullKll,
-            products: createdProducts
-        });
+    const onDishCreate = async () => {
+        try {
+            const { data } = await DishApi.create({
+                dish_name: dish.name,
+                kcal: formValues.fullKll,
+                products: createdProducts.map(cp => ({ ...cp, product: cp.value }))
+            });
+            toast.info(`Страву "${data.dish_name}" створено`);
+        } catch(e) {
+            const { response: { data: { message } } } = e;
+            toast.error(message);
+        }
     }
 
     const translated = useLittera(createDishTranslations);
@@ -190,7 +197,7 @@ function CreateDish() {
 
                     {/* save name of dish button */}
                     <div className="d-flex justify-content-end m-2">
-                        <Button onClick={onDishCreate} className="CreateDish__mainBlock__form__button">{translated.saveDish}</Button>
+                        <Button onClick={onDishCreate} className="CreateDish__mainBlock__form__button" disabled={!createdProducts.length}>{translated.saveDish}</Button>
                     </div>
                 </Form>
             </div>
