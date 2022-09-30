@@ -1,6 +1,8 @@
 #NavContainer {
     .Navigation {
-        // &__pages {
+        &--dropdown {
+            display: flex;
+        }
         display: flex;
         justify-content: space-between;
         .dropdown-menu {
@@ -30,7 +32,6 @@
             text-align: center;
             color: #c4c4c4;
             text-decoration-line: none;
-            padding-left: 10px;
         }
         .DropItem {
             background-color: #0e0d0dda;
@@ -59,5 +60,8 @@
                 margin: 0
             }
         }
+        .dropdown-toggle {
+            display: flex;
+        };
     }
 }

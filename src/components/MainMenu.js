@@ -12,23 +12,31 @@ import { headerTranslations } from "../localization/HeaderTranslation";
 
 function MainMenu({ user, onLogout }) {
     const translated = useLittera(headerTranslations);
-    
+
     return (
         <Container id='NavContainer'>
             <Nav className="Navigation">
-                <NavDropdown title={translated.menu} id='DropMenu'>
+                <NavDropdown className="Navigation--dropdown" title={translated.menu} id='DropMenu'>
                     <Link to="/menu" className="DropItem" id='LinkItem'>{translated.UserMenu}</Link>
-                    <Link to="/create-menu" className="DropItem" id='LinkItem'>{translated.crMenu}</Link>
-                    <Link to="/create-dish" className="DropItem" id='LinkItem'>{translated.crDish}</Link>
+                    {
+                        user?.email
+                            ? <>
+                                <Link to="/create-menu" className="DropItem" id='LinkItem'>{translated.crMenu}</Link>
+                                <Link to="/create-dish" className="DropItem" id='LinkItem'>{translated.crDish}</Link>
+                            </>
+                            : null
+                    }
                 </NavDropdown>
-                <Link className="DropItem" to="/directory" id='DropMenu'>{translated.directory}</Link>
-                <Link className="DropItem" to="/contact" id='DropMenu'>{translated.contact}</Link>
+                <Link to="/directory" id='DropMenu'>{translated.directory}</Link>
+                <Link to="/contact" id='DropMenu'>{translated.contact}</Link>
 
                 {user?.email
-                    ? <NavDropdown title={<div className="user-info">
-                        <img src={auth_img} alt="userPhoto" width="35px" height="35px" />
-                        <h5>{user.username}</h5>
-                    </div>}>
+                    ? <NavDropdown
+                        title={<div className="user-info">
+                            <img src={auth_img} alt="userPhoto" width="35px" height="35px" />
+                            <h5>{user.username}</h5>
+                        </div>}
+                    >
                         <div className="DropItem" onClick={onLogout}>Вийти</div>
                     </NavDropdown>
                     : <NavDropdown title={<img src={auth_img} className="Auth-img" alt="auth_img" dropdown-toggle='display-none' />}>
