@@ -1,0 +1,55 @@
+/* reset */
+*,
+*::before,
+*::after {
+  margin:  0;
+  padding: 0;
+  box: {
+    sizing: border-box;
+  };
+}
+
+:root {
+  /* basic color palette */
+  --white-1: hsl(0, 0%, 100%);
+  --white-2: hsl(0, 0%, 90%);
+  --black-1: hsl(0, 0%, 0%);
+  --black-2: hsl(0, 0%, 20%);
+
+  /* spaces */
+  --space-400: 1.5em;
+}
+
+/* components */
+.page {
+  color:   var(--black-1);
+  padding: var(--space-400);
+  display: grid;
+  background: {
+    color: #565353;
+  };
+  min: {
+    height: 100vh;
+  };
+  place: {
+    items: center;
+  };
+}
+
+.loader {
+  --size: calc(clamp(3rem, 30vw, 4rem));
+  
+  animation: rotate 1s linear infinite;
+  border: var(--size) solid var(--black-1) {
+    top: {
+      color: var(--white-1);
+    };
+    radius: 50%;
+  };
+}
+
+@keyframes rotate {
+  to {
+    rotate: 360deg;
+  }
+}

@@ -12,6 +12,7 @@ import { ProductApi } from "../api/products.api";
 import { DishApi } from "../api/dish.api";
 
 import { toast } from 'react-toastify';
+import { Loader } from "./Loader";
 
 const normizeliProducst = (prods) => {
     return prods.map(p => ({
@@ -22,6 +23,7 @@ const normizeliProducst = (prods) => {
 }
 
 function CreateDish() {
+    const user = JSON.parse(localStorage.getItem('user'));
     const [products, setProducts] = useState([]);
     const [dish, setDish] = useState({ name: '' });
 
@@ -107,11 +109,12 @@ function CreateDish() {
     const onDishCreate = async () => {
         try {
             const { data } = await DishApi.create({
-                dish_name: dish.name,
-                kcal: formValues.fullKll,
-                products: createdProducts.map(cp => ({ ...cp, product: cp.value }))
+                name: dish.name,
+                fullKll: formValues.fullKll,
+                products: createdProducts.map(cp => ({ ...cp, product: cp.value })),
+                author: user._id
             });
-            toast.info(`Страву "${data.dish_name}" створено`);
+            toast.info(`Страву "${data.name}" створено`);
         } catch(e) {
             const { response: { data: { message } } } = e;
             toast.error(message);
@@ -119,6 +122,11 @@ function CreateDish() {
     }
 
     const translated = useLittera(createDishTranslations);
+
+
+    if (!products.length) {
+        return <Loader />
+    }
 
     return (
         <div className="CreateDish">
